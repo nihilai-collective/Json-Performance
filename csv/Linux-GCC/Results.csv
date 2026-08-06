@@ -1,0 +1,14 @@
+# Json-Performance Stage Results
+#CPU: Intel(R) Core(TM) i9-14900KF-AVX2
+#OS: Linux-6.6.87.2-microsoft-standard-WSL2
+#Compiler: GCC-16.0.1
+
+# Json-Performance Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold,MaxTimeInS,RseThreshold,MaxK,MinK
+true,80,100000,1,10,2.5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,48,4,23
+glaze,12,6,51
+simdjson (ondemand),11,4,25
