@@ -1,0 +1,163 @@
+name: Benchmark
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - stage-1-parsing-avx512-newer
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - os: ubuntu-latest
+            compiler: clang
+            name: "Linux Clang"
+            branch: temp-stage-1-parsing-avx512-ubuntu-clang
+            commit_msg: "Updates - Linux-Clang"
+            install_path: /home/runner/work/Json-Performance/Json-Performance/install/bin/Json-Performance
+            run_path: /home/runner/work/Json-Performance/Json-Performance/install/bin/
+            work_path: /home/runner/work/Json-Performance/Json-Performance/
+          - os: ubuntu-latest
+            compiler: gcc
+            name: "Linux GCC"
+            branch: temp-stage-1-parsing-avx512-ubuntu-gcc
+            commit_msg: "Updates - Linux-GCC"
+            install_path: /home/runner/work/Json-Performance/Json-Performance/install/bin/Json-Performance
+            run_path: /home/runner/work/Json-Performance/Json-Performance/install/bin/
+            work_path: /home/runner/work/Json-Performance/Json-Performance/
+          - os: windows-latest
+            compiler: msvc
+            name: "Windows MSVC"
+            branch: temp-stage-1-parsing-avx512-windows-msvc
+            commit_msg: "Updates - Windows-MSVC"
+            run_path: D:/a/Json-Performance/Json-Performance/install/bin/
+            work_path: D:/a/Json-Performance/Json-Performance/
+
+    runs-on: ${{ matrix.config.os }}
+    name: Build on ${{ matrix.config.name }}
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Setup Clang (Linux)
+      if: matrix.config.os == 'ubuntu-latest' && matrix.config.compiler == 'clang'
+      run: |
+        wget https://apt.llvm.org/llvm.sh
+        chmod u+x llvm.sh
+        DEV_VERSION=$(awk -F'[][]' '/LLVM_VERSION_PATTERNS/ {print $2}' llvm.sh | sort -n | tail -n 1)
+        sudo ./llvm.sh $DEV_VERSION
+        echo "CXX_BIN=/usr/bin/clang++-$DEV_VERSION" >> $GITHUB_ENV
+        echo "C_BIN=/usr/bin/clang-$DEV_VERSION" >> $GITHUB_ENV
+
+    - name: Setup GCC (Linux)
+      if: matrix.config.os == 'ubuntu-latest' && matrix.config.compiler == 'gcc'
+      run: |
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        sudo apt-get update
+        DEV_VERSION=$(apt-cache search '^g\+\+-[0-9]+$' | awk '{print $1}' | sort -V | tail -n 1 | sed 's/g++-//')
+        sudo apt-get install -y gcc-$DEV_VERSION g++-$DEV_VERSION
+        echo "CXX_BIN=/usr/bin/g++-$DEV_VERSION" >> $GITHUB_ENV
+        echo "C_BIN=/usr/bin/gcc-$DEV_VERSION" >> $GITHUB_ENV
+
+    - name: Setup MSVC (Windows)
+      if: matrix.config.compiler == 'msvc'
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: Set up Python (macOS)
+      if: matrix.config.os == 'macos-latest'
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.x'
+
+    - name: Install Seaborn (Linux/Windows)
+      if: matrix.config.os != 'macos-latest'
+      run: pip install seaborn
+
+    - name: Install Seaborn (macOS)
+      if: matrix.config.os == 'macos-latest'
+      run: |
+        python -m venv env
+        source env/bin/activate
+        pip install seaborn matplotlib pandas
+    - name: Configure CMake (Unix)
+      if: matrix.config.compiler != 'msvc'
+      run: cmake -S . -B ./Build -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=${{ env.CXX_BIN }} -DCMAKE_C_COMPILER=${{ env.C_BIN }}
+
+    - name: Configure CMake (Windows)
+      if: matrix.config.compiler == 'msvc'
+      run: cmake -S . -B ./Build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build
+      working-directory: ./Build
+      run: cmake --build . --config=Release -v
+
+    - name: Install (Unix)
+      if: matrix.config.compiler != 'msvc'
+      run: |
+        sudo cmake --install ./Build --config=Release
+        sudo chmod +x ${{ matrix.config.install_path }}
+    - name: Install (Windows)
+      if: matrix.config.compiler == 'msvc'
+      working-directory: ./Build
+      run: cmake --install . --config=Release
+
+    - name: Run (Linux)
+      if: matrix.config.os == 'ubuntu-latest'
+      working-directory: ${{ matrix.config.run_path }}
+      run: ./Json-Performance
+      continue-on-error: true
+
+    - name: Run (Windows)
+      if: matrix.config.compiler == 'msvc'
+      working-directory: ${{ matrix.config.run_path }}
+      run: ./Json-Performance
+      continue-on-error: true
+
+    - name: Commit and push to temp branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      working-directory: ${{ matrix.config.work_path }}
+      shell: bash
+      run: |
+        if [ "${{ matrix.config.compiler }}" != "msvc" ]; then SUDO="sudo"; else SUDO=""; fi
+        $SUDO git config --global user.email "40668522+RealTimeChris@users.noreply.github.com"
+        $SUDO git config --global user.name "RealTimeChris"
+        $SUDO git checkout -b ${{ matrix.config.branch }}
+        $SUDO git add .
+        $SUDO git commit -m "${{ matrix.config.commit_msg }}"
+        $SUDO git push -f https://${{ secrets.GITHUB_TOKEN }}@github.com/RealTimeChris/Json-Performance.git ${{ matrix.config.branch }}
+  Merge-Branches:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Merge all temporary branches into the stage-1-parsing-avx512 branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        sudo git config --global user.email "40668522+RealTimeChris@users.noreply.github.com"
+        sudo git config --global user.name "RealTimeChris"
+        sudo git fetch origin
+        sudo git config pull.ff only
+        sudo git checkout stage-1-parsing-avx512-newer
+        sudo git pull -f origin stage-1-parsing-avx512-newer
+        sudo git merge origin/temp-stage-1-parsing-avx512-windows-msvc --no-ff
+        sudo git merge origin/temp-stage-1-parsing-avx512-ubuntu-gcc --no-ff
+        sudo git merge origin/temp-stage-1-parsing-avx512-ubuntu-clang --no-ff
+        sudo git checkout --orphan newBranch
+        sudo git add .
+        sudo git commit -m "Updating necessary files."
+        sudo git branch -m stage-1-parsing-avx512
+        sudo git push origin stage-1-parsing-avx512 -f
+    - name: Delete temporary branches
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        sudo git push origin --delete temp-stage-1-parsing-avx512-windows-msvc
+        sudo git push origin --delete temp-stage-1-parsing-avx512-ubuntu-gcc
+        sudo git push origin --delete temp-stage-1-parsing-avx512-ubuntu-clang
