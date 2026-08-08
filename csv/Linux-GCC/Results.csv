@@ -1,0 +1,14 @@
+# Json-Performance Stage Results
+#CPU: INTEL(R) XEON(R) PLATINUM 8573C-AVX512
+#OS: Linux-6.17.0-1020-azure
+#Compiler: GCC-16.0.1
+
+# Json-Performance Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold,MaxTimeInS,RseThreshold,MaxK,MinK
+true,80,100000,1,10,2.5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,40,6,29
+simdjson (ondemand),20,1,19
+glaze,12,7,50

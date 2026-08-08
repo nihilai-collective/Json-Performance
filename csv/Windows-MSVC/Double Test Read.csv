@@ -1,0 +1,9 @@
+# Double Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36252.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,807.058,0.48053,3.1708ms,1811,30,3172.41,2140,3.02073,Win
+glaze,241.553,0.129857,4.1962ms,1811,30,2586.21,7150,10.1973,Loss
+simdjson (ondemand),152.257,0.0914729,5.2789ms,1811,30,3229.89,11343.3,16.2378,Loss

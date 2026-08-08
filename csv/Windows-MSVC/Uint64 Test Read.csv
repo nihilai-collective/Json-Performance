@@ -1,0 +1,9 @@
+# Uint64 Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36252.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1513.76,0.372835,3.0407ms,3873,30,2482.76,2440,1.62074,Win
+glaze,1006.43,0.23187,3.3186ms,3873,30,2172.41,3670,2.45424,Loss
+simdjson (ondemand),326.384,1.36769,5.004ms,3873,30,718678,11316.7,7.59391,Loss
