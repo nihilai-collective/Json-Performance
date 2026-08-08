@@ -1,0 +1,13 @@
+# Json-Performance Stage Results
+#CPU: AMD EPYC 9V74 80-Core Processor-AVX512
+#OS: Linux-6.17.0-1020-azure
+#Compiler: Clang-22.1.8
+
+# Json-Performance Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold,MaxTimeInS,RseThreshold,MaxK,MinK
+true,80,100000,1,10,2.5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,32,1,1
+simdjson (ondemand),1,1,32

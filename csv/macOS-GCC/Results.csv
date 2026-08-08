@@ -1,0 +1,13 @@
+# Json-Performance Stage Results
+#CPU: Apple M1 (Virtual)-NEON
+#OS: macOS-25.5.0
+#Compiler: GCC-16.1.0
+
+# Json-Performance Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold,MaxTimeInS,RseThreshold,MaxK,MinK
+true,80,100000,1,10,2.5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,27,2,5
+simdjson (ondemand),5,2,27
