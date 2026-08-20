@@ -1,0 +1,238 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 Nihilai Collective Corp
+ * https://github.com/nihilai-collective/json-performance
+ * include/tests.hpp
+ */
+
+#pragma once
+
+#include <common.hpp>
+
+namespace tests {
+
+	enum class json_libraries {
+		jsonifier = 0,
+		simdjson  = 1,
+	};
+
+#if JP_CI_RUN
+	static constexpr double convergence_threshold{ 5.0 };
+	static constexpr double rse_threshold{ 10.0 };
+#else
+	static constexpr double convergence_threshold{ 2.5 };
+	static constexpr double rse_threshold{ 5.0 };
+#endif
+
+	static constexpr benchmarksuite::stage_config_data config{ .clear_cpu_caches_before_iterations = true,
+		.measured_iteration_count																   = measured_iteration_count,
+		.max_iteration_count																	   = max_iteration_count,
+		.convergence_threshold																	   = convergence_threshold,
+		.max_time_in_s																			   = 20,
+		.rse_threshold																			   = rse_threshold };
+
+	static constexpr benchmarksuite::string_literal stage_name{ "Json-Performance: Stage-1 Parsing" };
+
+	using benchmark_stage = benchmarksuite::benchmark_stage<stage_name, config>;
+
+	template<json_libraries json_library, benchmarksuite::string_literal test_name, bool minified> struct library_traits;
+
+	template<benchmarksuite::string_literal test_name_new, bool minified> struct library_traits<json_libraries::jsonifier, test_name_new, minified> {
+		static auto run(const std::string& json_data_in_pre) {
+			static constexpr benchmarksuite::string_literal test_name{ test_name_new };
+			static constexpr benchmarksuite::string_literal test_name_read{ test_name + " Read" };
+			static constexpr bool partial_read{ true };
+			jsonifier::jsonifier_core<> parser;
+			struct parse_test_struct {
+				static size_t impl(jsonifier::jsonifier_core<>& parser_new, const std::string& json_data_in, uint64_t size) {
+					benchmarksuite::do_not_optimize_away(
+						parser_new.collectStructurals<jsonifier::parse_options{ .partialRead = partial_read, .minified = minified }>(json_data_in));
+					return size;
+				}
+			};
+			benchmark_stage::template run_benchmark<test_name_read, jsonifier_library_name, parse_test_struct>(parser, json_data_in_pre, json_data_in_pre.size());
+			return;
+		}
+	};
+
+	template<benchmarksuite::string_literal test_name_new, bool minified> struct library_traits<json_libraries::simdjson, test_name_new, minified> {
+		static auto run(const std::string& json_data_in_pre) {
+			static constexpr benchmarksuite::string_literal test_name{ test_name_new };
+			static constexpr benchmarksuite::string_literal test_name_read{ test_name + " Read" };
+			simdjson::ondemand::parser parser;
+			struct parse_test_struct {
+				static size_t impl(simdjson::ondemand::parser& parser_new, const std::string& json_data_in, uint64_t size, uint64_t capacity) {
+					benchmarksuite::do_not_optimize_away(parser_new.iterate(json_data_in.data(), size, capacity));
+					return size;
+				}
+			};
+			benchmark_stage::template run_benchmark<test_name_read, simdjson_library_name, parse_test_struct>(parser, json_data_in_pre, json_data_in_pre.size(),
+				json_data_in_pre.capacity());
+			return;
+		}
+	};
+
+	std::string make_commit_row(std::string_view label, std::string_view org_repo, std::string_view commit) {
+		std::string result;
+		result.reserve(94);
+		result += "| ";
+		result += label;
+		result += ": [";
+		result += commit;
+		result += "](https://github.com/";
+		result += org_repo;
+		result += "/commit/";
+		result += commit;
+		result += ")  \n";
+		return result;
+	}
+
+	std::string make_section00() {
+		std::string result;
+		result.reserve(164);
+		result += "# Json-Performance\nPerformance profiling of JSON libraries (Compiled and run on ";
+		result += benchmarksuite::system_info_data<benchmarksuite::benchmark_types::cpu>::os_id;
+		result += " ";
+		result += benchmarksuite::system_info_data<benchmarksuite::benchmark_types::cpu>::os_version;
+		result += " using the ";
+		result += benchmarksuite::system_info_data<benchmarksuite::benchmark_types::cpu>::compiler_id;
+		result += " ";
+		result += benchmarksuite::system_info_data<benchmarksuite::benchmark_types::cpu>::compiler_version;
+		result += " compiler).  \n\nLatest Results: (";
+		return result;
+	}
+
+	std::string make_section01() {
+		std::string result;
+		result.reserve(223);
+		result += "#### Using the following commits:\n----\n";
+		result += make_commit_row("Jsonifier", "RealTimeChris/Jsonifier", JSONIFIER_COMMIT);
+		result += make_commit_row("Simdjson (On Demand)", "simdjson/simdjson", SIMDJSON_COMMIT);
+		return result;
+	}
+
+	std::string make_section02() {
+		std::string result;
+		result.reserve(1280);
+		result += "\n> Both libraries are executing only 'stage-1' parsing, where they identify the structural indices, and neither of them are performing utf-8 validation in "
+				  "these tests. Adaptive sampling on (";
+		result += benchmarksuite::system_info_data<benchmarksuite::benchmark_types::cpu>::device_name();
+		result += "): iterations begin at ";
+		result += std::to_string(config.measured_iteration_count);
+		result += " and double each epoch (e.g. ";
+		result += std::to_string(config.measured_iteration_count);
+		result += " → ";
+		result += std::to_string(config.measured_iteration_count * 2);
+		result += " → ";
+		result += std::to_string(config.measured_iteration_count * 4);
+		result += " → ...) up to a maximum of ";
+		result += std::to_string(config.max_iteration_count);
+		result += " iterations. Each epoch runs all iterations and evaluates a trailing window of ";
+		result += "max(iterations/10, ";
+		result += std::to_string(config.min_k);
+		result += ") samples, capped at ";
+		result += std::to_string(config.max_k);
+		result += ". Convergence requires RSE < ";
+		result += std::to_string(config.rse_threshold);
+		result += "% AND mean shift < ";
+		result += std::to_string(config.convergence_threshold);
+		result += "% epoch-over-epoch simultaneously. ";
+		result += "The first epoch satisfying both conditions is retained as the canonical result. ";
+		result += "If convergence is never reached before ";
+		result += std::to_string(config.max_time_in_s);
+		result += " seconds elapse or the iteration cap is hit, the result is marked non-converged and ";
+		result += "excluded from all rankings — only converged results participate in win/tie/loss tallying. ";
+		result += "All results use Bessel-corrected variance and Welch's t-test for statistical tie detection.\n\n";
+		result += "#### Note:\n  These benchmarks were executed using the CPU benchmark library [benchmarksuite](https://github.com/realtimechris/benchmarksuite).\n  ";
+		return result;
+	}
+
+	std::string generate_section(std::string_view test_name_new_graph, std::string_view test_name_new_json) {
+		std::string test_name_json{ benchmarksuite::url_encode(test_name_new_json) };
+		std::string test_name_graph{ benchmarksuite::url_encode(test_name_new_graph) };
+		std::string result;
+		result.reserve(test_name_new_json.size() + test_name_json.size() + test_name_graph.size() * 2 + current_path.size() * 2 + 200);
+		result += "\n----\n### ";
+		result += test_name_new_json;
+		result += " Results [(View the data used in the following test)](./json/";
+		result += test_name_json;
+		result += ".json):\n\n<p align=\"left\"><a href=\"./graphs/";
+		result += current_path.operator std::string_view();
+		result += "/";
+		result += test_name_graph;
+		result += "_Results.png\" target=\"_blank\"><img src=\"./graphs/";
+		result += current_path.operator std::string_view();
+		result += "/";
+		result += test_name_graph;
+		result += "_Results.png?raw=true\" \nalt=\"\" width=\"400\"/></p>\n\n";
+		return result;
+	}
+
+	template<benchmarksuite::string_literal test_name_new, typename... library_traits> struct test_traits {
+		static constexpr benchmarksuite::string_literal test_type_string{ " Read" };
+
+		template<typename library_type, typename json_input_type> static void run(const json_input_type& json_data_new) {
+			library_type::run(json_data_new);
+		}
+
+		template<typename json_input_type> static std::string run(const json_input_type& json_data_new) {
+			static constexpr benchmarksuite::string_literal test_name{ test_name_new + test_type_string };
+			std::string json_results;
+			(run<library_traits>(json_data_new), ...);
+			auto results = benchmark_stage::get_test_results(test_name);
+			results.print(false);
+			if (results.size() > 1) {
+				json_results += generate_section(test_name, test_name_new);
+				json_results += results.to_markdown(false, false);
+				benchmarksuite::file_handle::save_file(results.to_csv(), csv_out_path + "/" + test_name + ".csv");
+			}
+			return json_results;
+		}
+	};
+
+	std::string get_padded_json_string(const std::string& path) {
+		auto raw_data = benchmarksuite::file_handle::get(path);
+		raw_data.reserve(raw_data.size() + simdjson::SIMDJSON_PADDING);
+		return raw_data;
+	}
+
+	template<benchmarksuite::string_literal test_name, typename... library_traits> void execute_test(std::string& newer_string) {
+		std::string json_file_path;
+		json_file_path.reserve(json_path.size() + 1 + test_name.size() + 5);
+		json_file_path += json_path.operator std::string_view();
+		json_file_path += "/";
+		json_file_path += test_name.operator std::string_view();
+		json_file_path += ".json";
+		auto json_data_in = get_padded_json_string(json_file_path);
+		newer_string += test_traits<test_name, library_traits...>::run(json_data_in);
+	}
+
+	template<benchmarksuite::string_literal test_name, json_libraries... json_library> void run_test_pair(std::string& newer_string) {
+		execute_test<test_name + " (Minified)", library_traits<json_library, test_name + " (Minified)", true>...>(newer_string);
+		execute_test<test_name + " (Prettified)", library_traits<json_library, test_name + " (Prettified)", false>...>(newer_string);
+	}
+
+	int32_t test_function() {
+		if (benchmarksuite::system_info_data<benchmarksuite::benchmark_types::cpu>::instruction_set_name.find("AVX512") == std::string::npos) {
+			std::cout << "Sorry, but this CPU does not support AVX512." << std::endl;
+			return -2;
+		}
+		std::string newer_string{ make_section00() + benchmarksuite::get_time() + ")\n" + make_section01() + make_section02() };
+		benchmarksuite::pin_for_benchmark();
+		run_test_pair<"Canada Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"CitmCatalog Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Discord Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Google Maps Response Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Instruments Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Marine IK Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Mesh Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Random Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		run_test_pair<"Twitter Test", json_libraries::simdjson, json_libraries::jsonifier>(newer_string);
+		benchmarksuite::file_handle::save_file(newer_string, base_path + "/" + current_path + ".md");
+		auto stage_results = benchmark_stage::get_all_results();
+		benchmarksuite::file_handle::save_file(stage_results.to_csv(), csv_out_path + "/Results.csv");
+		std::cout << "Md Data: " << newer_string << std::endl;
+		benchmarksuite::execute_python_script(base_path + "/GenerateGraphs.py", csv_out_path + "/", graphs_path);
+		return 0;
+	}
+}
