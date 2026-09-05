@@ -1,0 +1,9 @@
+# String Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-6.18.33.2-microsoft-standard-WSL2
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,3225.01,0.0521579,1.05412ms,9578,30,65.4713,2832.33,0.934002,Win
+glaze,2746.66,0.0775005,1.13699ms,9578,30,199.283,3325.6,1.09934,Loss
+simdjson (ondemand),1596.57,0.153967,3.65873ms,9578,32,2483,5721.19,1.8964,Loss
