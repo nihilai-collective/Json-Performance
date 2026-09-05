@@ -1,0 +1,14 @@
+# Json-Performance: Jsonifier vs Glaze vs simdjson Stage Results
+#CPU: Apple M1 (Virtual)-NEON
+#OS: macOS-25.6.0
+#Compiler: Clang-23.1.0
+
+# Json-Performance: Jsonifier vs Glaze vs simdjson Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold,MaxTimeInS,RseThreshold,MaxK,MinK
+true,80,100000,1,10,2.5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,55,10,10
+glaze,6,11,57
+simdjson (ondemand),3,5,32
