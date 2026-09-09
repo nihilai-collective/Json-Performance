@@ -1,0 +1,196 @@
+name: Benchmark
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - scalar-vs-simd-newer
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - os: ubuntu-latest
+            compiler: clang
+            name: "Linux Clang"
+            branch_base: temp-scalar-vs-simd-ubuntu-clang
+            commit_msg: "Updates - Linux-Clang"
+          - os: ubuntu-latest
+            compiler: gcc
+            name: "Linux GCC"
+            branch_base: temp-scalar-vs-simd-ubuntu-gcc
+            commit_msg: "Updates - Linux-GCC"
+          - os: macos-latest
+            compiler: clang
+            name: "macOS Clang"
+            branch_base: temp-scalar-vs-simd-macos-clang
+            commit_msg: "Updates - macOS-Clang"
+          - os: macos-latest
+            compiler: gcc
+            name: "macOS GCC"
+            branch_base: temp-scalar-vs-simd-macos-gcc
+            commit_msg: "Updates - macOS-GCC"
+          - os: windows-latest
+            compiler: msvc
+            name: "Windows MSVC"
+            branch_base: temp-scalar-vs-simd-windows-msvc
+            commit_msg: "Updates - Windows-MSVC"
+
+    runs-on: ${{ matrix.config.os }}
+    name: Build on ${{ matrix.config.name }}
+
+    env:
+      RUN_TAG: ${{ github.run_id }}-${{ github.run_attempt }}
+      BRANCH_NAME: ${{ matrix.config.branch_base }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Clang (Linux)
+        if: matrix.config.os == 'ubuntu-latest' && matrix.config.compiler == 'clang'
+        run: |
+            wget https://apt.llvm.org/llvm.sh
+            chmod u+x llvm.sh
+            DEV_VERSION=$(
+            curl -s https://apt.llvm.org/unstable/pool/main/l/llvm-toolchain-snapshot/ |
+            grep -oP 'clang-\K[0-9]+(?=_)' |
+            sort -nu |
+            tail -1
+            )
+            sudo ./llvm.sh $DEV_VERSION    
+            echo "CXX_BIN=/usr/bin/clang++-$DEV_VERSION" >> $GITHUB_ENV
+            echo "C_BIN=/usr/bin/clang-$DEV_VERSION" >> $GITHUB_ENV
+
+      - name: Setup GCC (Linux)
+        if: matrix.config.os == 'ubuntu-latest' && matrix.config.compiler == 'gcc'
+        run: |
+          sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+          sudo apt-get update
+          DEV_VERSION=$(apt-cache search '^g\+\+-[0-9]+$' | awk '{print $1}' | sort -V | tail -n 1 | sed 's/g++-//')
+          sudo apt-get install -y gcc-$DEV_VERSION g++-$DEV_VERSION
+          echo "CXX_BIN=/usr/bin/g++-$DEV_VERSION" >> $GITHUB_ENV
+          echo "C_BIN=/usr/bin/gcc-$DEV_VERSION" >> $GITHUB_ENV
+
+      - name: Setup Clang (macOS)
+        if: matrix.config.os == 'macos-latest' && matrix.config.compiler == 'clang'
+        run: |
+          brew install llvm
+          echo "CXX_BIN=$(brew --prefix llvm)/bin/clang++" >> $GITHUB_ENV
+          echo "C_BIN=$(brew --prefix llvm)/bin/clang" >> $GITHUB_ENV
+
+      - name: Setup GCC (macOS)
+        if: matrix.config.os == 'macos-latest' && matrix.config.compiler == 'gcc'
+        run: |
+          brew install gcc
+          GCC_VERSION=$(brew list --versions gcc | awk '{print $2}' | cut -d. -f1)
+          echo "CXX_BIN=g++-$GCC_VERSION" >> $GITHUB_ENV
+          echo "C_BIN=gcc-$GCC_VERSION" >> $GITHUB_ENV
+
+      - name: Setup MSVC (Windows)
+        if: matrix.config.compiler == 'msvc'
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: Install Python Dependencies
+        run: pip install seaborn pandas matplotlib
+
+      - name: Configure CMake (Unix)
+        if: matrix.config.compiler != 'msvc'
+        run: cmake -S . -B ./Build -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=${{ env.CXX_BIN }} -DCMAKE_C_COMPILER=${{ env.C_BIN }}
+
+      - name: Configure CMake (Windows)
+        if: matrix.config.compiler == 'msvc'
+        run: cmake -S . -B ./Build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        working-directory: ./Build
+        run: cmake --build . --config=Release -v
+
+      - name: Install (Unix)
+        if: matrix.config.compiler != 'msvc'
+        run: |
+          sudo cmake --install ./Build --config=Release
+          sudo chmod +x "${{ github.workspace }}/install/bin/Json-Performance"
+
+      - name: Install (Windows)
+        if: matrix.config.compiler == 'msvc'
+        working-directory: ./Build
+        run: cmake --install . --config=Release
+
+      - name: Run (macOS)
+        if: matrix.config.os == 'macos-latest'
+        working-directory: ${{ github.workspace }}/install/bin
+        run: sudo -E env "PATH=$PATH" ./Json-Performance
+        continue-on-error: true
+
+      - name: Run (Linux)
+        if: matrix.config.os == 'ubuntu-latest'
+        working-directory: ${{ github.workspace }}/install/bin
+        run: sudo -E env "PATH=$PATH" ./Json-Performance
+        continue-on-error: true
+
+      - name: Run (Windows)
+        if: matrix.config.compiler == 'msvc'
+        working-directory: ${{ github.workspace }}/install/bin
+        run: ./Json-Performance
+        continue-on-error: true
+
+      - name: Commit and push to temp branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ${{ github.workspace }}
+        shell: bash
+        run: |
+          if [ "${{ matrix.config.compiler }}" != "msvc" ]; then SUDO="sudo"; else SUDO=""; fi
+          $SUDO git config --global user.email "40668522+RealTimeChris@users.noreply.github.com"
+          $SUDO git config --global user.name "RealTimeChris"
+          $SUDO git checkout -b "$BRANCH_NAME"
+          $SUDO git add .
+          $SUDO git commit -m "${{ matrix.config.commit_msg }}"
+          $SUDO git push -f https://${{ secrets.GITHUB_TOKEN }}@github.com/nihilai-collective/Json-Performance.git "$BRANCH_NAME"
+
+  Merge-Branches:
+    runs-on: ubuntu-latest
+    needs: build
+
+    env:
+      RUN_TAG: ${{ github.run_id }}-${{ github.run_attempt }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Merge all temporary branches into the benchmarking branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sudo git config --global user.email "40668522+RealTimeChris@users.noreply.github.com"
+          sudo git config --global user.name "RealTimeChris"
+          sudo git fetch origin
+          sudo git config pull.ff only
+          sudo git checkout scalar-vs-simd-newer
+          sudo git pull -f origin scalar-vs-simd-newer
+          sudo git merge origin/temp-scalar-vs-simd-windows-msvc-$RUN_TAG --no-ff
+          sudo git merge origin/temp-scalar-vs-simd-ubuntu-gcc-$RUN_TAG --no-ff
+          sudo git merge origin/temp-scalar-vs-simd-ubuntu-clang-$RUN_TAG --no-ff
+          sudo git merge origin/temp-scalar-vs-simd-macos-gcc-$RUN_TAG --no-ff
+          sudo git merge origin/temp-scalar-vs-simd-macos-clang-$RUN_TAG --no-ff
+          sudo git checkout --orphan newBranch
+          sudo git add .
+          sudo git commit -m "First commit."
+          sudo git branch -m scalar-vs-simd-$RUN_TAG
+          sudo git push origin scalar-vs-simd-$RUN_TAG -f
+
+      - name: Delete temporary branches
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for suffix in temp-scalar-vs-simd-windows-msvc temp-scalar-vs-simd-ubuntu-gcc temp-scalar-vs-simd-ubuntu-clang temp-scalar-vs-simd-macos-gcc temp-scalar-vs-simd-macos-clang; do
+            sudo git push origin --delete $suffix-$RUN_TAG || true
+          done
