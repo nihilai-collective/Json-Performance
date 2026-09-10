@@ -1,0 +1,13 @@
+# Json-Performance: Scalar Structural Parsing vs simdjson with simd Stage Results
+#CPU: AMD EPYC 9V45 96-Core Processor-AVX512
+#OS: Linux-6.17.0-1022-azure
+#Compiler: Clang-20.1.8
+
+# Json-Performance: Scalar Structural Parsing vs simdjson with simd Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold,MaxTimeInS,RseThreshold,MaxK,MinK
+true,80,100000,1,10,2.5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,21,2,10
+simdjson (ondemand),10,2,21
