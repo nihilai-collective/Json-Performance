@@ -1,0 +1,9 @@
+# Mesh Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-6.18.40.1-microsoft-standard-WSL2
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier (two-stage),2323.8,0.234539,6951.56ms,1225964,320,4.45595e+08,503129,1.30745,Tie
+simdjson (ondemand),2312.15,0.20108,6868.66ms,1225964,160,1.65416e+08,505663,1.3141,Tie
+jsonifier,1863.97,0.276799,8458.51ms,1225964,160,4.82311e+08,627247,1.63,Loss
