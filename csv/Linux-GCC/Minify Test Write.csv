@@ -1,0 +1,9 @@
+# Minify Test Write Test Results 
+#**CPU:** AMD EPYC 7763 64-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1390.66,0.370568,77.6702ms,466906,30,4.2235e+07,320190,1.67664,Win
+glaze,1318.53,0.482093,81.0755ms,466906,30,7.95171e+07,337706,1.76841,Loss
+simdjson (ondemand),669.881,0.208595,161.769ms,466906,30,5.76756e+07,664710,3.48101,Loss
