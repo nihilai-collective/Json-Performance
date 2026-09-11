@@ -1,0 +1,9 @@
+# Marine IK Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-20.1.8
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,2262.35,0.250701,1020.5ms,9930848,30,3.30436e+09,4.18627e+06,1.09596,Win
+simdjson (ondemand),2180.23,0.901522,1018.36ms,9930848,30,4.6009e+10,4.34395e+06,1.13722,Loss
+glaze,2001.04,0.172988,1141.7ms,9930848,30,2.01102e+09,4.73295e+06,1.23907,Loss

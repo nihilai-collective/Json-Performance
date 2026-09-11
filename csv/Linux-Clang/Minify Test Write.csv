@@ -1,0 +1,9 @@
+# Minify Test Write Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-20.1.8
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,2371.57,0.852996,46.0348ms,466906,30,7.6949e+07,187756,1.04522,Win
+glaze,2272,0.254069,48.8383ms,466906,30,7.43817e+06,195984,1.09116,Loss
+simdjson (ondemand),1111.83,0.408851,97.9187ms,466906,30,8.04328e+07,400489,2.22895,Loss
