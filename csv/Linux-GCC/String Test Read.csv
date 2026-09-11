@@ -1,0 +1,9 @@
+# String Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,2290.73,0.108569,1.7023ms,9578,30,562.259,3987.5,1.07448,Win
+glaze,1766.18,0.0829292,7.18709ms,9578,64,1177.26,5171.77,1.39634,Loss
+simdjson (ondemand),1065.09,0.0880607,2.61159ms,9578,30,1711.06,8576.1,2.32071,Loss

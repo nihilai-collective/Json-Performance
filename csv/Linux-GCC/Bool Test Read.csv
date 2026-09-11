@@ -1,0 +1,9 @@
+# Bool Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1191.65,0.226044,0.867023ms,905,30,80.4092,724.267,2.00413,Win
+glaze,504.742,0.0386435,0.912392ms,905,30,13.0989,1709.93,4.77591,Loss
+simdjson (ondemand),139.464,0.164322,4.13519ms,905,32,3309.16,6188.53,17.6889,Loss

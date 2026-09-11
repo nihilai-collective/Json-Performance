@@ -1,0 +1,9 @@
+# Double Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,794.985,0.156613,3.04831ms,1811,30,347.293,2172.5,3.0723,Win
+glaze,590.288,0.324446,1.24042ms,1811,30,2703.43,2925.87,4.16142,Loss
+simdjson (ondemand),160.612,0.0509236,6.73528ms,1811,32,959.548,10753.2,15.3854,Loss

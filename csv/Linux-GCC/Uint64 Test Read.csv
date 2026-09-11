@@ -1,0 +1,9 @@
+# Uint64 Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+glaze,1547.87,0.0421799,1.06687ms,3873,30,30.392,2386.23,1.57668,Win
+jsonifier,1396.6,0.0406656,1.29638ms,3873,30,34.7,2644.7,1.75232,Loss
+simdjson (ondemand),306.21,0.190484,3.38259ms,3873,30,15837.7,12062.2,8.07099,Loss
