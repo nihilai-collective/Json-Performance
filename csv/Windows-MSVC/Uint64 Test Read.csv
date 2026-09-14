@@ -1,0 +1,9 @@
+# Uint64 Test Read Test Results 
+#**CPU:** AMD EPYC 7763 64-Core Processor-AVX2
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36256.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1019.39,0.216763,2.5067ms,3873,30,1850.57,3623.33,2.2634,Win
+glaze,661.537,0.15079,2.6676ms,3873,30,2126.44,5583.33,3.49904,Loss
+simdjson (ondemand),228.563,0.0636345,5.3559ms,3873,30,3172.41,16160,10.172,Loss
