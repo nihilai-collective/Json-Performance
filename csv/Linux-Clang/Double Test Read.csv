@@ -1,0 +1,9 @@
+# Double Test Read Test Results 
+#**CPU:** INTEL(R) XEON(R) PLATINUM 8573C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,675.186,0.0837726,3.24721ms,1811,30,137.757,2557.97,3.19245,Win
+glaze,623.068,0.150494,1.1641ms,1811,30,522.064,2771.93,3.4607,Loss
+simdjson (ondemand),156.552,0.0506566,6.73043ms,1811,32,999.403,11032.1,13.9584,Loss
