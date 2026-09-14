@@ -1,0 +1,9 @@
+# Bool Test Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,345.59,0.723451,0.914084ms,905,30,9793.01,2497.4,Win
+simdjson (ondemand),183.057,0.0977935,19.5645ms,905,128,2721.17,4714.8,Loss
+glaze,141.422,0.308689,6.57529ms,905,30,10647,6102.83,Loss
