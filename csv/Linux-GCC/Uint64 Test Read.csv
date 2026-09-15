@@ -1,0 +1,9 @@
+# Uint64 Test Read Test Results 
+#**CPU:** Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1278.69,0.0517677,1.20301ms,3873,30,67.0816,2888.57,2.06601,Win
+glaze,1041.34,0.157881,1.23455ms,3873,30,940.792,3546.97,2.53836,Loss
+simdjson (ondemand),314.559,1.91596,3.21861ms,3873,30,1.51839e+06,11742.1,8.44944,Loss
