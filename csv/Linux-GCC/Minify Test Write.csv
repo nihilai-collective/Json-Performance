@@ -1,0 +1,9 @@
+# Minify Test Write Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1888.82,0.288721,57.0777ms,466906,30,1.38982e+07,235743,1.31047,Win
+glaze,1714.3,0.239388,62.81ms,466906,30,1.15987e+07,259742,1.44386,Loss
+simdjson (ondemand),894.864,0.871837,117.872ms,466906,30,5.64595e+08,497591,2.76623,Loss
