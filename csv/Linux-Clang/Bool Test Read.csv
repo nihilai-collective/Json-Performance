@@ -1,0 +1,9 @@
+# Bool Test Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1042.11,0.101171,0.325024ms,905,30,21.0621,828.2,2.30103,Win
+glaze,1011.63,0.110411,0.592472ms,905,32,28.3942,853.156,2.37099,Loss
+simdjson (ondemand),157.289,0.072705,1.43142ms,905,30,477.476,5487.2,15.665,Loss
