@@ -1,0 +1,9 @@
+# Double Test Read Test Results 
+#**CPU:** AMD EPYC 7763 64-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,544.885,0.104235,1.96578ms,1811,30,327.471,3169.67,4.23081,Win
+glaze,493.684,0.0922393,1.11609ms,1811,30,312.386,3498.4,4.67272,Loss
+simdjson (ondemand),137.466,0.199295,3.21529ms,1811,30,18808.7,12563.9,16.9132,Loss
