@@ -1,0 +1,3972 @@
+{
+  "library": "jsonifier",
+  "branch": "scalar-vs-simd-main",
+  "generatedAt": "2026-09-24T15:48:44.6468727Z",
+  "summary": {
+    "jsonifier": {
+      "wins": 102,
+      "ties": 6,
+      "losses": 11
+    },
+    "simdjson (ondemand)": {
+      "wins": 11,
+      "ties": 6,
+      "losses": 102
+    }
+  },
+  "platforms": {
+    "linux-clang": {
+      "cpu": "Intel(R) Core(TM) i9-14900KF-AVX2",
+      "os": "Linux-6.18.40.1-microsoft-standard-WSL2",
+      "compiler": "Clang-24.0.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 100,
+        "maxIterationCount": 100000,
+        "maxTimeInS": 20.0,
+        "convergenceThreshold": 2.5,
+        "rseThreshold": 5.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "jsonifier": {
+          "wins": 21,
+          "ties": 2,
+          "losses": 2
+        },
+        "simdjson (ondemand)": {
+          "wins": 2,
+          "ties": 2,
+          "losses": 21
+        }
+      },
+      "tests": [
+        {
+          "name": "Bool Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3088.66,
+              "rse": 0.652174,
+              "windowDuration": "0.917991ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 30,
+              "variance": 99.6333,
+              "latencyNs": 279.433,
+              "cyclesPerByte": 0.913591,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 234.124,
+              "rse": 0.127704,
+              "windowDuration": "1.92403ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 30,
+              "variance": 664.869,
+              "latencyNs": 3686.4,
+              "cyclesPerByte": 12.9055,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 830.426,
+              "rse": 0.397315,
+              "windowDuration": "727.422ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 30,
+              "variance": 2728860000.0,
+              "latencyNs": 2400460.0,
+              "cyclesPerByte": 3.65916,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 608.865,
+              "rse": 1.12473,
+              "windowDuration": "2223.16ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 40,
+              "variance": 54237800000.0,
+              "latencyNs": 3273960.0,
+              "cyclesPerByte": 4.99079,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2189.5,
+              "rse": 0.156083,
+              "windowDuration": "37325.1ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 640,
+              "variance": 13127900000.0,
+              "latencyNs": 2901700.0,
+              "cyclesPerByte": 1.38787,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1938.44,
+              "rse": 0.427847,
+              "windowDuration": "1010.58ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 30,
+              "variance": 5899170000.0,
+              "latencyNs": 3277520.0,
+              "cyclesPerByte": 1.56766,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1814.34,
+              "rse": 1.39472,
+              "windowDuration": "80.3592ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 30,
+              "variance": 403573000.0,
+              "latencyNs": 262974.0,
+              "cyclesPerByte": 1.67459,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1044.6,
+              "rse": 0.491416,
+              "windowDuration": "704.853ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 80,
+              "variance": 403037000.0,
+              "latencyNs": 456749.0,
+              "cyclesPerByte": 2.90873,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3631.57,
+              "rse": 0.516688,
+              "windowDuration": "117.857ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 30,
+              "variance": 114459000.0,
+              "latencyNs": 378039.0,
+              "cyclesPerByte": 0.836766,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2653.52,
+              "rse": 1.12559,
+              "windowDuration": "156.649ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 30,
+              "variance": 1017420000.0,
+              "latencyNs": 517378.0,
+              "cyclesPerByte": 1.14508,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1759.89,
+              "rse": 0.854983,
+              "windowDuration": "10.2896ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 30,
+              "variance": 2046180.0,
+              "latencyNs": 30546.0,
+              "cyclesPerByte": 1.72528,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1274.27,
+              "rse": 0.582719,
+              "windowDuration": "70.7133ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 80,
+              "variance": 4834660.0,
+              "latencyNs": 42187.0,
+              "cyclesPerByte": 2.38344,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2193.6,
+              "rse": 1.32353,
+              "windowDuration": "142.493ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 160,
+              "variance": 47178000.0,
+              "latencyNs": 41027.6,
+              "cyclesPerByte": 1.38449,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2056.13,
+              "rse": 0.287378,
+              "windowDuration": "14.7365ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 30,
+              "variance": 474673.0,
+              "latencyNs": 43770.7,
+              "cyclesPerByte": 1.47723,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Double Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1423.63,
+              "rse": 0.186427,
+              "windowDuration": "1.44233ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 153.454,
+              "latencyNs": 1213.17,
+              "cyclesPerByte": 2.08951,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 268.309,
+              "rse": 0.192002,
+              "windowDuration": "2.79369ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 4582.48,
+              "latencyNs": 6437.0,
+              "cyclesPerByte": 11.2809,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1338.06,
+              "rse": 0.137627,
+              "windowDuration": "3.4922ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 30,
+              "variance": 4027.37,
+              "latencyNs": 8418.73,
+              "cyclesPerByte": 2.26379,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1091.28,
+              "rse": 0.131017,
+              "windowDuration": "4.09172ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 30,
+              "variance": 5487.22,
+              "latencyNs": 10322.6,
+              "cyclesPerByte": 2.77663,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2585.83,
+              "rse": 0.693516,
+              "windowDuration": "9.97229ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 40,
+              "variance": 255304.0,
+              "latencyNs": 11519.7,
+              "cyclesPerByte": 1.17194,
+              "verdict": "tie"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 2516.55,
+              "rse": 2.96711,
+              "windowDuration": "191.704ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 640,
+              "variance": 78943800.0,
+              "latencyNs": 11836.8,
+              "cyclesPerByte": 1.20425,
+              "verdict": "tie"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3328.31,
+              "rse": 0.783945,
+              "windowDuration": "10.4434ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 1775840.0,
+              "latencyNs": 31035.3,
+              "cyclesPerByte": 0.912288,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1567.08,
+              "rse": 0.281264,
+              "windowDuration": "21.3703ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 1031160.0,
+              "latencyNs": 65915.7,
+              "cyclesPerByte": 1.93868,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3425.75,
+              "rse": 1.17584,
+              "windowDuration": "18.8434ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 14715800.0,
+              "latencyNs": 59563.9,
+              "cyclesPerByte": 0.886614,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2612.87,
+              "rse": 4.63779,
+              "windowDuration": "23.1615ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 393538000.0,
+              "latencyNs": 78094.7,
+              "cyclesPerByte": 1.16255,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Int64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2413.93,
+              "rse": 0.134344,
+              "windowDuration": "1.3114ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 30,
+              "variance": 126.047,
+              "latencyNs": 1525.77,
+              "cyclesPerByte": 1.23746,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 609.733,
+              "rse": 0.131685,
+              "windowDuration": "2.67869ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 30,
+              "variance": 1898.19,
+              "latencyNs": 6040.5,
+              "cyclesPerByte": 4.96311,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 787.348,
+              "rse": 0.452472,
+              "windowDuration": "3308.8ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 80,
+              "variance": 8084100000.0,
+              "latencyNs": 2221670.0,
+              "cyclesPerByte": 3.85948,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 189.694,
+              "rse": 0.379679,
+              "windowDuration": "2790.47ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 36774000000.0,
+              "latencyNs": 9221320.0,
+              "cyclesPerByte": 16.021,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3034.26,
+              "rse": 0.429325,
+              "windowDuration": "959.716ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 5387180000.0,
+              "latencyNs": 3121290.0,
+              "cyclesPerByte": 1.00149,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 883.964,
+              "rse": 0.828187,
+              "windowDuration": "3198.81ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 236201000000.0,
+              "latencyNs": 10714000.0,
+              "cyclesPerByte": 3.43795,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 823.389,
+              "rse": 0.303233,
+              "windowDuration": "644.425ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 1244960000.0,
+              "latencyNs": 2124420.0,
+              "cyclesPerByte": 3.69051,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 557.503,
+              "rse": 0.863292,
+              "windowDuration": "954.619ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 22010700000.0,
+              "latencyNs": 3137610.0,
+              "cyclesPerByte": 5.45079,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3007.75,
+              "rse": 0.419334,
+              "windowDuration": "953.109ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 5230350000.0,
+              "latencyNs": 3148800.0,
+              "cyclesPerByte": 1.01034,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2634.14,
+              "rse": 0.379658,
+              "windowDuration": "1096.16ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 5589850000.0,
+              "latencyNs": 3595400.0,
+              "cyclesPerByte": 1.15361,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1391.28,
+              "rse": 1.03699,
+              "windowDuration": "132.417ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 626110000.0,
+              "latencyNs": 440547.0,
+              "cyclesPerByte": 2.18383,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1152.32,
+              "rse": 0.747801,
+              "windowDuration": "159.42ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 474634000.0,
+              "latencyNs": 531904.0,
+              "cyclesPerByte": 2.63649,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2157.76,
+              "rse": 0.667621,
+              "windowDuration": "166.994ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 392583000.0,
+              "latencyNs": 541845.0,
+              "cyclesPerByte": 1.40811,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1962.46,
+              "rse": 0.497456,
+              "windowDuration": "180.201ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 263502000.0,
+              "latencyNs": 595767.0,
+              "cyclesPerByte": 1.5483,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1167.67,
+              "rse": 0.510715,
+              "windowDuration": "510.564ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 80,
+              "variance": 233663000.0,
+              "latencyNs": 334635.0,
+              "cyclesPerByte": 2.60226,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 936.327,
+              "rse": 0.712088,
+              "windowDuration": "126.158ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 30,
+              "variance": 264922000.0,
+              "latencyNs": 417316.0,
+              "cyclesPerByte": 3.24499,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1720.85,
+              "rse": 0.960991,
+              "windowDuration": "131.823ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 30,
+              "variance": 525342000.0,
+              "latencyNs": 435453.0,
+              "cyclesPerByte": 1.76578,
+              "verdict": "tie"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1707.91,
+              "rse": 0.47439,
+              "windowDuration": "673.454ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 80,
+              "variance": 346579000.0,
+              "latencyNs": 438753.0,
+              "cyclesPerByte": 1.779,
+              "verdict": "tie"
+            }
+          ]
+        },
+        {
+          "name": "String Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 4562.81,
+              "rse": 0.164394,
+              "windowDuration": "1.5136ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 30,
+              "variance": 324.921,
+              "latencyNs": 2001.9,
+              "cyclesPerByte": 0.655259,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1556.08,
+              "rse": 0.57323,
+              "windowDuration": "8.34089ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 40,
+              "variance": 45289.9,
+              "latencyNs": 5870.05,
+              "cyclesPerByte": 1.94565,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2073.21,
+              "rse": 1.69177,
+              "windowDuration": "87.4506ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 40,
+              "variance": 168887000.0,
+              "latencyNs": 121458.0,
+              "cyclesPerByte": 1.46542,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1643.34,
+              "rse": 0.968002,
+              "windowDuration": "47.7617ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 30,
+              "variance": 66001900.0,
+              "latencyNs": 153229.0,
+              "cyclesPerByte": 1.84904,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2304.69,
+              "rse": 1.42558,
+              "windowDuration": "51.0188ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 30,
+              "variance": 166988000.0,
+              "latencyNs": 165497.0,
+              "cyclesPerByte": 1.31841,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 2183.78,
+              "rse": 1.79689,
+              "windowDuration": "123.603ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 40,
+              "variance": 393995000.0,
+              "latencyNs": 174660.0,
+              "cyclesPerByte": 1.39115,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Uint64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2191.26,
+              "rse": 0.709936,
+              "windowDuration": "1.32574ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 4296.04,
+              "latencyNs": 1685.6,
+              "cyclesPerByte": 1.36461,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 613.013,
+              "rse": 1.79983,
+              "windowDuration": "119.385ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 640,
+              "variance": 7526580.0,
+              "latencyNs": 6025.29,
+              "cyclesPerByte": 4.94196,
+              "verdict": "loss"
+            }
+          ]
+        }
+      ]
+    },
+    "linux-gcc": {
+      "cpu": "Intel(R) Core(TM) i9-14900KF-AVX2",
+      "os": "Linux-6.18.40.1-microsoft-standard-WSL2",
+      "compiler": "GCC-16.1.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 100,
+        "maxIterationCount": 100000,
+        "maxTimeInS": 20.0,
+        "convergenceThreshold": 2.5,
+        "rseThreshold": 5.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "jsonifier": {
+          "wins": 16,
+          "ties": 2,
+          "losses": 7
+        },
+        "simdjson (ondemand)": {
+          "wins": 7,
+          "ties": 2,
+          "losses": 16
+        }
+      },
+      "tests": [
+        {
+          "name": "Bool Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2779.63,
+              "rse": 0.742926,
+              "windowDuration": "0.923442ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 30,
+              "variance": 159.638,
+              "latencyNs": 310.5,
+              "cyclesPerByte": 1.01738,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 197.253,
+              "rse": 0.0980185,
+              "windowDuration": "5.08435ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 40,
+              "variance": 735.743,
+              "latencyNs": 4375.48,
+              "cyclesPerByte": 15.3261,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 769.476,
+              "rse": 0.225203,
+              "windowDuration": "780.082ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 30,
+              "variance": 1021100000.0,
+              "latencyNs": 2590600.0,
+              "cyclesPerByte": 3.94918,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 742.386,
+              "rse": 0.222536,
+              "windowDuration": "811.533ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 30,
+              "variance": 1071150000.0,
+              "latencyNs": 2685130.0,
+              "cyclesPerByte": 4.09231,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2143.12,
+              "rse": 0.520438,
+              "windowDuration": "889.364ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 30,
+              "variance": 7141050000.0,
+              "latencyNs": 2964500.0,
+              "cyclesPerByte": 1.4177,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1960.78,
+              "rse": 0.297637,
+              "windowDuration": "982.018ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 30,
+              "variance": 2790190000.0,
+              "latencyNs": 3240180.0,
+              "cyclesPerByte": 1.54966,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1609.36,
+              "rse": 0.611781,
+              "windowDuration": "90.4286ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 30,
+              "variance": 98688400.0,
+              "latencyNs": 296467.0,
+              "cyclesPerByte": 1.88819,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1197.4,
+              "rse": 0.963141,
+              "windowDuration": "120.711ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 30,
+              "variance": 441858000.0,
+              "latencyNs": 398466.0,
+              "cyclesPerByte": 2.53743,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 3018.35,
+              "rse": 1.13799,
+              "windowDuration": "137.63ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 30,
+              "variance": 803753000.0,
+              "latencyNs": 454843.0,
+              "cyclesPerByte": 1.00666,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 2544.67,
+              "rse": 0.55324,
+              "windowDuration": "382.936ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 40,
+              "variance": 356358000.0,
+              "latencyNs": 539509.0,
+              "cyclesPerByte": 1.19406,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1666.08,
+              "rse": 3.57694,
+              "windowDuration": "10.5784ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 30,
+              "variance": 39960900.0,
+              "latencyNs": 32266.0,
+              "cyclesPerByte": 1.82251,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1208.79,
+              "rse": 3.19206,
+              "windowDuration": "77.3554ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 80,
+              "variance": 161217000.0,
+              "latencyNs": 44472.2,
+              "cyclesPerByte": 2.51233,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2009.94,
+              "rse": 0.856197,
+              "windowDuration": "14.6019ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 30,
+              "variance": 4409330.0,
+              "latencyNs": 44776.7,
+              "cyclesPerByte": 1.51107,
+              "verdict": "tie"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1976.95,
+              "rse": 1.47184,
+              "windowDuration": "34.5546ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 40,
+              "variance": 17958100.0,
+              "latencyNs": 45523.8,
+              "cyclesPerByte": 1.53614,
+              "verdict": "tie"
+            }
+          ]
+        },
+        {
+          "name": "Double Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1175.75,
+              "rse": 1.95964,
+              "windowDuration": "1.91546ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 24858.8,
+              "latencyNs": 1468.93,
+              "cyclesPerByte": 2.53396,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 231.163,
+              "rse": 0.142819,
+              "windowDuration": "3.11146ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 3415.83,
+              "latencyNs": 7471.37,
+              "cyclesPerByte": 13.0978,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1229.55,
+              "rse": 1.26909,
+              "windowDuration": "20.1361ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 80,
+              "variance": 1081500.0,
+              "latencyNs": 9161.75,
+              "cyclesPerByte": 2.46233,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1059.25,
+              "rse": 0.311808,
+              "windowDuration": "9.50422ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 40,
+              "variance": 43982.9,
+              "latencyNs": 10634.7,
+              "cyclesPerByte": 2.85998,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2461.49,
+              "rse": 3.61872,
+              "windowDuration": "10.6003ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 40,
+              "variance": 7671070.0,
+              "latencyNs": 12101.6,
+              "cyclesPerByte": 1.23078,
+              "verdict": "tie"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 2341.14,
+              "rse": 0.116105,
+              "windowDuration": "4.83812ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 6547.1,
+              "latencyNs": 12723.7,
+              "cyclesPerByte": 1.29559,
+              "verdict": "tie"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3216.37,
+              "rse": 0.697065,
+              "windowDuration": "10.8824ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 1503480.0,
+              "latencyNs": 32115.5,
+              "cyclesPerByte": 0.944032,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1575.6,
+              "rse": 1.26056,
+              "windowDuration": "20.7505ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 20488900.0,
+              "latencyNs": 65559.2,
+              "cyclesPerByte": 1.92754,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2910.85,
+              "rse": 0.509927,
+              "windowDuration": "470.66ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 320,
+              "variance": 40888800.0,
+              "latencyNs": 70100.3,
+              "cyclesPerByte": 1.04356,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 2786.86,
+              "rse": 2.05242,
+              "windowDuration": "52.8773ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 40,
+              "variance": 90331400.0,
+              "latencyNs": 73219.1,
+              "cyclesPerByte": 1.09008,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Int64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2116.43,
+              "rse": 0.156892,
+              "windowDuration": "1.30906ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 30,
+              "variance": 223.633,
+              "latencyNs": 1740.23,
+              "cyclesPerByte": 1.41309,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 569.582,
+              "rse": 0.347884,
+              "windowDuration": "2.88157ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 30,
+              "variance": 15181.0,
+              "latencyNs": 6466.3,
+              "cyclesPerByte": 5.31636,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 747.997,
+              "rse": 0.220697,
+              "windowDuration": "710.612ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 799113000.0,
+              "latencyNs": 2338550.0,
+              "cyclesPerByte": 4.06241,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 158.313,
+              "rse": 0.529299,
+              "windowDuration": "3298.65ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 102609000000.0,
+              "latencyNs": 11049200.0,
+              "cyclesPerByte": 19.1962,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2716.69,
+              "rse": 0.271666,
+              "windowDuration": "1047.88ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 2690820000.0,
+              "latencyNs": 3486160.0,
+              "cyclesPerByte": 1.11854,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 807.581,
+              "rse": 0.442258,
+              "windowDuration": "3534.09ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 80699800000.0,
+              "latencyNs": 11727400.0,
+              "cyclesPerByte": 3.76302,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 751.255,
+              "rse": 0.347886,
+              "windowDuration": "699.854ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 1968400000.0,
+              "latencyNs": 2328410.0,
+              "cyclesPerByte": 4.04492,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 576.219,
+              "rse": 0.692816,
+              "windowDuration": "909.318ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 13270100000.0,
+              "latencyNs": 3035700.0,
+              "cyclesPerByte": 5.27338,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2743.99,
+              "rse": 0.27015,
+              "windowDuration": "1041.09ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 2608180000.0,
+              "latencyNs": 3451470.0,
+              "cyclesPerByte": 1.10741,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2668.64,
+              "rse": 0.526165,
+              "windowDuration": "1063.49ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 10460600000.0,
+              "latencyNs": 3548920.0,
+              "cyclesPerByte": 1.13861,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1204.55,
+              "rse": 0.787853,
+              "windowDuration": "152.065ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 482144000.0,
+              "latencyNs": 508841.0,
+              "cyclesPerByte": 2.52238,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1109.59,
+              "rse": 0.243309,
+              "windowDuration": "166.746ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 54190300.0,
+              "latencyNs": 552385.0,
+              "cyclesPerByte": 2.73864,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2255.3,
+              "rse": 0.393972,
+              "windowDuration": "157.545ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 125142000.0,
+              "latencyNs": 518411.0,
+              "cyclesPerByte": 1.34717,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1611.15,
+              "rse": 0.327368,
+              "windowDuration": "219.06ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 169309000.0,
+              "latencyNs": 725676.0,
+              "cyclesPerByte": 1.88607,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1033.18,
+              "rse": 0.535117,
+              "windowDuration": "114.907ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 30,
+              "variance": 122872000.0,
+              "latencyNs": 378196.0,
+              "cyclesPerByte": 2.94105,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 950.703,
+              "rse": 0.592797,
+              "windowDuration": "293.861ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 40,
+              "variance": 237447000.0,
+              "latencyNs": 411005.0,
+              "cyclesPerByte": 3.1958,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1677.12,
+              "rse": 0.659132,
+              "windowDuration": "136.223ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 30,
+              "variance": 260200000.0,
+              "latencyNs": 446807.0,
+              "cyclesPerByte": 1.81163,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1435.88,
+              "rse": 0.890199,
+              "windowDuration": "157.535ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 30,
+              "variance": 647485000.0,
+              "latencyNs": 521876.0,
+              "cyclesPerByte": 2.11624,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "String Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 3764.8,
+              "rse": 0.0952397,
+              "windowDuration": "1.62436ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 30,
+              "variance": 160.185,
+              "latencyNs": 2426.23,
+              "cyclesPerByte": 0.795671,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1375.13,
+              "rse": 1.17004,
+              "windowDuration": "13.847ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 80,
+              "variance": 483228.0,
+              "latencyNs": 6642.48,
+              "cyclesPerByte": 2.20128,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1941.72,
+              "rse": 0.280392,
+              "windowDuration": "3385.67ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 1280,
+              "variance": 169242000.0,
+              "latencyNs": 129683.0,
+              "cyclesPerByte": 1.56468,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1509.02,
+              "rse": 1.58113,
+              "windowDuration": "247.348ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 80,
+              "variance": 556893000.0,
+              "latencyNs": 166868.0,
+              "cyclesPerByte": 2.01331,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 2280.84,
+              "rse": 0.637872,
+              "windowDuration": "259.074ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 80,
+              "variance": 91027700.0,
+              "latencyNs": 167228.0,
+              "cyclesPerByte": 1.33219,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1816.43,
+              "rse": 0.815311,
+              "windowDuration": "668.383ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 160,
+              "variance": 468958000.0,
+              "latencyNs": 209983.0,
+              "cyclesPerByte": 1.6727,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Uint64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2082.02,
+              "rse": 0.196223,
+              "windowDuration": "8.41684ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 80,
+              "variance": 969.429,
+              "latencyNs": 1774.04,
+              "cyclesPerByte": 1.43065,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 591.162,
+              "rse": 0.542363,
+              "windowDuration": "2.71883ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 34449.6,
+              "latencyNs": 6248.0,
+              "cyclesPerByte": 5.1224,
+              "verdict": "loss"
+            }
+          ]
+        }
+      ]
+    },
+    "macos-clang": {
+      "cpu": "Apple M1 (Virtual)-NEON",
+      "os": "macOS-25.6.0",
+      "compiler": "Clang-23.1.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 100,
+        "maxIterationCount": 100000,
+        "maxTimeInS": 20.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "jsonifier": {
+          "wins": 18,
+          "ties": 1,
+          "losses": 0
+        },
+        "simdjson (ondemand)": {
+          "wins": 0,
+          "ties": 1,
+          "losses": 18
+        }
+      },
+      "tests": [
+        {
+          "name": "Bool Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 760.575,
+              "rse": 0.289718,
+              "windowDuration": "0.370917ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 30,
+              "variance": 324.254,
+              "latencyNs": 1134.77,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 188.023,
+              "rse": 0.0983845,
+              "windowDuration": "1.52679ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 30,
+              "variance": 611.857,
+              "latencyNs": 4590.27,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 487.495,
+              "rse": 1.52142,
+              "windowDuration": "6859ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 80,
+              "variance": 309628000000.0,
+              "latencyNs": 4089070.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 305.621,
+              "rse": 6.23618,
+              "windowDuration": "1975.39ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 30,
+              "variance": 4963440000000.0,
+              "latencyNs": 6522470.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1385.61,
+              "rse": 0.618107,
+              "windowDuration": "105.324ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 30,
+              "variance": 135903000.0,
+              "latencyNs": 344342.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 637.397,
+              "rse": 4.49312,
+              "windowDuration": "551.92ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 40,
+              "variance": 45247500000.0,
+              "latencyNs": 748548.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2500.15,
+              "rse": 0.602071,
+              "windowDuration": "862.038ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 80,
+              "variance": 874406000.0,
+              "latencyNs": 549116.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1702.0,
+              "rse": 2.97004,
+              "windowDuration": "242.286ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 30,
+              "variance": 17218300000.0,
+              "latencyNs": 806625.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1439.72,
+              "rse": 0.534152,
+              "windowDuration": "12.5687ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 30,
+              "variance": 1193370.0,
+              "latencyNs": 37338.9,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 959.116,
+              "rse": 0.471269,
+              "windowDuration": "183.482ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 160,
+              "variance": 11163400.0,
+              "latencyNs": 56049.2,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1803.87,
+              "rse": 0.0642813,
+              "windowDuration": "16.5353ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 30,
+              "variance": 30856.6,
+              "latencyNs": 49891.8,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1549.17,
+              "rse": 0.127073,
+              "windowDuration": "17.7504ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 30,
+              "variance": 163493.0,
+              "latencyNs": 58094.4,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 914.326,
+              "rse": 1.0887,
+              "windowDuration": "66.248ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 160,
+              "variance": 2878620.0,
+              "latencyNs": 12320.3,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 695.719,
+              "rse": 1.23253,
+              "windowDuration": "5.04258ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 30,
+              "variance": 1194790.0,
+              "latencyNs": 16191.6,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1849.73,
+              "rse": 0.0697873,
+              "windowDuration": "5.09413ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 3789.14,
+              "latencyNs": 16104.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1638.69,
+              "rse": 1.52597,
+              "windowDuration": "5.68525ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 2308340.0,
+              "latencyNs": 18177.9,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2060.47,
+              "rse": 0.947621,
+              "windowDuration": "19.7523ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 6770480.0,
+              "latencyNs": 50131.9,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 996.809,
+              "rse": 0.558874,
+              "windowDuration": "74.6706ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 40,
+              "variance": 13416100.0,
+              "latencyNs": 103626.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2416.52,
+              "rse": 0.867196,
+              "windowDuration": "26.8056ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 16086200.0,
+              "latencyNs": 84440.2,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1812.15,
+              "rse": 0.719612,
+              "windowDuration": "33.9068ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 19697200.0,
+              "latencyNs": 112601.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1912.14,
+              "rse": 0.432318,
+              "windowDuration": "33994.3ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 320,
+              "variance": 146721000000.0,
+              "latencyNs": 4952990.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 598.948,
+              "rse": 1.38735,
+              "windowDuration": "11838.3ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 40,
+              "variance": 1924980000000.0,
+              "latencyNs": 15812400.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 488.883,
+              "rse": 1.40521,
+              "windowDuration": "1182.7ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 75838300000.0,
+              "latencyNs": 3578010.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 343.571,
+              "rse": 0.883134,
+              "windowDuration": "1554.63ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 60650500000.0,
+              "latencyNs": 5091310.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 797.052,
+              "rse": 0.380272,
+              "windowDuration": "10014.3ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 640,
+              "variance": 5472770000.0,
+              "latencyNs": 768988.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 623.076,
+              "rse": 1.00446,
+              "windowDuration": "325.735ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 2928960000.0,
+              "latencyNs": 983706.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1240.9,
+              "rse": 0.734652,
+              "windowDuration": "693.67ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 40,
+              "variance": 1916470000.0,
+              "latencyNs": 942192.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1171.76,
+              "rse": 1.3656,
+              "windowDuration": "1958.89ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 80,
+              "variance": 14853200000.0,
+              "latencyNs": 997793.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 705.622,
+              "rse": 0.648495,
+              "windowDuration": "523.914ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 40,
+              "variance": 515838000.0,
+              "latencyNs": 553758.0,
+              "cyclesPerByte": null,
+              "verdict": "tie"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 701.661,
+              "rse": 3.8465,
+              "windowDuration": "396.538ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 40,
+              "variance": 18353600000.0,
+              "latencyNs": 556884.0,
+              "cyclesPerByte": null,
+              "verdict": "tie"
+            }
+          ]
+        },
+        {
+          "name": "String Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2925.85,
+              "rse": 0.161578,
+              "windowDuration": "2.35258ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 40,
+              "variance": 1017.81,
+              "latencyNs": 3121.93,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 632.256,
+              "rse": 3.17324,
+              "windowDuration": "4.40171ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 30,
+              "variance": 6305100.0,
+              "latencyNs": 14447.1,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1574.55,
+              "rse": 0.869139,
+              "windowDuration": "50.6605ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 30,
+              "variance": 57959500.0,
+              "latencyNs": 159924.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1265.28,
+              "rse": 0.683688,
+              "windowDuration": "61.0802ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 30,
+              "variance": 55539800.0,
+              "latencyNs": 199014.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1894.1,
+              "rse": 1.01904,
+              "windowDuration": "61.9045ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 30,
+              "variance": 126329000.0,
+              "latencyNs": 201372.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1826.39,
+              "rse": 0.490307,
+              "windowDuration": "63.2353ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 30,
+              "variance": 31453900.0,
+              "latencyNs": 208837.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Uint64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1557.01,
+              "rse": 0.302786,
+              "windowDuration": "0.814209ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 1547.77,
+              "latencyNs": 2372.23,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 409.969,
+              "rse": 1.54767,
+              "windowDuration": "6.93863ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 40,
+              "variance": 777699.0,
+              "latencyNs": 9009.42,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        }
+      ]
+    },
+    "macos-gcc": {
+      "cpu": "Apple M1 (Virtual)-NEON",
+      "os": "macOS-25.6.0",
+      "compiler": "GCC-16.2.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 100,
+        "maxIterationCount": 100000,
+        "maxTimeInS": 20.0,
+        "convergenceThreshold": 5.0,
+        "rseThreshold": 10.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "jsonifier": {
+          "wins": 23,
+          "ties": 0,
+          "losses": 2
+        },
+        "simdjson (ondemand)": {
+          "wins": 2,
+          "ties": 0,
+          "losses": 23
+        }
+      },
+      "tests": [
+        {
+          "name": "Bool Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1723.39,
+              "rse": 7.97177,
+              "windowDuration": "1.67706ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 160,
+              "variance": 255011.0,
+              "latencyNs": 500.8,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 202.283,
+              "rse": 1.9792,
+              "windowDuration": "1.2951ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 30,
+              "variance": 213934.0,
+              "latencyNs": 4266.67,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 574.103,
+              "rse": 0.2043,
+              "windowDuration": "1054.05ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 30,
+              "variance": 1509620000.0,
+              "latencyNs": 3472200.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 430.625,
+              "rse": 1.54352,
+              "windowDuration": "1368.81ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 30,
+              "variance": 153158000000.0,
+              "latencyNs": 4629090.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1386.05,
+              "rse": 0.116368,
+              "windowDuration": "1394.85ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 30,
+              "variance": 853552000.0,
+              "latencyNs": 4583730.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1206.28,
+              "rse": 2.94556,
+              "windowDuration": "7353.25ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 80,
+              "variance": 1925410000000.0,
+              "latencyNs": 5266830.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1516.92,
+              "rse": 0.141358,
+              "windowDuration": "2165.98ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 320,
+              "variance": 63259100.0,
+              "latencyNs": 314534.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 821.027,
+              "rse": 0.297501,
+              "windowDuration": "178.03ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 30,
+              "variance": 89669000.0,
+              "latencyNs": 581129.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2322.18,
+              "rse": 0.243567,
+              "windowDuration": "411.691ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 40,
+              "variance": 82940600.0,
+              "latencyNs": 591200.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1709.96,
+              "rse": 1.15217,
+              "windowDuration": "237.633ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 30,
+              "variance": 2567100000.0,
+              "latencyNs": 802867.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1270.87,
+              "rse": 0.487874,
+              "windowDuration": "13.589ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 30,
+              "variance": 1277650.0,
+              "latencyNs": 42299.7,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 873.143,
+              "rse": 0.161655,
+              "windowDuration": "18.6319ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 30,
+              "variance": 297172.0,
+              "latencyNs": 61568.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1521.89,
+              "rse": 0.124536,
+              "windowDuration": "19.126ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 30,
+              "variance": 162710.0,
+              "latencyNs": 59136.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1344.04,
+              "rse": 0.0853564,
+              "windowDuration": "20.257ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 30,
+              "variance": 98002.7,
+              "latencyNs": 66961.1,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Double Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1003.2,
+              "rse": 4.3577,
+              "windowDuration": "6.14579ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 40,
+              "variance": 225133.0,
+              "latencyNs": 1721.6,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 149.7,
+              "rse": 1.76406,
+              "windowDuration": "3.51002ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 1242620.0,
+              "latencyNs": 11537.1,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 960.767,
+              "rse": 0.631264,
+              "windowDuration": "8.53811ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 40,
+              "variance": 219125.0,
+              "latencyNs": 11724.8,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 627.719,
+              "rse": 0.316036,
+              "windowDuration": "5.49197ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 30,
+              "variance": 96496.1,
+              "latencyNs": 17945.6,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1718.75,
+              "rse": 0.558325,
+              "windowDuration": "5.42413ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 280901.0,
+              "latencyNs": 17331.2,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1418.44,
+              "rse": 1.29706,
+              "windowDuration": "6.21901ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 2225890.0,
+              "latencyNs": 21000.5,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2092.47,
+              "rse": 0.197483,
+              "windowDuration": "15.552ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 285119.0,
+              "latencyNs": 49365.3,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1065.29,
+              "rse": 0.679527,
+              "windowDuration": "29.1561ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 13024400.0,
+              "latencyNs": 96964.3,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2521.85,
+              "rse": 0.368762,
+              "windowDuration": "25.184ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 2670860.0,
+              "latencyNs": 80913.1,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1833.34,
+              "rse": 0.197794,
+              "windowDuration": "33.5501ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 1453920.0,
+              "latencyNs": 111300.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Int64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1836.65,
+              "rse": 0.883463,
+              "windowDuration": "0.648192ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 30,
+              "variance": 9416.09,
+              "latencyNs": 2005.33,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 416.413,
+              "rse": 0.679182,
+              "windowDuration": "6.29094ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 40,
+              "variance": 144347.0,
+              "latencyNs": 8844.8,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 497.484,
+              "rse": 0.873734,
+              "windowDuration": "2542.88ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 40,
+              "variance": 37753100000.0,
+              "latencyNs": 3516150.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 99.2615,
+              "rse": 2.06109,
+              "windowDuration": "5435.08ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 3957720000000.0,
+              "latencyNs": 17622400.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1916.78,
+              "rse": 0.47358,
+              "windowDuration": "17261.9ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 160,
+              "variance": 87606000000.0,
+              "latencyNs": 4940980.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 576.688,
+              "rse": 0.317872,
+              "windowDuration": "5072.91ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 81755500000.0,
+              "latencyNs": 16422700.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 532.76,
+              "rse": 0.160182,
+              "windowDuration": "2421.08ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 40,
+              "variance": 1106410000.0,
+              "latencyNs": 3283330.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 419.195,
+              "rse": 0.092968,
+              "windowDuration": "1254.95ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 30,
+              "variance": 451490000.0,
+              "latencyNs": 4172830.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2060.96,
+              "rse": 0.197076,
+              "windowDuration": "1407.07ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 2460500000.0,
+              "latencyNs": 4595330.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1764.01,
+              "rse": 0.221673,
+              "windowDuration": "1616.5ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 4249290000.0,
+              "latencyNs": 5368890.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 849.162,
+              "rse": 0.206572,
+              "windowDuration": "528.857ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 40,
+              "variance": 88927300.0,
+              "latencyNs": 721798.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 660.496,
+              "rse": 1.49503,
+              "windowDuration": "269.723ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 5774190000.0,
+              "latencyNs": 927974.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1519.66,
+              "rse": 0.238637,
+              "windowDuration": "231.293ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 101126000.0,
+              "latencyNs": 769365.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1217.67,
+              "rse": 0.490694,
+              "windowDuration": "288.709ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 665947000.0,
+              "latencyNs": 960171.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 675.443,
+              "rse": 0.149754,
+              "windowDuration": "174.628ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 30,
+              "variance": 22515800.0,
+              "latencyNs": 578500.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 570.482,
+              "rse": 0.115579,
+              "windowDuration": "206.635ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 30,
+              "variance": 18800800.0,
+              "latencyNs": 684937.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1090.62,
+              "rse": 0.23374,
+              "windowDuration": "1042.08ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 80,
+              "variance": 206337000.0,
+              "latencyNs": 687085.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1003.05,
+              "rse": 0.65478,
+              "windowDuration": "221.254ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 30,
+              "variance": 717848000.0,
+              "latencyNs": 747068.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "String Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2434.51,
+              "rse": 0.739829,
+              "windowDuration": "24.6579ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 320,
+              "variance": 246569.0,
+              "latencyNs": 3752.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 644.834,
+              "rse": 2.69499,
+              "windowDuration": "4.66893ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 30,
+              "variance": 4372080.0,
+              "latencyNs": 14165.3,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1605.22,
+              "rse": 0.191611,
+              "windowDuration": "47.9432ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 30,
+              "variance": 2710400.0,
+              "latencyNs": 156868.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 885.219,
+              "rse": 4.59884,
+              "windowDuration": "78.9888ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 30,
+              "variance": 5134000000.0,
+              "latencyNs": 284459.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1813.59,
+              "rse": 0.149447,
+              "windowDuration": "1450.83ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 320,
+              "variance": 31611700.0,
+              "latencyNs": 210311.0,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1710.91,
+              "rse": 0.214591,
+              "windowDuration": "67.167ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 30,
+              "variance": 6865840.0,
+              "latencyNs": 222933.0,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Uint64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1818.66,
+              "rse": 1.99837,
+              "windowDuration": "0.659968ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 49415.7,
+              "latencyNs": 2030.93,
+              "cyclesPerByte": null,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 433.275,
+              "rse": 1.10736,
+              "windowDuration": "2.592ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 267342.0,
+              "latencyNs": 8524.8,
+              "cyclesPerByte": null,
+              "verdict": "loss"
+            }
+          ]
+        }
+      ]
+    },
+    "windows-msvc": {
+      "cpu": "Intel(R) Core(TM) i9-14900KF-AVX2",
+      "os": "Windows-10.0.26200",
+      "compiler": "MSVC-19.44.35228.0",
+      "harness": {
+        "clearCpuCachesBeforeIterations": true,
+        "measuredIterationCount": 100,
+        "maxIterationCount": 100000,
+        "maxTimeInS": 20.0,
+        "convergenceThreshold": 2.5,
+        "rseThreshold": 5.0,
+        "maxK": 100000,
+        "minK": 30
+      },
+      "wtl": {
+        "jsonifier": {
+          "wins": 24,
+          "ties": 1,
+          "losses": 0
+        },
+        "simdjson (ondemand)": {
+          "wins": 0,
+          "ties": 1,
+          "losses": 24
+        }
+      },
+      "tests": [
+        {
+          "name": "Bool Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2595.72,
+              "rse": 2.25564,
+              "windowDuration": "0.2652ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 40,
+              "variance": 2250.0,
+              "latencyNs": 332.5,
+              "cyclesPerByte": 1.11635,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 146.47,
+              "rse": 0.0715764,
+              "windowDuration": "4.2435ms",
+              "fileSizeBytes": 905,
+              "windowSamplesK": 40,
+              "variance": 711.538,
+              "latencyNs": 5892.5,
+              "cyclesPerByte": 20.6885,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 554.244,
+              "rse": 1.7345,
+              "windowDuration": "2639.02ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 40,
+              "variance": 155667000000.0,
+              "latencyNs": 3596610.0,
+              "cyclesPerByte": 5.48308,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 354.311,
+              "rse": 1.22255,
+              "windowDuration": "3986.38ms",
+              "fileSizeBytes": 2090234,
+              "windowSamplesK": 40,
+              "variance": 189242000000.0,
+              "latencyNs": 5626140.0,
+              "cyclesPerByte": 8.57754,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Canada Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1476.29,
+              "rse": 0.958958,
+              "windowDuration": "3015.14ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 40,
+              "variance": 68126200000.0,
+              "latencyNs": 4303560.0,
+              "cyclesPerByte": 2.05843,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1060.82,
+              "rse": 1.02395,
+              "windowDuration": "8756.85ms",
+              "fileSizeBytes": 6661897,
+              "windowSamplesK": 80,
+              "variance": 300856000000.0,
+              "latencyNs": 5989050.0,
+              "cyclesPerByte": 2.86487,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1345.94,
+              "rse": 1.02654,
+              "windowDuration": "114.332ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 30,
+              "variance": 397263000.0,
+              "latencyNs": 354490.0,
+              "cyclesPerByte": 2.25793,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 466.368,
+              "rse": 1.802,
+              "windowDuration": "713.163ms",
+              "fileSizeBytes": 500299,
+              "windowSamplesK": 40,
+              "variance": 13594800000.0,
+              "latencyNs": 1023060.0,
+              "cyclesPerByte": 6.51581,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "CitmCatalog Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2137.55,
+              "rse": 2.13638,
+              "windowDuration": "457.276ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 40,
+              "variance": 7530890000.0,
+              "latencyNs": 642265.0,
+              "cyclesPerByte": 1.42148,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1277.51,
+              "rse": 2.46424,
+              "windowDuration": "335.016ms",
+              "fileSizeBytes": 1439562,
+              "windowSamplesK": 30,
+              "variance": 21038800000.0,
+              "latencyNs": 1074650.0,
+              "cyclesPerByte": 2.37851,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1266.97,
+              "rse": 1.1206,
+              "windowDuration": "15.7251ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 30,
+              "variance": 6782170.0,
+              "latencyNs": 42430.0,
+              "cyclesPerByte": 2.3977,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 624.608,
+              "rse": 0.722651,
+              "windowDuration": "131.274ms",
+              "fileSizeBytes": 56369,
+              "windowSamplesK": 80,
+              "variance": 30946600.0,
+              "latencyNs": 86066.2,
+              "cyclesPerByte": 4.86394,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Discord Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1377.88,
+              "rse": 2.08651,
+              "windowDuration": "203.074ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 160,
+              "variance": 297170000.0,
+              "latencyNs": 65316.2,
+              "cyclesPerByte": 2.20428,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 989.971,
+              "rse": 1.15365,
+              "windowDuration": "142.281ms",
+              "fileSizeBytes": 94370,
+              "windowSamplesK": 80,
+              "variance": 87996400.0,
+              "latencyNs": 90910.0,
+              "cyclesPerByte": 3.06914,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Double Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1086.23,
+              "rse": 0.350369,
+              "windowDuration": "0.5109ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 931.034,
+              "latencyNs": 1590.0,
+              "cyclesPerByte": 2.71576,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 181.038,
+              "rse": 0.0953582,
+              "windowDuration": "2.938ms",
+              "fileSizeBytes": 1811,
+              "windowSamplesK": 30,
+              "variance": 2482.76,
+              "latencyNs": 9540.0,
+              "cyclesPerByte": 16.7319,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 971.383,
+              "rse": 1.50979,
+              "windowDuration": "3.7903ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 30,
+              "variance": 919644.0,
+              "latencyNs": 11596.7,
+              "cyclesPerByte": 3.12574,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 491.872,
+              "rse": 1.26862,
+              "windowDuration": "74.6552ms",
+              "fileSizeBytes": 11812,
+              "windowSamplesK": 160,
+              "variance": 13506000.0,
+              "latencyNs": 22901.9,
+              "cyclesPerByte": 6.17361,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Google Maps Response Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1864.47,
+              "rse": 0.149098,
+              "windowDuration": "4.9927ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 17023.0,
+              "latencyNs": 15976.7,
+              "cyclesPerByte": 1.6273,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1201.13,
+              "rse": 4.6384,
+              "windowDuration": "7.7352ms",
+              "fileSizeBytes": 31235,
+              "windowSamplesK": 30,
+              "variance": 39697200.0,
+              "latencyNs": 24800.0,
+              "cyclesPerByte": 2.52648,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2235.51,
+              "rse": 3.38111,
+              "windowDuration": "15.4079ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 73223400.0,
+              "latencyNs": 46206.7,
+              "cyclesPerByte": 1.358,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 687.703,
+              "rse": 1.64727,
+              "windowDuration": "46.7331ms",
+              "fileSizeBytes": 108313,
+              "windowSamplesK": 30,
+              "variance": 183658000.0,
+              "latencyNs": 150203.0,
+              "cyclesPerByte": 4.41817,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Instruments Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2038.55,
+              "rse": 1.80389,
+              "windowDuration": "304.196ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 160,
+              "variance": 521643000.0,
+              "latencyNs": 100096.0,
+              "cyclesPerByte": 1.49049,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1234.7,
+              "rse": 2.84928,
+              "windowDuration": "49.5461ms",
+              "fileSizeBytes": 213963,
+              "windowSamplesK": 30,
+              "variance": 665190000.0,
+              "latencyNs": 165263.0,
+              "cyclesPerByte": 2.46099,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Int64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2176.93,
+              "rse": 2.02195,
+              "windowDuration": "10.7876ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 320,
+              "variance": 374479.0,
+              "latencyNs": 1691.88,
+              "cyclesPerByte": 1.37488,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 407.71,
+              "rse": 1.46727,
+              "windowDuration": "122.326ms",
+              "fileSizeBytes": 3862,
+              "windowSamplesK": 640,
+              "variance": 11244100.0,
+              "latencyNs": 9033.59,
+              "cyclesPerByte": 7.42732,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 595.212,
+              "rse": 1.01847,
+              "windowDuration": "4464.15ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 80,
+              "variance": 71669700000.0,
+              "latencyNs": 2938830.0,
+              "cyclesPerByte": 5.10571,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 35.3893,
+              "rse": 0.551562,
+              "windowDuration": "34675.5ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 40,
+              "variance": 2973010000000.0,
+              "latencyNs": 49428100.0,
+              "cyclesPerByte": 85.8831,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Reverse Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2129.06,
+              "rse": 0.987706,
+              "windowDuration": "1372.3ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 57912600000.0,
+              "latencyNs": 4448340.0,
+              "cyclesPerByte": 1.42745,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 184.223,
+              "rse": 0.300701,
+              "windowDuration": "15408.9ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 716927000000.0,
+              "latencyNs": 51409400.0,
+              "cyclesPerByte": 16.4981,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 588.635,
+              "rse": 1.10224,
+              "windowDuration": "4434.26ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 80,
+              "variance": 85831200000.0,
+              "latencyNs": 2971670.0,
+              "cyclesPerByte": 5.16261,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 322.474,
+              "rse": 0.934672,
+              "windowDuration": "3871.04ms",
+              "fileSizeBytes": 1834197,
+              "windowSamplesK": 40,
+              "variance": 102821000000.0,
+              "latencyNs": 5424390.0,
+              "cyclesPerByte": 9.42421,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Marine IK Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 2122.98,
+              "rse": 0.963752,
+              "windowDuration": "1348.53ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 55453900000.0,
+              "latencyNs": 4461080.0,
+              "cyclesPerByte": 1.43152,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1513.13,
+              "rse": 0.654492,
+              "windowDuration": "1865.14ms",
+              "fileSizeBytes": 9930848,
+              "windowSamplesK": 30,
+              "variance": 50344300000.0,
+              "latencyNs": 6259080.0,
+              "cyclesPerByte": 2.00848,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1165.95,
+              "rse": 1.63198,
+              "windowDuration": "157.577ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 2208040000.0,
+              "latencyNs": 525687.0,
+              "cyclesPerByte": 2.60617,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 783.402,
+              "rse": 1.6878,
+              "windowDuration": "236.894ms",
+              "fileSizeBytes": 642697,
+              "windowSamplesK": 30,
+              "variance": 5231240000.0,
+              "latencyNs": 782387.0,
+              "cyclesPerByte": 3.87867,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Mesh Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1459.49,
+              "rse": 1.60885,
+              "windowDuration": "244.611ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 4983140000.0,
+              "latencyNs": 801080.0,
+              "cyclesPerByte": 2.0819,
+              "verdict": "tie"
+            },
+            {
+              "lib": "jsonifier",
+              "mbps": 1388.62,
+              "rse": 2.31983,
+              "windowDuration": "248.905ms",
+              "fileSizeBytes": 1225964,
+              "windowSamplesK": 30,
+              "variance": 11445100000.0,
+              "latencyNs": 841963.0,
+              "cyclesPerByte": 2.18827,
+              "verdict": "tie"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 803.821,
+              "rse": 1.39453,
+              "windowDuration": "747.981ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 80,
+              "variance": 3676300000.0,
+              "latencyNs": 486109.0,
+              "cyclesPerByte": 3.78051,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 482.349,
+              "rse": 2.06139,
+              "windowDuration": "243.978ms",
+              "fileSizeBytes": 409725,
+              "windowSamplesK": 30,
+              "variance": 8365720000.0,
+              "latencyNs": 810087.0,
+              "cyclesPerByte": 6.29975,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Random Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1139.15,
+              "rse": 1.7612,
+              "windowDuration": "466.468ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 40,
+              "variance": 5368890000.0,
+              "latencyNs": 657815.0,
+              "cyclesPerByte": 2.66729,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 855.589,
+              "rse": 1.72115,
+              "windowDuration": "1281.67ms",
+              "fileSizeBytes": 785750,
+              "windowSamplesK": 80,
+              "variance": 18178700000.0,
+              "latencyNs": 875829.0,
+              "cyclesPerByte": 3.5514,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "String Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1747.63,
+              "rse": 0.157113,
+              "windowDuration": "1.7112ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 30,
+              "variance": 2022.99,
+              "latencyNs": 5226.67,
+              "cyclesPerByte": 1.72225,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 789.936,
+              "rse": 3.49567,
+              "windowDuration": "3.4447ms",
+              "fileSizeBytes": 9578,
+              "windowSamplesK": 30,
+              "variance": 4901710.0,
+              "latencyNs": 11563.3,
+              "cyclesPerByte": 3.84181,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Minified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1474.83,
+              "rse": 1.81459,
+              "windowDuration": "1059.49ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 320,
+              "variance": 3071590000.0,
+              "latencyNs": 170737.0,
+              "cyclesPerByte": 2.06028,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 797.913,
+              "rse": 1.16353,
+              "windowDuration": "103.473ms",
+              "fileSizeBytes": 264040,
+              "windowSamplesK": 30,
+              "variance": 404484000.0,
+              "latencyNs": 315583.0,
+              "cyclesPerByte": 3.80812,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Twitter Test (Prettified)",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1578.64,
+              "rse": 2.41371,
+              "windowDuration": "175.401ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 40,
+              "variance": 1360410000.0,
+              "latencyNs": 241612.0,
+              "cyclesPerByte": 1.92495,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 1143.04,
+              "rse": 1.93842,
+              "windowDuration": "510.598ms",
+              "fileSizeBytes": 399947,
+              "windowSamplesK": 80,
+              "variance": 3347080000.0,
+              "latencyNs": 333688.0,
+              "cyclesPerByte": 2.65839,
+              "verdict": "loss"
+            }
+          ]
+        },
+        {
+          "name": "Uint64 Test",
+          "params": {
+            "operation": "read"
+          },
+          "rows": [
+            {
+              "lib": "jsonifier",
+              "mbps": 1910.47,
+              "rse": 4.24746,
+              "windowDuration": "0.6154ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 202299.0,
+              "latencyNs": 1933.33,
+              "cyclesPerByte": 1.56608,
+              "verdict": "win"
+            },
+            {
+              "lib": "simdjson (ondemand)",
+              "mbps": 429.486,
+              "rse": 0.0,
+              "windowDuration": "3.197ms",
+              "fileSizeBytes": 3873,
+              "windowSamplesK": 30,
+              "variance": 0.0,
+              "latencyNs": 8600.0,
+              "cyclesPerByte": 7.04673,
+              "verdict": "loss"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
