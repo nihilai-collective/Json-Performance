@@ -1,0 +1,13 @@
+# Json-Performance: Stage-1 Parsing Stage Results
+#CPU: AMD EPYC 9V45 96-Core Processor-AVX512
+#OS: Linux-6.17.0-1022-azure
+#Compiler: GCC-16.0.1
+
+# Json-Performance: Stage-1 Parsing Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,10,20,10,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,16,4,3
+simdjson (ondemand),3,4,16
