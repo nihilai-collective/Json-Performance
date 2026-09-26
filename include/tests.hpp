@@ -799,7 +799,7 @@ namespace tests {
 			library_traits<test_types::parse, json_libraries::jsonifier, test_name + " (Prettified)", false, test_data_type>,
 			library_traits<test_types::parse, json_libraries::glaze, test_name + " (Prettified)", false, test_data_type>,
 			library_traits<test_types::parse, json_libraries::simdjson, test_name + " (Prettified)", false, test_data_type>>(newer_string);
-	}
+	} 
 
 	void test_function() {
 		std::string newer_string{ make_section00() + benchmarksuite::get_time() + ")\n" + make_section01() + make_section02() };
