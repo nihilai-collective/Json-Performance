@@ -1,0 +1,9 @@
+# Twitter Partial Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Xeon(R) 6973P-C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,6892.63,2.03208,18.2236ms,399947,30,3.79348e+07,55337.2,0.359502,Win
+simdjson (ondemand),6197.58,0.646778,19.7779ms,399947,30,4.75326e+06,61543.2,0.399816,Loss
+glaze,2971.64,0.774658,93.3674ms,399947,40,3.95452e+07,128353,0.834119,Loss
