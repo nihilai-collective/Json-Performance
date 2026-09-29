@@ -1,0 +1,54 @@
+﻿{
+  "version": 3,
+  "configurePresets": [
+    {
+      "binaryDir": "${sourceDir}/Build/",
+      "condition": {
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows",
+        "type": "equals"
+      },
+      "description": "Target Windows with the Visual Studio development environment.",
+      "generator": "Visual Studio 17 2022",
+      "hidden": true,
+      "installDir": "${sourceDir}/install/",
+      "name": "Windows-Base"
+    },
+    {
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" },
+      "description": "Target Windows (64-bit) with the Visual Studio development environment. (Release)",
+      "inherits": "Windows-Base",
+      "name": "Windows-Release"
+    },
+    {
+      "architecture": {
+        "strategy": "external",
+        "value": "x64"
+      },
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" },
+      "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
+      "inherits": "Windows-Base",
+      "name": "Windows-Debug"
+    }
+  ],
+  "buildPresets": [
+    {
+      "configurePreset": "Windows-Release",
+      "configuration": "Release",
+      "inheritConfigureEnvironment": true,
+      "name": "Windows-Release",
+      "verbose": true
+    },
+    {
+      "configurePreset": "Windows-Debug",
+      "configuration": "Debug",
+      "inheritConfigureEnvironment": true,
+      "name": "Windows-Debug",
+      "verbose": true
+    }
+  ]
+}
