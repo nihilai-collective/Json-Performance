@@ -1,0 +1,9 @@
+# Int64 Test Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1487.75,0.309404,1222.78ms,3862,160,9387.22,2475.61,1.63872,Win
+glaze,884.463,0.133822,1397.69ms,3862,160,4968.7,4164.21,2.77424,Loss
+simdjson (ondemand),309.227,0.0590636,2187.42ms,3862,40,1979.57,11910.6,7.98143,Loss

@@ -1,0 +1,10 @@
+# Discord Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 7763 64-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1320.16,0.168513,7634.99ms,94370,4890,6.45347e+07,68172.4,1.76484,Win
+glaze,1244.53,0.154293,8027.01ms,94370,4890,6.0878e+07,72315.2,1.87224,Loss
+simdjson (reflection),1135.28,0.17864,8782.95ms,94370,2560,5.13398e+07,79273.7,2.05274,Loss
+simdjson (ondemand),1109.83,0.152335,8920.67ms,94370,4890,7.46219e+07,81092,2.09967,Loss

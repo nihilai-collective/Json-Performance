@@ -1,0 +1,9 @@
+# Bool Test Write Test Results 
+#**CPU:** AMD EPYC 7763 64-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1142.99,0.332634,915.932ms,905,40,252.349,755.1,1.94785,Win
+simdjson (reflection),180.8,0.0601004,1308.9ms,905,30,246.93,4773.63,12.7978,Loss
+glaze,99.6381,1.66128,1654.13ms,905,4890,1.01261e+08,8662.1,23.3077,Loss
