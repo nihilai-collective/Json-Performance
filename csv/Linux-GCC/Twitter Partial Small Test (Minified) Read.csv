@@ -1,0 +1,10 @@
+# Twitter Partial Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+simdjson (ondemand),3875.99,0.153034,845.318ms,2821,640,722.097,694.097,0.611447,Win
+simdjson (reflection),3826.5,0.395971,846.029ms,2821,40,310.02,703.075,0.620728,Loss
+jsonifier,2641.18,0.233521,885.087ms,2821,320,1810.55,1018.6,0.910363,Loss
+glaze,1645.91,0.190245,940.614ms,2821,80,773.592,1634.55,1.47706,Loss

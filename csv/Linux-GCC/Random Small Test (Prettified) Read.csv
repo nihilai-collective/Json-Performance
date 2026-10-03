@@ -1,0 +1,10 @@
+# Random Small Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1757.75,0.1266,1308.35ms,9463,40,1689.94,5134.18,1.40049,Win
+simdjson (reflection),1516.25,0.158815,1383.04ms,9463,80,7148.07,5951.95,1.62486,Tie
+simdjson (ondemand),1458.28,2.53423,1375.27ms,9463,4890,1.20275e+08,6188.52,1.68982,Tie
+glaze,1421.96,0.294808,1434.82ms,9463,320,112024,6346.6,1.73326,Loss

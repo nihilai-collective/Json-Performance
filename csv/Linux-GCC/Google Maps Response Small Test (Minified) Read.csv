@@ -1,0 +1,10 @@
+# Google Maps Response Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+glaze,1221.01,0.289956,1121.01ms,4390,40,3953.79,3428.82,2.01054,Win
+jsonifier,1023.84,0.241136,1181.85ms,4390,2560,248904,4089.16,2.40069,Loss
+simdjson (reflection),867.064,3.26172,1232.47ms,4390,4890,1.21291e+08,4828.51,2.83785,Loss
+simdjson (ondemand),775.075,0.614317,1318.86ms,4390,640,704704,5401.58,3.17676,Loss

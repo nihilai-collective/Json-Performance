@@ -1,0 +1,9 @@
+# Instruments Test (Minified) Write Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,10269.4,0.663448,1792.23ms,108313,320,1.42507e+06,10058.6,0.240373,Win
+simdjson (reflection),6085.12,0.43029,2456.63ms,108313,4890,2.60888e+07,16975.1,0.406158,Loss
+glaze,1847.41,0.140132,6324.75ms,108313,4890,3.00208e+07,55913.7,1.33942,Loss

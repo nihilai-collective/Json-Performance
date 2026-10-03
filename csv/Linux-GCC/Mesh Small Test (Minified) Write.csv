@@ -1,0 +1,9 @@
+# Mesh Small Test (Minified) Write Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1490.19,0.587833,853.662ms,1181,30,592.166,755.8,1.59972,Win
+simdjson (reflection),792.586,0.119971,915.652ms,1187,320,939.53,1428.25,3.05969,Loss
+glaze,683.253,0.265686,936.872ms,1181,640,12275.9,1648.42,3.55952,Loss

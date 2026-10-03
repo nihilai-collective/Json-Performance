@@ -1,0 +1,10 @@
+# CitmCatalog Small Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+simdjson (ondemand),1795.12,0.159866,1438.57ms,11724,30,2974.4,6228.5,1.37252,Win
+simdjson (reflection),1776.88,0.124848,1442ms,11724,40,2468.66,6292.43,1.38682,Loss
+jsonifier,1714.3,0.782682,1447.79ms,11724,40,104234,6522.12,1.43644,Loss
+glaze,1530.89,0.526277,1540.54ms,11724,320,472761,7303.52,1.61076,Loss
