@@ -1,0 +1,10 @@
+# Mesh Small Test (Prettified) Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,1362.39,1.42843,178.255ms,2496,320,199320,1747.2,Win
+simdjson (reflection),1156.26,0.21681,208.842ms,2496,4890,97419.1,2058.68,Loss
+simdjson (ondemand),1131.41,0.370414,213.204ms,2496,2560,155477,2103.9,Loss
+glaze,1104.76,0.271749,224.908ms,2496,4890,167646,2154.64,Loss

@@ -1,0 +1,10 @@
+# Marine IK Reverse Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1665.43,0.159332,8528.62ms,9930848,40,3.28388e+09,5.6867e+06,1.48641,Win
+simdjson (ondemand),1422.05,0.151651,10134.9ms,9930848,80,8.16054e+09,6.65994e+06,1.74089,Loss
+simdjson (reflection),1406.26,0.112662,10198.2ms,9930848,30,1.72711e+09,6.73475e+06,1.76046,Loss
+glaze,1299.03,0.099688,5067.59ms,9930848,30,1.58469e+09,7.29068e+06,1.90573,Loss

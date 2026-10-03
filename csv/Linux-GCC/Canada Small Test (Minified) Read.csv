@@ -1,0 +1,10 @@
+# Canada Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V74 80-Core Processor-AVX2
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,644.196,1.04567,1710.38ms,4630,320,1.64387e+06,6854.3,3.82201,Win
+glaze,423.121,2.36018,2040.36ms,4630,4890,2.96642e+08,10435.6,5.83006,Tie
+simdjson (ondemand),420.628,0.112244,2117.87ms,4630,30,4165.01,10497.4,5.86638,Tie
+simdjson (reflection),397.92,0.119316,2170.46ms,4630,40,7011.79,11096.5,6.20224,Loss
