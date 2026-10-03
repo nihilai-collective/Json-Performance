@@ -1,0 +1,10 @@
+# Mesh Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,1001.49,0.394282,872.229ms,1181,320,6291.75,1124.62,2.41252,Win
+glaze,786.924,0.142493,905.836ms,1181,160,665.487,1431.26,3.08656,Loss
+simdjson (ondemand),772.132,0.164004,881.024ms,1181,80,457.842,1458.67,3.14915,Loss
+simdjson (reflection),761.431,0.231054,885.983ms,1181,320,3737.81,1479.17,3.19456,Loss

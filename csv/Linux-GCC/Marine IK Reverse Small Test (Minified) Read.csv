@@ -1,0 +1,10 @@
+# Marine IK Reverse Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,878.095,0.287761,1248.36ms,4604,1280,265009,5000.27,2.80419,Win
+glaze,607.196,0.557657,1456.34ms,4604,320,520352,7231.14,4.06227,Loss
+simdjson (ondemand),599.661,0.0622051,1481.33ms,4604,40,829.795,7322,4.11416,Loss
+simdjson (reflection),563.013,0.0669338,1504.01ms,4604,30,817.421,7798.6,4.38262,Loss

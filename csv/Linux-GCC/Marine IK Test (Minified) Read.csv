@@ -1,0 +1,10 @@
+# Marine IK Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,779.957,0.251004,7110.25ms,1834197,160,5.0703e+09,2.24272e+06,3.17425,Win
+simdjson (ondemand),626.776,0.121021,8872.45ms,1834197,40,4.56299e+08,2.79083e+06,3.95003,Loss
+glaze,623.74,0.0949541,8851.33ms,1834197,30,2.12732e+08,2.80441e+06,3.96925,Loss
+simdjson (reflection),569.105,0.133337,9534.88ms,1834197,160,2.68736e+09,3.07365e+06,4.35032,Loss

@@ -1,0 +1,9 @@
+# Uint64 Test Write Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,786.811,0.134364,1142.81ms,3873,30,1193.55,4694.37,3.12875,Win
+glaze,724.336,0.0956662,1147.89ms,3873,30,713.926,5099.27,3.40016,Loss
+simdjson (reflection),527.202,0.525284,1381.37ms,3873,640,866780,7006.01,4.67878,Loss
