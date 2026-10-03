@@ -1,0 +1,9 @@
+# Minify Test Write Test Results 
+#**CPU:** INTEL(R) XEON(R) PLATINUM 8573C-AVX512
+#**OS:** Linux-6.17.0-1022-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,2535.49,0.15524,9142.15ms,466906,640,4.75688e+07,175618,0.864905,Win
+glaze,1796.48,0.105444,6393.52ms,466906,640,4.37154e+07,247860,1.22076,Loss
+simdjson (ondemand),918.844,0.112146,6215ms,466906,320,9.45132e+07,484605,2.38607,Loss
