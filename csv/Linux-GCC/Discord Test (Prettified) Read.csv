@@ -1,0 +1,10 @@
+# Discord Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-6.18.40.1-microsoft-standard-WSL2
+#**Compiler:** GCC-16.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+glaze,2405.14,0.466127,4034.27ms,94370,4890,1.48766e+08,37419.1,1.2625,Tie
+jsonifier,2374.34,0.81214,4269.24ms,94370,30,2.84292e+06,37904.5,1.27908,Tie
+simdjson (reflection),2344.04,0.451933,4072.04ms,94370,4890,1.4723e+08,38394.6,1.29548,Loss
+simdjson (ondemand),2259.15,0.394904,4303.37ms,94370,4890,1.21024e+08,39837.3,1.34414,Loss

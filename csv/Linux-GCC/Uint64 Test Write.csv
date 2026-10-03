@@ -1,0 +1,9 @@
+# Uint64 Test Write Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-6.18.40.1-microsoft-standard-WSL2
+#**Compiler:** GCC-16.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Position
+jsonifier,968.16,0.692344,698.502ms,3873,80,55812.8,3815.05,3.1213,Win
+glaze,805.64,0.245116,766.39ms,3873,160,20205.8,4584.66,3.75075,Loss
+simdjson (reflection),620.379,0.214242,922.978ms,3873,40,6508.04,5953.75,4.88332,Loss

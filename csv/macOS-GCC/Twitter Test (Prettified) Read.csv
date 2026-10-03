@@ -1,0 +1,10 @@
+# Twitter Test (Prettified) Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,2039.95,0.432586,9973.62ms,399947,160,1.04672e+08,186974,Win
+glaze,1705.95,0.103962,5735.08ms,399947,1280,6.9156e+07,223581,Loss
+simdjson (reflection),1588.06,0.270797,6406.56ms,399947,640,2.70732e+08,240180,Loss
+simdjson (ondemand),1432.84,1.00645,6796.37ms,399947,30,2.15334e+08,266197,Loss
