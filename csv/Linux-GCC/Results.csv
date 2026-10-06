@@ -1,0 +1,13 @@
+# Json-Performance: Generic Parsing & Streaming vs simdjson On Demand Stage Results
+#CPU: Intel(R) Core(TM) i9-14900KF-AVX2
+#OS: Linux-7.0.0-38-generic
+#Compiler: GCC-16.2.1
+
+# Json-Performance: Generic Parsing & Streaming vs simdjson On Demand Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,2.5,4,5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier (generic),242,4,69
+simdjson (ondemand),69,4,242
