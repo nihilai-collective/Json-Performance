@@ -1,0 +1,11 @@
+# Random Small Test (Prettified) Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,1880.13,0.887481,533.06ms,9463,80,145175,4800,0,Win,true
+jsonifier (two-stage),1336.58,1.32749,696.729ms,9463,80,642709,6752,0.38059,Loss,true
+simdjson (reflection),1166.1,0.294533,818.84ms,9463,4890,2.54075e+06,7739.16,6.96451,Loss,false
+glaze,1002.44,1.95725,846.684ms,9463,30,931440,9002.67,1.15053,Tie,true
+simdjson (ondemand),998.652,2.24482,1008.74ms,9463,30,1.23456e+06,9036.8,1.76252,Tie,true

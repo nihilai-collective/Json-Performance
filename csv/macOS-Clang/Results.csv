@@ -1,0 +1,17 @@
+# Json-Performance: Jsonifier (Fused vs Two-Stage) vs Glaze vs simdjson Stage Results
+#CPU: Apple M1 (Virtual)-NEON
+#OS: macOS-25.6.0
+#Compiler: Clang-23.1.0
+
+# Json-Performance: Jsonifier (Fused vs Two-Stage) vs Glaze vs simdjson Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,true,5,5,10,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,175,9,9
+jsonifier (two-stage),6,11,81
+glaze,3,12,178
+simdjson (ondemand),0,9,93
+jsonifier (combined),186,4,3
+simdjson (combined),0,9,93

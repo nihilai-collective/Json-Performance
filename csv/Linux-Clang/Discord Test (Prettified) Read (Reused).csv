@@ -1,0 +1,10 @@
+# Discord Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (two-stage),3809.71,0.0179559,3464.78ms,94370,4890,87985,23623.4,0.081336,1.32833,6.64036,1.03339,0.00173002,1.5689e-05,1.06334e-05,Win,true
+glaze,3323.94,0.286904,3798.81ms,94370,30,181033,27075.8,0.0773736,1.52252,7.96997,1.59524,0.00282258,8.12405e-06,1.41288e-06,Loss,true
+simdjson (ondemand),3137.15,0.0618973,3993.27ms,94370,320,100900,28687.9,0.1262,1.62166,7.62045,1.11076,0.00234128,8.24547e-06,4.20552e-06,Loss,true
+jsonifier,2602.08,0.0177189,4560.11ms,94370,2560,96147.7,34587.1,0.0472485,1.94736,7.17825,1.53465,0.0039139,2.23025e-05,1.62674e-05,Loss,true

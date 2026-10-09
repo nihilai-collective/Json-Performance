@@ -1,0 +1,10 @@
+# Google Maps Response Small Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,3184.83,0.0985564,477.292ms,11521,40,462.42,3449.88,0.162831,Win,true
+jsonifier (two-stage),2439.34,0.072789,578.249ms,11521,40,429.959,4504.2,0.0333133,Loss,true
+simdjson (ondemand),2262.54,0.0809946,538.635ms,11521,40,618.815,4856.18,0.0956742,Loss,true
+glaze,1733.52,0.421918,689.089ms,11521,4890,3.49693e+06,6338.12,4.60016,Loss,true

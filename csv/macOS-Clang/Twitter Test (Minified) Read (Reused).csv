@@ -1,0 +1,10 @@
+# Twitter Test (Minified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,2625.35,0.133329,5947.72ms,264040,1280,2.09327e+07,95914.1,0.285944,Win,true
+simdjson (ondemand),1728.32,0.105476,8936.65ms,264040,2560,6.04562e+07,145695,0.722993,Loss,true
+glaze,1627.28,0.202635,9399.71ms,264040,640,6.2925e+07,154741,0.0515167,Tie,true
+jsonifier (two-stage),1548.86,4.91107,5093.39ms,264040,640,4.07988e+10,162576,1.09775,Tie,true

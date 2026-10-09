@@ -1,0 +1,11 @@
+# Google Maps Response Test (Prettified) Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,2694.19,0.14129,1202.16ms,31235,4890,1.19331e+06,11056.4,0.218643,Win,true
+jsonifier (two-stage),1833.24,1.03277,1675.49ms,31235,640,1.80231e+07,16248.8,1.46987,Loss,true
+glaze,1642.72,0.395174,2148.21ms,31235,30,154047,18133.3,0.520341,Loss,true
+simdjson (reflection),1490.77,1.20675,1980.32ms,31235,2560,1.48845e+08,19981.6,1.00474,Loss,true
+simdjson (ondemand),1376.2,1.32132,2257.24ms,31235,1280,1.047e+08,21645.2,6.01629,Loss,false

@@ -1,0 +1,10 @@
+# Bool Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,1827.05,0.2273,759.736ms,905,160,184.465,472.387,0.111014,3.05077,14.7127,2.73039,0.00140193,4.14365e-05,6.90608e-06,Win,true
+glaze,792.585,0.0722379,832.322ms,905,80,49.5024,1088.94,0.0126286,6.74214,18.6398,3.27514,0.00251381,9.66851e-05,0,Loss,true
+jsonifier (two-stage),275.293,0.0494542,1031.43ms,905,640,1538.48,3135.11,0.0907389,18.9483,55.7846,8.35913,0.00650207,0.000132942,4.14365e-05,Loss,true
+simdjson (ondemand),183.559,0.126852,1186.44ms,905,320,11383.8,4701.88,0.0508698,28.2771,103.829,10.5669,0.0430007,6.56077e-05,1.38122e-05,Loss,true

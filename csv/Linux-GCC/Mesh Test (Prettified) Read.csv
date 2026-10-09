@@ -1,0 +1,11 @@
+# Mesh Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+simdjson (ondemand),2189.57,0.0606089,6924.77ms,1225964,320,3.35167e+07,533972,0.241971,2.31766,11.5494,1.68893,0.00509725,0.0629137,3.16027e-05,Win,true
+simdjson (reflection),2156.44,0.154579,7015.83ms,1225964,40,2.80959e+07,542176,0.123848,2.3718,11.8868,1.68263,0.00491742,0.0593386,2.45725e-05,Loss,true
+jsonifier (two-stage),2102.32,0.363204,7260.55ms,1225964,30,1.22399e+08,556132,0.182399,2.40756,11.4403,2.04401,0.00728404,0.0612966,2.33286e-05,Loss,true
+jsonifier,1841.33,0.0590452,8178.36ms,1225964,320,4.49792e+07,634960,0.0341264,2.77588,12.5508,2.76666,0.0171557,0.0251027,3.48986e-05,Loss,true
+glaze,1827.56,0.122073,8173.84ms,1225964,30,1.82966e+07,639743,0.0148423,2.76533,12.5996,2.53139,0.0137857,0.0309088,4.4917e-05,Loss,true

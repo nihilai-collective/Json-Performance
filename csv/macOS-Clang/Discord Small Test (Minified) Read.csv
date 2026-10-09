@@ -1,0 +1,10 @@
+# Discord Small Test (Minified) Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,1656.8,1.92308,416.487ms,4857,40,115625,2795.75,3.3649,Win,true
+glaze,1238.82,0.189824,501.533ms,4857,80,4030.1,3739.05,0.378529,Loss,true
+jsonifier (two-stage),1093.63,0.151516,428.646ms,4857,4890,201382,4235.43,2.08126,Loss,true
+simdjson (ondemand),1074.1,0.163837,437.786ms,4857,4890,244105,4312.43,0.79612,Loss,true

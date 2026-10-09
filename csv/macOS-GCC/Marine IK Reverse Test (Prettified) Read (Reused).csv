@@ -1,0 +1,11 @@
+# Marine IK Reverse Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,2375.44,0.837286,7151.74ms,9930848,40,4.4575e+10,3.98696e+06,0.116622,Win,true
+jsonifier (two-stage),2129.65,0.559132,7428.56ms,9930848,30,1.85484e+10,4.44711e+06,0.347443,Loss,true
+simdjson (reflection),1945.99,0.618625,8183.2ms,9930848,40,3.62584e+10,4.86684e+06,3.72059,Loss,true
+simdjson (ondemand),1828.31,0.454956,8926.25ms,9930848,30,1.66623e+10,5.18009e+06,8.29031,Tie,false
+glaze,1755.23,2.00115,9065.83ms,9930848,40,4.66361e+11,5.39575e+06,2.05979,Tie,true

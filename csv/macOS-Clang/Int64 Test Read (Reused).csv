@@ -1,0 +1,10 @@
+# Int64 Test Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,2446.95,0.176642,166.912ms,3862,40,282.763,1505.17,0.0238011,Win,true
+glaze,1314.05,0.90397,279.184ms,3862,320,205426,2802.84,0.251121,Loss,true
+jsonifier (two-stage),591.354,0.17071,705.677ms,3862,4890,552785,6228.23,6.46741,Loss,false
+simdjson (ondemand),417.288,0.349789,969.98ms,3862,640,610019,8826.25,0.776429,Loss,true
