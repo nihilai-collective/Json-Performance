@@ -1,0 +1,10 @@
+# Twitter Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position
+jsonifier (two-stage),2635.81,0.0759518,7792.43ms,399947,2560,3.09239e+07,144707,1.94294,6.66719,1.02737,0.00871029,0.00153368,0.000123448,Win
+simdjson (ondemand),2501.13,0.0530859,8209.9ms,399947,2560,1.67776e+07,152499,2.03103,7.1476,1.03912,0.00761291,0.006762,9.69904e-05,Loss
+glaze,2402.06,0.156841,8558.84ms,399947,160,9.9238e+06,158789,2.12727,8.4602,1.53055,0.00580971,0.000178742,2.25967e-05,Loss
+jsonifier,2043.88,0.139035,9944.9ms,399947,1280,8.61692e+07,186616,2.5103,7.02697,1.35516,0.00796353,0.00164475,5.08896e-05,Loss

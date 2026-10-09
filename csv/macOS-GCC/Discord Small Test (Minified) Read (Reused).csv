@@ -1,0 +1,11 @@
+# Discord Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,2101.22,0.360452,301.766ms,4857,4890,308742,2204.43,Win
+glaze,1626.75,0.57934,348.69ms,4857,1280,348317,2847.4,Loss
+jsonifier (two-stage),1275.68,0.894103,431.675ms,4857,2560,2.69816e+06,3631,Loss
+simdjson (reflection),1226.11,0.272131,430.927ms,4857,4890,516827,3777.81,Loss
+simdjson (ondemand),1143.48,0.25021,493.114ms,4857,640,65746.1,4050.8,Loss

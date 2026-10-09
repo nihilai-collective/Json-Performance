@@ -1,0 +1,10 @@
+# Instruments Small Test (Prettified) Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,3152.56,0.113902,288.786ms,9249,40,406.246,2797.9,Win
+jsonifier (two-stage),2727.09,0.180098,328.026ms,9249,1280,43433.1,3234.42,Loss
+simdjson (ondemand),2134.55,0.0777146,418.731ms,9249,80,825.031,4132.26,Loss
+glaze,2068.04,0.128048,434.074ms,9249,30,894.833,4265.17,Loss

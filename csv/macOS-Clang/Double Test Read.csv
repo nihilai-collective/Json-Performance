@@ -1,0 +1,10 @@
+# Double Test Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,860.446,0.0369865,204.971ms,1811,640,352.742,2007.22,Win
+glaze,756.068,0.128535,220.715ms,1811,40,344.84,2284.32,Loss
+jsonifier (two-stage),274.014,0.0964409,634.051ms,1811,2560,94591.8,6302.98,Loss
+simdjson (ondemand),167.781,1.90894,1144.81ms,1811,40,1.54454e+06,10293.8,Loss

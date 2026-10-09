@@ -1,0 +1,9 @@
+# Prettify Test Write Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position
+jsonifier,4761.63,0.138525,7686.98ms,699405,40,1.50613e+06,140079,1.08113,4.01735,0.644058,0.00547912,0.000860088,5.54042e-06,Win
+glaze,3997.18,0.0710025,8974.21ms,699405,40,561511,166869,1.28764,4.84003,1.13546,0.00190998,0.00197679,3.864e-05,Loss
+simdjson (ondemand),1438.52,0.659494,6560.86ms,767297,640,7.20267e+09,508682,3.53522,13.9013,2.23378,0.0115941,0.0709623,0.000123701,Loss

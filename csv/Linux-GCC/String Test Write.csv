@@ -1,0 +1,9 @@
+# String Test Write Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position
+jsonifier,3757.41,0.233021,981.35ms,9578,160,5134.3,2431.01,1.3689,5.4739,1.11234,0.00200525,2.28388e-05,1.95761e-06,Win
+simdjson (reflection),3721.62,0.233072,984.416ms,9578,320,10471.7,2454.39,1.37889,6.09846,1.12195,0.00046167,3.65421e-05,2.186e-05,Loss
+glaze,1997.85,0.0716434,1192.72ms,9578,1280,13733.7,4572.07,2.54506,12.7134,2.58561,0.0011284,7.41445e-05,3.7113e-05,Loss

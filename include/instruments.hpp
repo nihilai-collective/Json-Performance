@@ -1,0 +1,251 @@
+/*
+ * SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 Nihilai Collective Corp
+ * https://github.com/nihilai-collective/json-performance
+ * include/instruments.hpp
+ */
+
+#pragma once
+
+#include <common.hpp>
+
+struct node {
+	int64_t tick;
+	int64_t value;
+};
+
+struct envelope {
+	int64_t loop_end;
+	int64_t loop_start;
+	std::vector<node> nodes;
+	int64_t release_node;
+	int64_t sustain_end;
+	int64_t sustain_start;
+};
+
+struct instrument_data {
+	int64_t default_filter_cutoff;
+	bool default_filter_cutoff_enabled;
+	int64_t default_filter_mode;
+	int64_t default_filter_resonance;
+	bool default_filter_resonance_enabled;
+	int64_t default_pan;
+	int64_t duplicate_check_type;
+	int64_t duplicate_note_action;
+	int64_t fadeout;
+	int64_t global_volume;
+	int64_t graph_insert;
+	std::string legacy_filename;
+	int64_t midi_bank;
+	int64_t midi_channel;
+	int64_t midi_drum_set;
+	int64_t midi_program;
+	std::string name;
+	int64_t new_note_action;
+	std::optional<std::string> note_map;
+	envelope panning_envelope;
+	envelope pitch_envelope;
+	int64_t pitch_pan_center;
+	int64_t pitch_pan_separation;
+	int64_t pitch_to_tempo_lock;
+	int64_t random_cutoff_weight;
+	int64_t random_pan_weight;
+	int64_t random_resonance_weight;
+	int64_t random_volume_weight;
+	std::optional<std::string> sample_map;
+	std::optional<std::string> tuning;
+	envelope volume_envelope;
+	int64_t volume_ramp_down;
+	int64_t volume_ramp_up;
+};
+
+struct datum {
+	int64_t channel;
+	int64_t fxcmd;
+	int64_t fxparam;
+	int64_t instr;
+	int64_t note;
+	int64_t row;
+	int64_t volcmd;
+	int64_t volval;
+};
+
+struct pattern {
+	std::optional<std::vector<datum>> data;
+	std::string name;
+	int64_t rows;
+	int64_t rows_per_beat;
+	int64_t rows_per_measure;
+};
+
+struct sample_data {
+	int64_t c5_samplerate;
+	int64_t global_volume;
+	std::string legacy_filename;
+	int64_t length;
+	int64_t loop_end;
+	int64_t loop_start;
+	std::string name;
+	int64_t pan;
+	int64_t sustain_end;
+	int64_t sustain_start;
+	int64_t vibrato_depth;
+	int64_t vibrato_rate;
+	int64_t vibrato_sweep;
+	int64_t vibrato_type;
+	int64_t volume;
+};
+
+struct instruments_message {
+	std::optional<std::string> graphstate;
+	std::vector<instrument_data> instruments;
+	std::optional<std::string> message;
+	std::string name;
+	std::optional<std::string> orderlist;
+	std::vector<pattern> patterns;
+	std::optional<std::string> pluginstate;
+	std::vector<sample_data> samples;
+	int64_t version;
+};
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, node& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"tick", "value">(obj, data_new.tick, data_new.value);
+}
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, envelope& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"loop_end", "loop_start", "nodes", "release_node", "sustain_end", "sustain_start">(obj, data_new.loop_end, data_new.loop_start, data_new.nodes,
+		data_new.release_node, data_new.sustain_end, data_new.sustain_start);
+}
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, instrument_data& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"default_filter_cutoff", "default_filter_cutoff_enabled", "default_filter_mode", "default_filter_resonance", "default_filter_resonance_enabled", "default_pan",
+		"duplicate_check_type", "duplicate_note_action", "fadeout", "global_volume", "graph_insert", "legacy_filename", "midi_bank", "midi_channel", "midi_drum_set",
+		"midi_program", "name", "new_note_action", "note_map", "panning_envelope", "pitch_envelope", "pitch_pan_center", "pitch_pan_separation", "pitch_to_tempo_lock",
+		"random_cutoff_weight", "random_pan_weight", "random_resonance_weight", "random_volume_weight", "sample_map", "tuning", "volume_envelope", "volume_ramp_down",
+		"volume_ramp_up">(obj, data_new.default_filter_cutoff, data_new.default_filter_cutoff_enabled, data_new.default_filter_mode, data_new.default_filter_resonance,
+		data_new.default_filter_resonance_enabled, data_new.default_pan, data_new.duplicate_check_type, data_new.duplicate_note_action, data_new.fadeout, data_new.global_volume,
+		data_new.graph_insert, data_new.legacy_filename, data_new.midi_bank, data_new.midi_channel, data_new.midi_drum_set, data_new.midi_program, data_new.name,
+		data_new.new_note_action, data_new.note_map, data_new.panning_envelope, data_new.pitch_envelope, data_new.pitch_pan_center, data_new.pitch_pan_separation,
+		data_new.pitch_to_tempo_lock, data_new.random_cutoff_weight, data_new.random_pan_weight, data_new.random_resonance_weight, data_new.random_volume_weight,
+		data_new.sample_map, data_new.tuning, data_new.volume_envelope, data_new.volume_ramp_down, data_new.volume_ramp_up);
+}
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, datum& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"channel", "fxcmd", "fxparam", "instr", "note", "row", "volcmd", "volval">(obj, data_new.channel, data_new.fxcmd, data_new.fxparam, data_new.instr, data_new.note,
+		data_new.row, data_new.volcmd, data_new.volval);
+}
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, pattern& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"data", "name", "rows", "rows_per_beat", "rows_per_measure">(obj, data_new.data, data_new.name, data_new.rows, data_new.rows_per_beat, data_new.rows_per_measure);
+}
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, sample_data& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"c5_samplerate", "global_volume", "legacy_filename", "length", "loop_end", "loop_start", "name", "pan", "sustain_end", "sustain_start", "vibrato_depth",
+		"vibrato_rate", "vibrato_sweep", "vibrato_type", "volume">(obj, data_new.c5_samplerate, data_new.global_volume, data_new.legacy_filename, data_new.length,
+		data_new.loop_end, data_new.loop_start, data_new.name, data_new.pan, data_new.sustain_end, data_new.sustain_start, data_new.vibrato_depth, data_new.vibrato_rate,
+		data_new.vibrato_sweep, data_new.vibrato_type, data_new.volume);
+}
+
+template<document_or_value simdjson_type> inline void get_value(simdjson_type val_new, instruments_message& data_new) {
+	simdjson::ondemand::object obj{ get_object(val_new) };
+	get_fields<"graphstate", "instruments", "message", "name", "orderlist", "patterns", "pluginstate", "samples", "version">(obj, data_new.graphstate, data_new.instruments,
+		data_new.message, data_new.name, data_new.orderlist, data_new.patterns, data_new.pluginstate, data_new.samples, data_new.version);
+}
+
+template<> struct glz::meta<node> {
+	using value_type			= node;
+	static constexpr auto value = object(&value_type::tick, &value_type::value);
+};
+
+template<> struct glz::meta<envelope> {
+	using value_type = envelope;
+	static constexpr auto value =
+		object(&value_type::loop_end, &value_type::loop_start, &value_type::nodes, &value_type::release_node, &value_type::sustain_end, &value_type::sustain_start);
+};
+
+template<> struct glz::meta<instrument_data> {
+	using value_type			= instrument_data;
+	static constexpr auto value = object(&value_type::default_filter_cutoff, &value_type::default_filter_cutoff_enabled, &value_type::default_filter_mode,
+		&value_type::default_filter_resonance, &value_type::default_filter_resonance_enabled, &value_type::default_pan, &value_type::duplicate_check_type,
+		&value_type::duplicate_note_action, &value_type::fadeout, &value_type::global_volume, &value_type::graph_insert, &value_type::legacy_filename, &value_type::midi_bank,
+		&value_type::midi_channel, &value_type::midi_drum_set, &value_type::midi_program, &value_type::name, &value_type::new_note_action, &value_type::note_map,
+		&value_type::panning_envelope, &value_type::pitch_envelope, &value_type::pitch_pan_center, &value_type::pitch_pan_separation, &value_type::pitch_to_tempo_lock,
+		&value_type::random_cutoff_weight, &value_type::random_pan_weight, &value_type::random_resonance_weight, &value_type::random_volume_weight, &value_type::sample_map,
+		&value_type::tuning, &value_type::volume_envelope, &value_type::volume_ramp_down, &value_type::volume_ramp_up);
+};
+
+template<> struct glz::meta<datum> {
+	using value_type = datum;
+	static constexpr auto value =
+		object(&value_type::channel, &value_type::fxcmd, &value_type::fxparam, &value_type::instr, &value_type::note, &value_type::row, &value_type::volcmd, &value_type::volval);
+};
+
+template<> struct glz::meta<pattern> {
+	using value_type			= pattern;
+	static constexpr auto value = object(&value_type::data, &value_type::name, &value_type::rows, &value_type::rows_per_beat, &value_type::rows_per_measure);
+};
+
+template<> struct glz::meta<sample_data> {
+	using value_type			= sample_data;
+	static constexpr auto value = object(&value_type::c5_samplerate, &value_type::global_volume, &value_type::legacy_filename, &value_type::length, &value_type::loop_end,
+		&value_type::loop_start, &value_type::name, &value_type::pan, &value_type::sustain_end, &value_type::sustain_start, &value_type::vibrato_depth, &value_type::vibrato_rate,
+		&value_type::vibrato_sweep, &value_type::vibrato_type, &value_type::volume);
+};
+
+template<> struct glz::meta<instruments_message> {
+	using value_type			= instruments_message;
+	static constexpr auto value = object(&value_type::graphstate, &value_type::instruments, &value_type::message, &value_type::name, &value_type::orderlist, &value_type::patterns,
+		&value_type::pluginstate, &value_type::samples, &value_type::version);
+};
+
+template<> struct jsonifier::core<node> {
+	using value_type				 = node;
+	static constexpr auto parseValue = createValue<&value_type::tick, &value_type::value>();
+};
+
+template<> struct jsonifier::core<envelope> {
+	using value_type = envelope;
+	static constexpr auto parseValue =
+		createValue<&value_type::loop_end, &value_type::loop_start, &value_type::nodes, &value_type::release_node, &value_type::sustain_end, &value_type::sustain_start>();
+};
+
+template<> struct jsonifier::core<instrument_data> {
+	using value_type				 = instrument_data;
+	static constexpr auto parseValue = createValue<&value_type::default_filter_cutoff, &value_type::default_filter_cutoff_enabled, &value_type::default_filter_mode,
+		&value_type::default_filter_resonance, &value_type::default_filter_resonance_enabled, &value_type::default_pan, &value_type::duplicate_check_type,
+		&value_type::duplicate_note_action, &value_type::fadeout, &value_type::global_volume, &value_type::graph_insert, &value_type::legacy_filename, &value_type::midi_bank,
+		&value_type::midi_channel, &value_type::midi_drum_set, &value_type::midi_program, &value_type::name, &value_type::new_note_action, &value_type::note_map,
+		&value_type::panning_envelope, &value_type::pitch_envelope, &value_type::pitch_pan_center, &value_type::pitch_pan_separation, &value_type::pitch_to_tempo_lock,
+		&value_type::random_cutoff_weight, &value_type::random_pan_weight, &value_type::random_resonance_weight, &value_type::random_volume_weight, &value_type::sample_map,
+		&value_type::tuning, &value_type::volume_envelope, &value_type::volume_ramp_down, &value_type::volume_ramp_up>();
+};
+
+template<> struct jsonifier::core<datum> {
+	using value_type				 = datum;
+	static constexpr auto parseValue = createValue<&value_type::channel, &value_type::fxcmd, &value_type::fxparam, &value_type::instr, &value_type::note, &value_type::row,
+		&value_type::volcmd, &value_type::volval>();
+};
+
+template<> struct jsonifier::core<pattern> {
+	using value_type				 = pattern;
+	static constexpr auto parseValue = createValue<&value_type::data, &value_type::name, &value_type::rows, &value_type::rows_per_beat, &value_type::rows_per_measure>();
+};
+
+template<> struct jsonifier::core<sample_data> {
+	using value_type				 = sample_data;
+	static constexpr auto parseValue = createValue<&value_type::c5_samplerate, &value_type::global_volume, &value_type::legacy_filename, &value_type::length, &value_type::loop_end,
+		&value_type::loop_start, &value_type::name, &value_type::pan, &value_type::sustain_end, &value_type::sustain_start, &value_type::vibrato_depth, &value_type::vibrato_rate,
+		&value_type::vibrato_sweep, &value_type::vibrato_type, &value_type::volume>();
+};
+
+template<> struct jsonifier::core<instruments_message> {
+	using value_type				 = instruments_message;
+	static constexpr auto parseValue = createValue<&value_type::graphstate, &value_type::instruments, &value_type::message, &value_type::name, &value_type::orderlist,
+		&value_type::patterns, &value_type::pluginstate, &value_type::samples, &value_type::version>();
+};

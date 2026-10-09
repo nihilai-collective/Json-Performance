@@ -1,0 +1,9 @@
+# Bool Test Write Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position
+jsonifier,1768.96,0.108092,774.956ms,905,2560,712.012,487.899,3.09399,12.7635,1.41215,0.00388596,0.000113087,9.06423e-06,Win
+simdjson (reflection),252.459,0.0518629,1072.53ms,905,4890,15372.2,3418.67,20.2674,95.1227,20.7646,0.0464744,0.000213538,1.78513e-05,Loss
+glaze,203.275,0.0638558,1156.42ms,905,4890,35945.2,4245.86,25.107,110.474,23.1426,0.0840602,0.000338949,9.80691e-05,Loss

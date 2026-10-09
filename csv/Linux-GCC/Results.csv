@@ -1,0 +1,17 @@
+# Json-Performance: Jsonifier (Fused vs Two-Stage) vs Glaze vs simdjson Stage Results
+#CPU: Intel(R) Core(TM) i9-14900KF-AVX2
+#OS: Linux-7.0.0-38-generic
+#Compiler: GCC-16.2.1
+
+# Json-Performance: Jsonifier (Fused vs Two-Stage) vs Glaze vs simdjson Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,2.5,5,5,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier,134,8,48
+jsonifier (two-stage),38,8,52
+simdjson (reflection),9,6,160
+simdjson (ondemand),2,4,96
+glaze,2,1,187
+jsonifier (combined),176,3,11

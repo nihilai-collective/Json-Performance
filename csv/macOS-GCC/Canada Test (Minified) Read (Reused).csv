@@ -1,0 +1,11 @@
+# Canada Test (Minified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,800.683,0.120566,9508.82ms,2090234,80,7.20785e+08,2.48963e+06,Win
+jsonifier (two-stage),730.346,0.36645,10301.5ms,2090234,30,3.00112e+09,2.7294e+06,Loss
+simdjson (reflection),636.448,0.147107,5591.69ms,2090234,40,8.4916e+08,3.13208e+06,Loss
+glaze,601.306,0.174443,5845.81ms,2090234,40,1.33772e+09,3.31512e+06,Loss
+simdjson (ondemand),552.832,0.102167,6255.25ms,2090234,80,1.08572e+09,3.6058e+06,Loss

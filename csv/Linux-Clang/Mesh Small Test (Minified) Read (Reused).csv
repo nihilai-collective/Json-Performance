@@ -1,0 +1,10 @@
+# Mesh Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position
+jsonifier,1246.71,0.095663,823.637ms,1181,4890,3652.32,903.413,4.3106,17.6207,3.53175,0.0040505,8.93493e-05,3.80946e-05,Win
+glaze,1234.11,0.118114,818.881ms,1181,1280,1487.32,912.63,4.37988,17.9822,3.52752,0.00238146,3.90294e-05,1.52149e-05,Loss
+jsonifier (two-stage),1070.21,0.173143,843.759ms,1181,40,132.81,1052.4,5.02798,21.0711,3.94073,0.00169348,6.35055e-05,4.2337e-05,Loss
+simdjson (ondemand),1002.64,0.116625,848.984ms,1181,160,274.611,1123.33,5.32897,22.8146,3.663,0.00261431,4.76291e-05,2.11685e-05,Loss
