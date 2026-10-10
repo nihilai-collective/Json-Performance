@@ -159,7 +159,7 @@ namespace tests {
 		result += "| Library | Active Implementation |\n";
 		result += "| ------- | --------------------- |\n";
 		result += "| Jsonifier | ";
-		result += jsonifier::cpu_arch_name;
+		result += jsonifier::activeBackendName();
 		result += " |\n";
 		result += "| simdjson (ondemand) | ";
 		result += simdjson::get_active_implementation()->name();
