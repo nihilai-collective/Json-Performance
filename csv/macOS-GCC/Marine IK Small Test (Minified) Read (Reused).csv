@@ -1,0 +1,11 @@
+# Marine IK Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,824.408,0.250054,698.329ms,4604,2560,454039,5325.9,Win
+jsonifier (two-stage),565.348,1.85886,988.253ms,4604,80,1.66734e+06,7766.4,Loss
+simdjson (reflection),520.128,1.03907,1125.16ms,4604,80,615499,8441.6,Loss
+glaze,477.307,0.580592,1379.82ms,4604,30,85573.4,9198.93,Loss
+simdjson (ondemand),413.281,0.126054,1335.57ms,4604,4890,877001,10624.1,Loss

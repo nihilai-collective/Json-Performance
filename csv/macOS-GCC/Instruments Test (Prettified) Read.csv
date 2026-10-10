@@ -1,0 +1,11 @@
+# Instruments Test (Prettified) Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier (two-stage),2460.6,0.101836,8481.26ms,213963,2560,1.82571e+07,82927.2,Win
+glaze,2110.62,0.259575,5287.18ms,213963,40,2.5191e+06,96678.4,Loss
+simdjson (reflection),2038.5,0.0791584,5587.93ms,213963,640,4.0182e+06,100099,Loss
+simdjson (ondemand),1988.93,0.1247,5398.98ms,213963,160,2.61876e+06,102594,Loss
+jsonifier,1378.45,0.0902021,7861.74ms,213963,1280,2.28211e+07,148029,Loss

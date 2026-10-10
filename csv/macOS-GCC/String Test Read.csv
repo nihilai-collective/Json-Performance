@@ -1,0 +1,10 @@
+# String Test Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Position
+jsonifier,1172.88,0.0993994,785.637ms,9578,4890,293033,7787.9,Win
+glaze,1055.26,0.134584,878.03ms,9578,2560,347425,8656,Loss
+simdjson (ondemand),782.059,0.142771,1184.98ms,9578,1280,355926,11679.8,Loss
+jsonifier (two-stage),724.944,0.204654,1286.44ms,9578,640,425561,12600,Loss
