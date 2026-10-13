@@ -1,0 +1,8 @@
+# Large Amazon Cellphones Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (generic),4141.66,0.0558497,7568.26ms,10548466,160,2.94436e+08,2.42893e+06,0.107404,1.21778,3.99943,0.644046,0.0111346,0.0169704,0.00165395,Win,true
+simdjson (ondemand),4084.69,0.053694,4763.73ms,10548466,30,5.24607e+07,2.46281e+06,0.538245,1.23585,4.46914,0.728374,0.0100562,0.0171949,0.000245062,Loss,true

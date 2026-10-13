@@ -1,0 +1,13 @@
+# Json-Performance: Generic Parsing & Streaming vs simdjson On Demand Stage Results
+#CPU: Apple M1 (Virtual)-NEON
+#OS: macOS-25.6.0
+#Compiler: Clang-23.1.0
+
+# Json-Performance: Generic Parsing & Streaming vs simdjson On Demand Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,true,5,4,10,100000,30
+
+Library,Wins,Ties,Losses
+jsonifier (generic),225,28,71
+simdjson (ondemand),71,28,225

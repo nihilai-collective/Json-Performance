@@ -1,0 +1,8 @@
+# Stream Formats Small Test (NDJSON) Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier (generic),2235.69,0.111602,5093.11ms,16002592,30,1.7411e+09,6.82621e+06,1.0618,Win,true
+simdjson (ondemand),2034.91,0.904962,5461.07ms,16002592,40,1.84251e+11,7.49971e+06,10.6444,Loss,false
