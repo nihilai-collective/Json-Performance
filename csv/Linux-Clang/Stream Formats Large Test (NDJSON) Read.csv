@@ -1,0 +1,8 @@
+# Stream Formats Large Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (generic),18618.1,0.0923806,5288.78ms,16197086,320,1.87981e+08,829661,0.0198731,0.268301,1.45194,0.0666257,8.03078e-05,0.0157366,8.24666e-05,Win,true
+simdjson (ondemand),18296,0.0503273,5392.96ms,16197086,320,5.77721e+07,844269,0.0826814,0.27601,1.27274,0.0715446,8.07281e-05,0.0157419,6.27281e-05,Loss,true

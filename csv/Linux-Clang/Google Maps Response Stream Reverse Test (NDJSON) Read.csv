@@ -1,0 +1,8 @@
+# Google Maps Response Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (generic),778.6,0.0691973,8002.25ms,4203059,80,1.01525e+09,5.14815e+06,0.283442,6.48034,29.3778,6.01331,0.0216614,0.0888691,0.00306902,Win,true
+simdjson (ondemand),725.09,0.0728713,4005.36ms,4203059,40,6.49113e+08,5.52807e+06,0.0322389,6.96494,29.0052,5.21275,0.0271567,0.0883969,0.00810155,Loss,true

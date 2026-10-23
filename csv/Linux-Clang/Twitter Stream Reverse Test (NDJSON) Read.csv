@@ -1,0 +1,8 @@
+# Twitter Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (generic),715.578,0.771981,4116.55ms,4219120,30,5.6528e+10,5.62296e+06,0.00991332,7.06508,27.881,5.19,0.0193775,0.0577272,0.000137928,Win,true
+simdjson (ondemand),228.49,0.240621,5375.47ms,4219120,30,5.38638e+10,1.76098e+07,0.0482016,22.0053,81.4439,16.4482,0.12549,0.0565353,0.000625707,Loss,true
