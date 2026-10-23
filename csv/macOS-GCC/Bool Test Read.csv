@@ -1,0 +1,10 @@
+# Bool Test Read Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,1516.24,1.26808,60.5819ms,905,4890,254781,569.22,2.36356,Win,true
+glaze,1358.1,1.5768,89.0939ms,905,2560,257053,635.5,0.521987,Loss,true
+jsonifier (two-stage),217.813,0.177876,402.5ms,905,4890,242924,3962.45,0.526441,Loss,true
+simdjson (ondemand),183.649,0.504585,503.403ms,905,640,359890,4699.6,0.00851209,Loss,true

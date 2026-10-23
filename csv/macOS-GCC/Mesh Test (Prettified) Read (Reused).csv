@@ -1,0 +1,11 @@
+# Mesh Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+simdjson (ondemand),1475.25,1.01912,6153.72ms,1225964,40,2.60937e+09,792525,0.239535,Tie,true
+glaze,1441.68,0.975493,5687.44ms,1225964,80,5.00673e+09,810976,1.00313,Tie,true
+jsonifier,1348.36,0.437537,5820.33ms,1225964,160,2.30298e+09,867102,1.83154,Loss,true
+jsonifier (two-stage),1284.67,0.777038,5405.05ms,1225964,320,1.60033e+10,910095,1.46936,Loss,true
+simdjson (reflection),999.987,1.4299,9556.56ms,1225964,30,8.38497e+09,1.16919e+06,1.09649,Loss,true

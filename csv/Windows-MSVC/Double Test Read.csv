@@ -1,0 +1,10 @@
+# Double Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.44.35228.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier,539.082,0.669571,319.903ms,1811,2560,1.17804e+06,3203.79,0.0646625,5.60143,Win,true
+glaze,417.679,0.184707,403.542ms,1811,40,2333.33,4135,0.121065,7.25134,Loss,true
+jsonifier (two-stage),302.536,0.313597,573.976ms,1811,640,205119,5708.75,0.142528,10.0069,Loss,true
+simdjson (ondemand),166.398,0.211692,1051.57ms,1811,160,77244.9,10379.4,0.114541,18.2284,Loss,true

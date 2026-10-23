@@ -1,0 +1,11 @@
+# CitmCatalog Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** Apple M1 (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,1765.09,0.8903,419.144ms,5092,320,191985,2751.2,0.376593,Win,true
+jsonifier (two-stage),1147.04,0.61651,526.108ms,5092,640,435994,4233.6,1.16613,Loss,true
+glaze,932.146,1.54185,613.489ms,5092,80,516158,5209.6,2.77778,Tie,true
+simdjson (reflection),918.326,0.790378,705.589ms,5092,160,279494,5288,0.691106,Tie,true
+simdjson (ondemand),893.368,0.442357,634.09ms,5092,4890,2.82729e+06,5435.73,0.365978,Loss,true

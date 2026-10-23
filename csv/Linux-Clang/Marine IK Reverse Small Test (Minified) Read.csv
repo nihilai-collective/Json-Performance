@@ -1,0 +1,10 @@
+# Marine IK Reverse Small Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,816.604,0.0612884,1277.51ms,4604,1280,13900,5376.8,0.0659663,6.23577,24.4559,5.40964,0.00508593,7.72087e-05,3.0035e-05,Win,true
+jsonifier (two-stage),732.346,0.0731886,1342.83ms,4604,640,12322.7,5995.41,0.0436081,6.94498,28.0615,5.85296,0.0056907,0.000121837,7.22877e-05,Loss,true
+glaze,650.241,0.036206,1414.57ms,4604,2560,15301.1,6752.45,0.15978,7.82599,32.7965,6.86881,0.00852621,8.86627e-05,4.36102e-05,Loss,true
+simdjson (ondemand),592.003,0.0298066,1487.51ms,4604,2560,12510.8,7416.71,0.00684207,8.58509,35.3486,6.5543,0.00775735,0.000122007,6.007e-05,Loss,true

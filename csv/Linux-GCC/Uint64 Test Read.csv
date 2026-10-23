@@ -1,0 +1,10 @@
+# Uint64 Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,3419.75,0.0790216,833.766ms,3873,2560,1864.83,1080.07,0.0418622,1.53852,7.02685,0.830365,0.000276554,0.000146245,5.91031e-05,Win,true
+glaze,1909.19,0.0466408,917.055ms,3873,2560,2084.34,1934.63,0.139858,2.70122,12.8079,1.7906,0.000271108,7.53413e-05,2.86438e-05,Loss,true
+jsonifier (two-stage),840.402,0.0527942,1164.92ms,3873,1280,6891.34,4395.02,0.0178793,6.0862,15.5025,1.86316,0.000781653,0.00011861,4.80086e-05,Loss,true
+simdjson (ondemand),535.817,0.0418218,1420.88ms,3873,1280,10638.4,6893.36,0.0304961,9.49207,31.1567,3.50865,0.010459,9.35967e-05,3.36867e-05,Loss,true
