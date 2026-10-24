@@ -1,0 +1,10 @@
+# Apache Builds Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 7763 64-Core Processor-AVX2
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier,730.867,0.17519,353.971ms,2632,160,5792.06,3434.38,0.0181951,3.15041,Win,true
+glaze,614.272,0.127427,422.742ms,2632,160,4338.05,4086.25,0.0305998,3.76458,Loss,true
+jsonifier (two-stage),597.636,0.0920204,433.497ms,2632,160,2389.94,4200,0.0594884,3.86915,Loss,true
+simdjson (ondemand),365.309,0.320132,693.392ms,2632,4890,2.36602e+06,6871.08,0.0955617,6.34618,Loss,true
