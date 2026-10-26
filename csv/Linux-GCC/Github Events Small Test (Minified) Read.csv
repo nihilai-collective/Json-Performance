@@ -1,0 +1,11 @@
+# Github Events Small Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,2071.59,0.062078,814.093ms,1691,640,149.464,778.467,0.131296,2.57017,8.57067,1.42164,0.000591366,5.72886e-05,5.54406e-06,Win,true
+glaze,1944.01,0.0722253,816.537ms,1691,640,229.747,829.555,0.00659283,2.72833,10.071,1.96629,0.00115594,2.67963e-05,3.69604e-06,Loss,true
+simdjson (reflection),1799.24,0.0642876,822.218ms,1691,4890,1623.58,896.304,0.235615,2.94747,9.68066,1.70491,0.000593301,0.000180191,7.123e-05,Loss,true
+jsonifier (two-stage),1772.65,0.133938,824.049ms,1691,640,950.229,909.748,0.0324714,2.99149,10.0325,1.61857,0.00060153,6.37567e-05,3.69604e-06,Loss,true
+simdjson (ondemand),1558.03,0.0905625,839.787ms,1691,320,281.18,1035.07,0.0724065,3.37658,8.8356,1.5618,0.0017741,0.000144145,5.91366e-05,Loss,true

@@ -1,0 +1,11 @@
+# Apache Builds Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (two-stage),1889.86,0.0475828,7046.99ms,124597,2560,2.29138e+06,62875,0.027842,2.65619,11.9203,2.00323,0.00750959,5.43063e-05,4.14555e-05,Win,true
+simdjson (ondemand),1754.26,0.0643935,7547.13ms,124597,80,152194,67734.9,0.0755317,2.88206,11.3265,2.10845,0.00901175,0.000112262,8.30678e-05,Loss,true
+jsonifier,1719.74,0.0221042,7669.77ms,124597,4890,1.14064e+06,69094.6,0.16342,2.92706,12.0599,2.29178,0.0173567,2.40448e-05,1.64752e-05,Loss,true
+simdjson (reflection),1704.83,0.0408955,7755.87ms,124597,640,519977,69699,0.0345003,2.96544,11.3421,2.08327,0.010607,2.16699e-05,1.44967e-05,Loss,true
+glaze,1669.76,0.0295521,7887.44ms,124597,1280,566104,71163.1,0.226971,3.01968,13.6447,2.65272,0.0114156,1.67039e-05,1.11673e-05,Loss,true

@@ -1,0 +1,10 @@
+# Bool Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier,522.285,0.483897,345.813ms,905,40,2557.69,1652.5,1.24502,5.79304,Win,true
+glaze,336.228,0.359089,359.001ms,905,4890,415472,2566.93,0.00832835,8.97389,Loss,true
+jsonifier (two-stage),270.848,0.215832,620.64ms,905,640,30273,3186.56,0.76087,11.1436,Loss,true
+simdjson (ondemand),92.8787,0.104729,1492.52ms,905,40,3788.46,9292.5,0.423271,32.6328,Loss,true

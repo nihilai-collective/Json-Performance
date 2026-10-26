@@ -1,0 +1,10 @@
+# Canada Small Test (Prettified) Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.4
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,1589.88,0.0419368,704.719ms,11579,160,1357.45,6945.57,0.0645612,Win,true
+jsonifier (two-stage),1556.89,0.0772215,759.852ms,11579,40,1199.95,7092.73,0.063053,Loss,true
+simdjson (ondemand),1092.76,0.0427527,1022.72ms,11579,80,1493.17,10105.2,0.0840617,Loss,true
+glaze,1078.54,0.127655,1032.18ms,11579,1280,218654,10238.5,0.0158537,Loss,true

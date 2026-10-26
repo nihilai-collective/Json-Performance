@@ -1,0 +1,10 @@
+# Apache Builds Test (Minified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,2920.67,0.101517,5096.84ms,94653,160,157506,30906.6,0.023261,1.71897,9.0484,1.54597,0.00536222,5.3749e-05,4.33821e-05,Win,true
+jsonifier (two-stage),2410.19,0.0175969,5789.67ms,94653,4890,212396,37452.6,0.104212,2.09031,10.7249,1.87596,0.00563693,2.94499e-05,2.06264e-05,Loss,true
+glaze,2130.33,0.0236611,6328.37ms,94653,2560,257327,42372.9,0.231114,2.37278,11.8475,2.2397,0.00875354,1.50096e-05,1.05773e-05,Loss,true
+simdjson (ondemand),1697.03,0.0328664,7388.29ms,94653,2560,782405,53191.7,0.0684392,2.95752,12.5013,2.22821,0.00741884,2.5038e-05,1.83895e-05,Loss,true

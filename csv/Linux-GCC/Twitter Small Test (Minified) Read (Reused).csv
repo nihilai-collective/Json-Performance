@@ -1,0 +1,11 @@
+# Twitter Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,3187.22,0.29567,829.94ms,2889,1280,8361.73,864.441,0.0542867,1.66759,5.41468,0.85393,0.000607909,7.59887e-05,3.24507e-05,Win,true
+glaze,2572.95,0.075639,848.235ms,2889,4890,3208,1070.82,0.0572785,2.03986,8.36803,1.3697,0.000358457,0.000132793,8.47301e-05,Loss,true
+jsonifier (two-stage),2535.12,0.134038,853.639ms,2889,40,84.8821,1086.8,0.128985,2.07055,7.0945,1.01661,0.000346141,3.46141e-05,0,Loss,true
+simdjson (reflection),2289.87,0.0807948,867.417ms,2889,2560,2419.25,1203.2,0.0753283,2.28117,8.31499,1.22949,0.000365205,9.68112e-05,4.0969e-05,Loss,true
+simdjson (ondemand),1791.47,0.0684853,899.625ms,2889,2560,2839.94,1537.93,0.149699,2.89952,9.108,1.54967,0.000599932,0.000121555,7.05802e-05,Loss,true

@@ -1,0 +1,10 @@
+# Int64 Test Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier,2132.03,0.290806,361.084ms,3862,80,2018.99,1727.5,0.860832,1.40318,Win,true
+glaze,1005.39,0.244274,563.121ms,3862,30,2402.3,3663.33,0.272232,2.98928,Loss,true
+jsonifier (two-stage),937.024,0.218701,792.961ms,3862,160,11823.5,3930.62,1.30477,3.2118,Loss,true
+simdjson (ondemand),327.75,0.0689848,2275.3ms,3862,40,2403.85,11237.5,0.0964964,9.23884,Loss,true

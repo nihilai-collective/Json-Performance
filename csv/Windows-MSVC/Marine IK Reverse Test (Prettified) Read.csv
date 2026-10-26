@@ -1,0 +1,10 @@
+# Marine IK Reverse Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier (two-stage),901.326,2.36587,5471.05ms,7351818,30,1.01609e+12,7.77881e+06,1.48546,3.37183,Tie,true
+jsonifier,868.129,2.11737,5545.25ms,7351818,30,8.77279e+11,8.07626e+06,4.06675,3.50077,Tie,false
+glaze,575.027,1.70741,8643.59ms,7351818,40,1.7336e+12,1.21929e+07,1.61038,5.28546,Loss,true
+simdjson (ondemand),280.576,1.2668,7350.97ms,7351818,30,3.00624e+12,2.49888e+07,3.19832,10.8327,Loss,false

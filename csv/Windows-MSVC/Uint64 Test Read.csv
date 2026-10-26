@@ -1,0 +1,10 @@
+# Uint64 Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier,1558.47,0.30962,488.445ms,3873,40,2153.85,2370,0.280505,1.92615,Win,true
+glaze,987.423,0.104125,787.699ms,3873,160,2427.28,3740.62,0.183456,3.06408,Loss,true
+jsonifier (two-stage),896.5,0.178107,839.849ms,3873,40,2153.85,4120,0.651466,3.37139,Loss,true
+simdjson (ondemand),316.367,0.066841,2356.24ms,3873,40,2435.9,11675,0.213675,9.59147,Loss,true

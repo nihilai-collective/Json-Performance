@@ -1,0 +1,10 @@
+# CitmCatalog Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (two-stage),3589.37,0.0622971,8028.77ms,1151920,1280,4.65322e+07,306058,0.262271,1.38198,6.21172,0.977391,0.00583204,0.053967,3.80567e-05,Win,true
+jsonifier,3159.21,0.071232,9132.76ms,1151920,80,4.90828e+06,347732,0.246677,1.59792,6.95942,1.45937,0.0047111,0.0185211,0.000297384,Loss,true
+simdjson (ondemand),2539.76,0.191224,5590.8ms,1151920,320,2.18924e+08,432543,0.271607,1.97333,7.19182,1.08383,0.00737261,0.0484646,7.76258e-05,Tie,true
+glaze,2530.84,0.0284538,5627.21ms,1151920,320,4.88142e+06,434068,0.304924,1.99562,8.48756,1.64664,0.00748968,0.0136127,5.7217e-05,Tie,true

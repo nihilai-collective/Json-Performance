@@ -1,0 +1,11 @@
+# Canada Small Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,1070.09,0.0834607,1154.05ms,4630,320,3795.22,4126.31,0.0466301,4.76995,22.4067,4.50151,0.00184058,3.44222e-05,2.69978e-06,Win,true
+jsonifier (two-stage),967.503,0.0368663,1196.56ms,4630,2560,7246.96,4563.82,0.340187,5.26911,25.0487,4.85487,0.00199767,6.62291e-05,1.94891e-05,Loss,true
+simdjson (reflection),933.742,0.146871,1221.05ms,4630,30,1447.11,4728.83,0.0211513,5.46302,26.2104,4.65205,0.00397408,7.19942e-05,3.59971e-05,Loss,true
+simdjson (ondemand),774.254,0.14718,1315.79ms,4630,160,11272.3,5702.93,0.00306869,6.57248,30.1868,5.55162,0.00405373,4.04968e-05,1.61987e-05,Loss,true
+glaze,709.296,0.177914,1365.09ms,4630,40,4906.68,6225.2,0.0165964,7.1779,30.073,5.82527,0.00523218,0.000102592,4.31965e-05,Loss,true

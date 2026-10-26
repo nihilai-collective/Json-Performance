@@ -1,0 +1,11 @@
+# CitmCatalog Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,2414.22,0.0225894,5249.51ms,500299,1280,2.55109e+06,197630,0.00443003,2.09278,8.93208,1.68478,0.0122221,0.0105803,0.000151014,Win,true
+jsonifier (two-stage),1861.99,0.154152,6828.05ms,500299,40,6.24114e+06,256243,0.0508697,2.71364,11.8648,2.05224,0.0138492,0.0424387,0.000113482,Loss,true
+glaze,1782.77,0.152828,6940.02ms,500299,40,6.69165e+06,267630,0.016733,2.78844,11.5682,2.26287,0.0138648,0.00585965,0.000136269,Loss,true
+simdjson (reflection),1420.9,0.0361835,9078.15ms,500299,320,4.72392e+06,335789,0.165821,3.55609,14.6782,2.36489,0.0185487,0.0232455,0.000181142,Loss,true
+simdjson (ondemand),1362.51,0.020169,9157.34ms,500299,1280,6.38495e+06,350179,0.181255,3.70691,14.1991,2.33486,0.0177011,0.0355987,0.000215851,Loss,true

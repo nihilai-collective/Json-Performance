@@ -1,0 +1,10 @@
+# Double Test Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier,1308.58,0.0583429,867.229ms,1811,160,94.8707,1319.83,0.0127874,3.98238,19.7195,4.06074,0.00057979,6.90226e-05,6.90226e-06,Win,true
+glaze,977.715,0.0865172,910.335ms,1811,1280,2989.7,1766.47,0.0430068,5.26474,26.487,4.27002,0.00145336,7.24738e-05,2.58835e-06,Loss,true
+jsonifier (two-stage),757.83,0.0618842,962.77ms,1811,4890,9726.62,2279.01,0.0845258,6.78634,33.3722,5.49973,0.00056336,0.000175478,7.6673e-05,Loss,true
+simdjson (ondemand),335.082,0.0891894,1256.2ms,1811,2560,54100.7,5154.28,0.0620383,14.9638,70.8609,9.14357,0.00131014,0.000137182,2.91189e-05,Loss,true

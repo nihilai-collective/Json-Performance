@@ -1,0 +1,10 @@
+# Github Events Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+simdjson (ondemand),1932.76,0.0444366,3997.76ms,65103,2560,521639,32123.6,0.0639769,2.6171,8.45916,1.39157,0.00812233,0.000109148,7.66814e-05,Win,true
+jsonifier (two-stage),1912.2,0.0939854,4008.75ms,65103,4890,4.55371e+06,32468.9,0.144971,2.64238,8.99623,1.53852,0.00835651,0.000197717,0.000137944,Loss,true
+jsonifier,1634.1,0.071039,4574.51ms,65103,1280,932503,37994.7,0.163759,3.07762,9.44615,1.79005,0.00899192,0.000175119,0.000109202,Loss,true
+glaze,1579.91,0.0490874,4696.22ms,65103,4890,1.81964e+06,39297.8,0.084353,3.1949,10.812,2.09053,0.0191927,0.000109385,7.1587e-05,Loss,true

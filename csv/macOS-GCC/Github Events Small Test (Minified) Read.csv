@@ -1,0 +1,11 @@
+# Github Events Small Test (Minified) Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+jsonifier,1417.23,0.70265,116.883ms,1691,2560,163654,1137.9,0.308533,Win,true
+glaze,1305.27,0.706751,128.605ms,1691,2560,195190,1235.5,0.00809454,Loss,true
+jsonifier (two-stage),1221.34,1.6057,135.995ms,1691,640,287688,1320.4,0.572289,Loss,true
+simdjson (ondemand),1082.98,0.749367,156.33ms,1691,2560,318770,1489.1,1.78736,Loss,true
+simdjson (reflection),1057.14,0.82348,154.604ms,1691,2560,403990,1525.5,0.0327654,Loss,true
