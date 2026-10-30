@@ -22,7 +22,7 @@ include(GetCommitHash.cmake)
 FetchContent_Declare(
   jsonifier
   GIT_REPOSITORY https://github.com/nihilai-collective/Jsonifier.git
-  GIT_TAG main
+  GIT_TAG test-depth-table
   GIT_SHALLOW TRUE
 )
 FetchContent_MakeAvailable(jsonifier)
