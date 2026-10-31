@@ -1,0 +1,8 @@
+# Instruments Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (generic),1031.51,0.132699,5968.69ms,4197496,80,2.12157e+09,3.88076e+06,0.154055,4.89097,26.6178,5.36546,0.000999641,0.0819876,0.00145863,Win,true
+simdjson (ondemand),787.905,0.11655,7817.88ms,4197496,30,1.05191e+09,5.08061e+06,0.243384,6.42566,31.8513,5.99558,0.00944955,0.0810106,0.000786485,Loss,true

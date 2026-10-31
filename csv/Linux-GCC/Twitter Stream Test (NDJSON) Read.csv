@@ -1,0 +1,8 @@
+# Twitter Stream Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-38-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+jsonifier (generic),1870.6,0.154139,7521.95ms,4219120,160,1.75882e+09,2.151e+06,0.102327,2.68634,8.97173,1.64354,0.0220643,0.0575053,0.000533575,Win,true
+simdjson (ondemand),1810.41,0.104525,7775.44ms,4219120,80,4.3174e+08,2.22251e+06,0.141305,2.78134,8.9529,1.51769,0.0153732,0.0541099,0.000317726,Loss,true

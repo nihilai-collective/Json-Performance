@@ -1,0 +1,8 @@
+# Stream Formats Small Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+jsonifier (generic),3698.38,0.332335,6175.43ms,16002592,80,1.50453e+10,4.12648e+06,0.143832,0.8217,Win,true
+simdjson (ondemand),1967.66,0.317959,5424.49ms,16002592,40,2.43266e+10,7.75603e+06,0.317654,1.54461,Loss,true
