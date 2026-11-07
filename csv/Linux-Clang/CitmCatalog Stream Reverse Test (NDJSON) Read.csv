@@ -1,0 +1,8 @@
+# CitmCatalog Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-42-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+Jsonifier (generic),731.063,0.212961,4305.98ms,4525120,30,4.74102e+09,5.90304e+06,1.16558,6.81347,32.179,6.41867,0.0157319,0.0782832,0.0195433,Win,true
+simdjson (ondemand),552.419,0.121057,5676.81ms,4525120,30,2.683e+09,7.81198e+06,0.0374476,9.06695,42.9826,8.45386,0.0257468,0.0776029,0.012711,Loss,true
