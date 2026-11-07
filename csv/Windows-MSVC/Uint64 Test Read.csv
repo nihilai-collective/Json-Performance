@@ -1,0 +1,10 @@
+# Uint64 Test Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1406.77,0.240125,265.841ms,3873,4890,194373,2625.58,0.0402721,1.74171,Win,true
+Glaze,1017.17,0.104133,369.13ms,3873,160,2287.74,3631.25,0.171821,2.41473,Loss,true
+Jsonifier (two-stage),573.514,0.149566,655.064ms,3873,4890,453717,6440.27,0.022329,4.29845,Loss,true
+simdjson (ondemand),310.438,0.258043,1212.18ms,3873,640,603267,11898,0.0800441,7.95841,Loss,true

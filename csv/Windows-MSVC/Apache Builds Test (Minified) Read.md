@@ -1,0 +1,13 @@
+
+----
+### Apache Builds Test (Minified) Read Results [(View the data used in the following test)](./json/Apache%20Builds%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Apache%20Builds%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Apache%20Builds%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 835.017 | 0.413555 | 5551.32ms | 94653 | 2560 | 5.11664e+08 | 108103 | 0.228605 | 2.96416 | 1(Win) | true |
+| Jsonifier (two-stage) | 822.776 | 0.241364 | 5651.42ms | 94653 | 2560 | 1.79511e+08 | 109712 | 0.0336351 | 3.00823 | 2(Loss) | true |
+| Glaze | 805.426 | 0.383785 | 5783.77ms | 94653 | 1280 | 2.36812e+08 | 112075 | 0.0908164 | 3.07305 | 3(Loss) | true |
+| simdjson (ondemand) | 748.073 | 0.259476 | 6196.53ms | 94653 | 1280 | 1.25483e+08 | 120668 | 0.314377 | 3.30868 | 4(Loss) | true |

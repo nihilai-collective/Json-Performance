@@ -1,0 +1,17 @@
+# Json-Performance: Jsonifier (Fused vs Two-Stage) vs Glaze vs simdjson (AVX512) Stage Results
+#CPU: AMD EPYC 9V45 96-Core Processor-AVX512
+#OS: Linux-7.0.0-1019-azure
+#Compiler: Clang-24.0.0
+
+# Json-Performance: Jsonifier (Fused vs Two-Stage) vs Glaze vs simdjson (AVX512) Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,true,2.5,5,5,100000,30
+
+Library,Wins,Ties,Losses
+Jsonifier,156,4,49
+Jsonifier (two-stage),48,3,55
+simdjson (ondemand),3,1,106
+Glaze,0,2,207
+Jsonifier (combined),206,0,3
+simdjson (combined),3,1,106

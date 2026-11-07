@@ -1,0 +1,10 @@
+# Double Test Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1405.76,0.145494,126.681ms,1811,640,2044.97,1228.59,0.114329,1.72393,Win,true
+Glaze,510.789,0.0915454,344.543ms,1811,160,1533.02,3381.25,0.0738825,4.80754,Loss,true
+Jsonifier (two-stage),418.861,0.190478,419.196ms,1811,30,1850.57,4123.33,0.0807754,5.879,Loss,true
+simdjson (ondemand),146.453,0.188839,1192.93ms,1811,1280,634797,11792.9,0.18581,16.8653,Loss,true

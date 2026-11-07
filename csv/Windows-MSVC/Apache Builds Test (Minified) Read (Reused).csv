@@ -1,0 +1,10 @@
+# Apache Builds Test (Minified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1258.6,0.0898539,9044.73ms,94653,2560,1.06319e+07,71721.3,0.0655089,1.9664,Win,true
+Jsonifier (two-stage),1219.2,0.0575744,9304.71ms,94653,4890,8.88566e+06,74039.1,0.205155,2.0299,Loss,true
+Glaze,1165.67,0.0951343,9552.32ms,94653,2560,1.38941e+07,77438.7,0.22181,2.12311,Loss,true
+simdjson (ondemand),1081.31,0.205659,5164.69ms,94653,320,9.43224e+06,83480.3,0.0108547,2.2878,Loss,true

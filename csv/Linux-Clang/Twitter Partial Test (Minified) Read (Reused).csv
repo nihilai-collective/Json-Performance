@@ -1,0 +1,10 @@
+# Twitter Partial Test (Minified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,10822.7,0.201693,4202.89ms,466906,160,1.10177e+06,41143,0.0656577,0.228611,Tie,true
+Jsonifier (two-stage),10820.7,0.0604542,4178.67ms,466906,4890,3.02629e+06,41150.4,0.0280054,0.228641,Tie,true
+simdjson (ondemand),8418.08,0.0904682,5457.85ms,466906,4890,1.11978e+07,52895.2,0.715985,0.293935,Loss,true
+Glaze,3460.66,0.0662201,6622.58ms,466906,2560,1.85849e+07,128668,0.168551,0.715276,Loss,true

@@ -1,0 +1,10 @@
+# Marine IK Reverse Test (Prettified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (two-stage),2412.56,0.207702,10116ms,7351818,160,5.82954e+09,2.90614e+06,0.570004,1.02619,Win,true
+Jsonifier,2228.33,0.643952,5148.69ms,7351818,40,1.64209e+10,3.14641e+06,1.30016,1.11104,Loss,true
+Glaze,788.731,0.345059,6554.56ms,7351818,30,2.82254e+10,8.88927e+06,2.66047,3.13894,Loss,false
+simdjson (ondemand),511.344,0.159852,9933.79ms,7351818,40,1.92159e+10,1.37114e+07,0.343164,4.84169,Loss,true

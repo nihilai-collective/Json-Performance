@@ -1,0 +1,13 @@
+
+----
+### Discord Small Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Discord%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Discord%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Discord%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2689.13 | 0.0369406 | 197.315ms | 4857 | 160 | 64.7797 | 1722.49 | 0.278716 | 0.906794 | 1(Win) | true |
+| Glaze | 2237.84 | 0.164527 | 230.868ms | 4857 | 80 | 927.775 | 2069.85 | 0.00845543 | 1.09306 | 2(Loss) | true |
+| Jsonifier (two-stage) | 2168.08 | 0.0627087 | 236.866ms | 4857 | 80 | 143.592 | 2136.45 | 0 | 1.12781 | 3(Loss) | true |
+| simdjson (ondemand) | 897.638 | 0.169282 | 541.213ms | 4857 | 2560 | 195342 | 5160.2 | 0.0158944 | 2.7431 | 4(Loss) | true |
