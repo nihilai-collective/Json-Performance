@@ -1,0 +1,13 @@
+# Json-Performance: Stage-1 Parsing Stage Results
+#CPU: Intel(R) Core(TM) i9-14900KF-AVX2
+#OS: Linux-7.0.0-42-generic
+#Compiler: GCC-16.2.1
+
+# Json-Performance: Stage-1 Parsing Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,true,2.5,5,5,100000,30
+
+Library,Wins,Ties,Losses
+Jsonifier,24,0,1
+simdjson (ondemand),1,0,24
