@@ -1,0 +1,11 @@
+# Discord Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,2523.31,0.102471,3637.85ms,83958,2560,2.70662e+06,31731.6,0.108527,Win,true
+Glaze,2272.2,0.133461,3982.73ms,83958,1280,2.83107e+06,35238.4,0.021572,Loss,true
+Jsonifier (two-stage),2195.52,0.0886391,4248.34ms,83958,2560,2.6751e+06,36469.1,0.281852,Loss,true
+simdjson (ondemand),1681.87,0.0582136,5225.72ms,83958,4890,3.75576e+06,47606.9,0.217337,Loss,true
+simdjson (reflection),1656.66,0.241814,5320.61ms,83958,160,2.18544e+06,48331.2,0.135915,Loss,true

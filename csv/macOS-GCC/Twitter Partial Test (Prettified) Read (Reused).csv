@@ -1,0 +1,11 @@
+# Twitter Partial Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier (two-stage),5612.95,0.465196,5698.1ms,631514,30,7.47442e+06,107298,0.215191,Tie,true
+Jsonifier,5597.81,0.236279,5697.28ms,631514,30,1.93866e+06,107588,0.0158655,Tie,true
+simdjson (ondemand),4824.03,0.176464,6495.31ms,631514,320,1.55314e+07,124846,0.226965,Loss,true
+simdjson (reflection),4778.59,0.0775964,6578.37ms,631514,2560,2.44845e+07,126033,0.073419,Loss,true
+Glaze,3067.22,0.134727,5232.97ms,631514,1280,8.95772e+07,196353,0.248537,Loss,true

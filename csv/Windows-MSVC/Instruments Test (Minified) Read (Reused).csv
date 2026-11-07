@@ -1,0 +1,10 @@
+# Instruments Test (Minified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,2580.35,0.994598,4248.33ms,108313,2560,4.05826e+08,40031.5,0.219947,1.17707,Win,true
+Glaze,1784.57,0.216674,6349.52ms,108313,40,629173,57882.5,0.131184,1.70216,Loss,true
+Jsonifier (two-stage),1769.06,0.231577,6392.85ms,108313,30,548517,58390,0.330014,1.71736,Loss,true
+simdjson (ondemand),838.621,0.084202,6454.24ms,108313,320,3.44211e+06,123173,0.0398481,3.62355,Loss,true

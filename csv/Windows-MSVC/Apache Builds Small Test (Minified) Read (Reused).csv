@@ -1,0 +1,10 @@
+# Apache Builds Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1582.39,0.268771,187.673ms,2632,80,1454.11,1586.25,0.0788644,1.9067,Tie,true
+Glaze,1576.8,0.2226,197.474ms,2632,160,2009.04,1591.88,2.04327,1.89818,Tie,true
+Jsonifier (two-stage),1214.55,0.482943,244.309ms,2632,30,2988.51,2066.67,0.161031,2.46594,Loss,true
+simdjson (ondemand),990.166,0.233798,306.051ms,2632,80,2810.13,2535,0.197628,3.05227,Loss,true

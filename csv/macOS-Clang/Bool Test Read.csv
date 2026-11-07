@@ -1,0 +1,10 @@
+# Bool Test Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.4
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,1270.79,0.112884,73.3156ms,905,640,376.182,679.166,0.306921,Win,true
+Glaze,1203.01,0.306396,78.0395ms,905,2560,12369.9,717.43,0.320105,Loss,true
+Jsonifier (two-stage),371.642,0.0935549,236.763ms,905,2560,12084.3,2322.33,0.107817,Loss,true
+simdjson (ondemand),177.458,0.133649,485.034ms,905,40,1690.05,4863.55,0.0785365,Loss,true

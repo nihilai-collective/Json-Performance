@@ -1,0 +1,10 @@
+# Canada Test (Minified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-42-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+Jsonifier,1269.71,0.230318,6449.8ms,2251027,160,2.42622e+09,1.69074e+06,0.301467,3.91773,20.911,3.90242,0.00722181,0.0414772,0.000460829,Win,true
+Jsonifier (two-stage),1064.43,0.119347,7412.85ms,2251027,80,4.63494e+08,2.01681e+06,0.0628268,4.65903,23.6726,4.137,0.00970748,0.0784217,0.00103442,Loss,true
+Glaze,982.643,0.369181,8000.03ms,2251027,30,1.95151e+09,2.18467e+06,0.413827,5.03372,26.7587,4.69658,0.0092258,0.0402999,0.000304439,Loss,true
+simdjson (ondemand),802.38,0.227903,9541.57ms,2251027,160,5.94866e+09,2.67547e+06,0.131007,6.17626,26.0539,4.37655,0.0107288,0.0750086,0.00151994,Loss,true

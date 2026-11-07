@@ -1,0 +1,10 @@
+# Twitter Partial Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,7363.35,0.0652738,8410.55ms,631514,4890,1.3938e+07,81791.3,0.529521,0.412647,Tie,true
+Jsonifier (two-stage),7334.78,0.441642,8567.69ms,631514,30,3.94507e+06,82110,0.781407,0.414224,Tie,true
+simdjson (ondemand),4034.06,0.525766,7499ms,631514,2560,1.57727e+09,149293,0.646554,0.753259,Loss,true
+Glaze,3482.54,0.290416,9235.23ms,631514,30,7.56723e+06,172937,0.634286,0.872648,Loss,true

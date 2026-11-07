@@ -1,0 +1,10 @@
+# Double Test Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.4
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,1102.79,0.147818,160.199ms,1811,80,428.744,1566.12,0.164689,Win,true
+Glaze,972.763,0.134928,191.946ms,1811,80,459.113,1775.46,0.0246475,Loss,true
+Jsonifier (two-stage),403.594,0.0842677,431.655ms,1811,4890,63588.5,4279.31,0.0553539,Loss,true
+simdjson (ondemand),220.408,0.0269467,789.956ms,1811,160,713.365,7835.93,0.0122847,Loss,true

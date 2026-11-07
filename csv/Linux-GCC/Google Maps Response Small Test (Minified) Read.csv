@@ -1,0 +1,11 @@
+# Google Maps Response Small Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-42-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+Jsonifier,2278.59,0.0371722,915.7ms,4390,640,298.549,1837.38,0.296333,2.2858,10.4321,1.70866,0.00164614,2.7406e-05,4.98292e-06,Win,true
+Glaze,1833.07,0.050022,960.26ms,4390,4890,6382.67,2283.95,0.0359682,2.81815,13.0267,2.59021,0.00058783,2.64591e-05,1.00619e-05,Loss,true
+Jsonifier (two-stage),1669.13,0.0395575,982.229ms,4390,4890,4814.13,2508.28,0.255029,3.07469,13.8091,2.24579,0.00345137,5.72504e-05,1.34159e-05,Loss,true
+simdjson (reflection),1369.11,0.0511302,1037.55ms,4390,4890,11954.1,3057.92,0.159891,3.76786,14.1729,2.44898,0.00380638,5.9859e-05,2.16611e-05,Loss,true
+simdjson (ondemand),1134.44,0.0802484,1101.49ms,4390,1280,11226.6,3690.48,0.0189925,4.50241,16.8497,2.94989,0.00241298,5.33884e-05,2.3135e-05,Loss,true

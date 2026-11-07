@@ -1,0 +1,11 @@
+# Apache Builds Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,2155.75,0.0585773,7480.25ms,124597,4890,5.09781e+06,55119.9,0.0206661,Win,true
+Glaze,1873.14,0.0726649,8329.01ms,124597,2560,5.43958e+06,63436.3,0.126112,Loss,true
+Jsonifier (two-stage),1862.67,0.0777092,8260.87ms,124597,2560,6.29112e+06,63792.8,0.0850348,Loss,true
+simdjson (reflection),1325.49,0.181304,5638.63ms,124597,320,8.45342e+06,89646.4,0.107202,Loss,true
+simdjson (ondemand),1255.27,0.177445,5884.72ms,124597,320,9.02854e+06,94660.8,0.165919,Loss,true

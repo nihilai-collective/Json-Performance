@@ -1,0 +1,11 @@
+# Marine IK Small Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier (two-stage),2390.87,0.305504,869.961ms,18245,640,316367,7277.6,0.0990317,Win,true
+Jsonifier,2362.31,0.152234,874.188ms,18245,4890,614815,7365.58,0.131853,Loss,true
+simdjson (reflection),2097.98,0.312109,961.521ms,18245,640,428824,8293.6,0.202156,Loss,true
+simdjson (ondemand),1603.49,0.116294,1225.77ms,18245,4890,778719,10851.2,0.192175,Loss,true
+Glaze,1489.61,0.237968,1309.89ms,18245,640,494494,11680.8,0.150448,Loss,true
