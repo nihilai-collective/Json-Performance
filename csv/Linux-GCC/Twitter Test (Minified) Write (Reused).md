@@ -1,0 +1,12 @@
+
+----
+### Twitter Test (Minified) Write (Reused) Results [(View the data used in the following test)](./json/Twitter%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Test%20%28Minified%29%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Test%20%28Minified%29%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 17565.3 | 0.147725 | 3353.1ms | 475954 | 640 | 932630 | 25841 | 0.202073 | 0.283626 | 1.00324 | 0.147762 | 0.000260428 | 0.00279602 | 4.80614e-06 | 1(Win) | true |
+| simdjson (reflection) | 10884.4 | 0.0465586 | 4904.1ms | 475954 | 160 | 60317.4 | 41702.4 | 0.0314679 | 0.456221 | 1.30829 | 0.183753 | 0.000273818 | 0.00370983 | 1.60205e-06 | 2(Loss) | true |
+| Glaze | 8761.98 | 0.208924 | 5948.7ms | 475954 | 2560 | 2.99877e+07 | 51804 | 0.105805 | 0.57546 | 2.21522 | 0.322105 | 0.000261165 | 0.00100797 | 2.4638e-06 | 3(Loss) | true |

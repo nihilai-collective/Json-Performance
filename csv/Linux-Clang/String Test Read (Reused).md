@@ -1,0 +1,13 @@
+
+----
+### String Test Read (Reused) Results [(View the data used in the following test)](./json/String%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/String%20Test%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/String%20Test%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 2871.88 | 0.208 | 1201.57ms | 9578 | 80 | 3501.36 | 3180.6 | 0.0401029 | 1.81742 | 9.85467 | 1.77427 | 0.000374556 | 5.08979e-05 | 3.26269e-05 | 1(Win) | true |
+| Glaze | 2000.91 | 0.102345 | 1344.45ms | 9578 | 1280 | 27940.6 | 4565.06 | 0.106097 | 2.54968 | 13.4357 | 2.53978 | 0.000161829 | 2.60199e-05 | 6.85164e-06 | 2(Loss) | true |
+| simdjson (ondemand) | 1960.56 | 0.0953089 | 1354.31ms | 9578 | 4890 | 96419.2 | 4659.01 | 0.102709 | 2.59717 | 13.3493 | 2.03247 | 0.00232501 | 3.47593e-05 | 1.18498e-05 | 3(Loss) | true |
+| Jsonifier (two-stage) | 1813.26 | 0.0828632 | 1382.72ms | 9578 | 4890 | 85204.1 | 5037.49 | 0.0215309 | 2.81506 | 14.0902 | 2.17739 | 0.00012185 | 3.73641e-05 | 1.43051e-05 | 4(Loss) | true |

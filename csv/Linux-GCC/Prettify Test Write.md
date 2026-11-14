@@ -1,0 +1,12 @@
+
+----
+### Prettify Test Write Results [(View the data used in the following test)](./json/Prettify%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Prettify%20Test%20Write_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Prettify%20Test%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 4170.51 | 0.0780277 | 8577.91ms | 699405 | 2560 | 3.98673e+07 | 159933 | 0.045487 | 1.22219 | 4.79602 | 1.19835 | 0.00192184 | 0.00108175 | 2.18137e-05 | 1(Win) | true |
+| Glaze | 3217.5 | 0.130015 | 5561.8ms | 699405 | 30 | 2.17934e+06 | 207305 | 0.111296 | 1.59826 | 6.2876 | 1.35582 | 0.00200852 | 0.00134166 | 7.17276e-05 | 2(Loss) | true |
+| simdjson (ondemand) | 2429.99 | 0.282621 | 7914.8ms | 767297 | 160 | 1.1589e+08 | 301133 | 0.577646 | 2.07853 | 8.04354 | 1.07977 | 0.00368105 | 0.0999357 | 4.22995e-05 | 3(Loss) | true |

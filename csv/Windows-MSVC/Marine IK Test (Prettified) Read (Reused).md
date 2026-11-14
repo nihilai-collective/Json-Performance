@@ -1,0 +1,13 @@
+
+----
+### Marine IK Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Marine%20IK%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Marine%20IK%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Marine%20IK%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2285.31 | 0.209135 | 5015.77ms | 7351818 | 30 | 1.23502e+09 | 3.06796e+06 | 0.326617 | 1.32981 | 1(Win) | true |
+| Jsonifier | 2219.35 | 0.181307 | 5207.11ms | 7351818 | 40 | 1.31227e+09 | 3.15914e+06 | 0.346412 | 1.36938 | 2(Loss) | true |
+| simdjson (ondemand) | 1401.23 | 0.24392 | 7915.29ms | 7351818 | 80 | 1.19167e+10 | 5.00364e+06 | 1.31457 | 2.16901 | 3(Loss) | true |
+| Glaze | 1166.8 | 0.340784 | 9419.61ms | 7351818 | 80 | 3.35466e+10 | 6.00897e+06 | 0.170578 | 2.60476 | 4(Loss) | true |

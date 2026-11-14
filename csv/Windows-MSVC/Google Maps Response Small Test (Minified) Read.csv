@@ -1,0 +1,10 @@
+# Google Maps Response Small Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1227.4,0.124707,344.026ms,4390,4890,88480.3,3410.98,0.593425,2.462,Win,true
+Jsonifier (two-stage),1071.21,0.214049,394.69ms,4390,4890,342228,3908.32,0.0840976,2.82325,Loss,true
+Glaze,943.466,0.251142,448.782ms,4390,40,4967.95,4437.5,0.0187829,3.2014,Loss,true
+simdjson (ondemand),589.718,0.127257,716.064ms,4390,640,52237.5,7099.38,0.140659,5.14009,Loss,true

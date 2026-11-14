@@ -1,0 +1,10 @@
+# Twitter Partial Small Test (Minified) Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.4
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,3741.06,0.0928136,77.3235ms,2889,1280,598.052,736.466,0.0687991,Tie,true
+Jsonifier (two-stage),3740.45,0.15815,77.462ms,2889,320,434.249,736.587,0.02036,Tie,true
+simdjson (ondemand),3510.26,0.235002,83.9527ms,2889,2560,8709.62,784.889,0.419817,Loss,true
+Glaze,2226.58,0.141599,127.83ms,2889,1280,3929.58,1237.4,0.592491,Loss,true

@@ -1,0 +1,13 @@
+
+----
+### CitmCatalog Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/CitmCatalog%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/CitmCatalog%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/CitmCatalog%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 3023.57 | 0.08354 | 5088.57ms | 1151920 | 640 | 5.89622e+07 | 363331 | 0.062447 | 1.00507 | 1(Win) | true |
+| Jsonifier | 2658.87 | 0.18735 | 5702.5ms | 1151920 | 30 | 1.79754e+07 | 413167 | 0.0588601 | 1.14299 | 2(Loss) | true |
+| Glaze | 1775.38 | 0.0484816 | 8330.92ms | 1151920 | 640 | 5.75968e+07 | 618774 | 0.0443725 | 1.71181 | 3(Loss) | true |
+| simdjson (ondemand) | 1547.92 | 0.116017 | 9432.3ms | 1151920 | 320 | 2.16941e+08 | 709697 | 0.018277 | 1.96327 | 4(Loss) | true |

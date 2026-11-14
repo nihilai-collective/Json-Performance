@@ -1,0 +1,12 @@
+
+----
+### Random Small Test (Prettified) Write Results [(View the data used in the following test)](./json/Random%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Random%20Small%20Test%20%28Prettified%29%20Write_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Random%20Small%20Test%20%28Prettified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 24797.3 | 0.372483 | 755.353ms | 9255 | 4890 | 8595.42 | 355.936 | 0.136317 | 0.2303 | 0.930524 | 0.143814 | 0.000108337 | 1.52463e-05 | 4.50759e-06 | 1(Win) | true |
+| Glaze | 4516.69 | 0.179556 | 924.878ms | 9255 | 640 | 7879.4 | 1954.14 | 0.00799519 | 1.16379 | 4.81026 | 0.812966 | 0.000111595 | 1.26621e-05 | 2.19476e-06 | 2(Loss) | true |
+| simdjson (reflection) | 516.345 | 0.598373 | 2445.44ms | 9255 | 2560 | 2.67829e+07 | 17093.7 | 0.00909655 | 9.83568 | 38.0793 | 7.28266 | 0.0203276 | 0.000181912 | 9.02384e-05 | 3(Loss) | true |

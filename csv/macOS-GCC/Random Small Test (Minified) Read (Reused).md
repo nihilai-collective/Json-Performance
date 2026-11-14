@@ -1,0 +1,14 @@
+
+----
+### Random Small Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Random%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Random%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Random%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1434.1 | 0.354567 | 426.47ms | 5094 | 2560 | 369314 | 3387.5 | 0.150781 | 1(Win) | true |
+| Jsonifier (two-stage) | 1246.03 | 0.283837 | 470.255ms | 5094 | 4890 | 598833 | 3898.79 | 0.321411 | 2(Loss) | true |
+| Glaze | 992.242 | 1.47767 | 597.939ms | 5094 | 80 | 418725 | 4896 | 1.0568 | 3(Loss) | true |
+| simdjson (reflection) | 947.832 | 0.311032 | 619.498ms | 5094 | 1280 | 325294 | 5125.4 | 0.369334 | 4(Loss) | true |
+| simdjson (ondemand) | 812.54 | 0.404977 | 710.656ms | 5094 | 1280 | 750409 | 5978.8 | 0.707452 | 5(Loss) | true |

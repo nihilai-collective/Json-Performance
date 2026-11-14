@@ -1,0 +1,14 @@
+
+----
+### Random Test (Minified) Read Results [(View the data used in the following test)](./json/Random%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Random%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Random%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1194.32 | 0.0572243 | 9617.23ms | 461466 | 80 | 3.55702e+06 | 368483 | 0.0552501 | 4.22977 | 17.8094 | 3.2223 | 0.0195459 | 0.0398549 | 2.10741e-05 | 1(Win) | true |
+| simdjson (reflection) | 1170.46 | 0.0716117 | 9826.24ms | 461466 | 640 | 4.63994e+07 | 375995 | 0.0546484 | 4.29063 | 18.5842 | 3.24556 | 0.0100896 | 0.0567621 | 0.000279392 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1090.45 | 0.205844 | 5238.94ms | 461466 | 40 | 2.76059e+07 | 403582 | 0.126468 | 4.61646 | 19.2173 | 3.44868 | 0.0221796 | 0.0853488 | 0.000457943 | 3(Loss) | true |
+| Glaze | 1064.14 | 0.153034 | 5372.3ms | 461466 | 160 | 6.40875e+07 | 413561 | 0.00531031 | 4.74634 | 20.1525 | 3.94161 | 0.024413 | 0.0322765 | 6.41299e-05 | 4(Loss) | true |
+| simdjson (ondemand) | 977.784 | 0.0844196 | 5828.21ms | 461466 | 640 | 9.23975e+07 | 450088 | 0.0679617 | 5.14019 | 20.2893 | 3.60155 | 0.0119902 | 0.089572 | 0.000431671 | 5(Loss) | true |

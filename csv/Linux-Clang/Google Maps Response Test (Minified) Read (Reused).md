@@ -1,0 +1,13 @@
+
+----
+### Google Maps Response Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Google%20Maps%20Response%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Google%20Maps%20Response%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Google%20Maps%20Response%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 2812.61 | 0.0847976 | 1191.51ms | 11812 | 40 | 461.374 | 4005.1 | 0.083158 | 1.81688 | 9.06231 | 1.53242 | 0.00313241 | 5.07958e-05 | 0 | 1(Win) | true |
+| Jsonifier (two-stage) | 2047.69 | 0.197342 | 1350.79ms | 11812 | 1280 | 150857 | 5501.22 | 0.210452 | 2.48764 | 12.5033 | 2.07653 | 0.00423622 | 2.96309e-05 | 1.14423e-05 | 2(Loss) | true |
+| Glaze | 2021.09 | 0.0754211 | 1354.06ms | 11812 | 2560 | 45237.7 | 5573.62 | 0.0624764 | 2.51919 | 12.6057 | 2.41246 | 0.00121477 | 2.94655e-05 | 1.00864e-05 | 3(Loss) | true |
+| simdjson (ondemand) | 1129.48 | 0.0774629 | 1797.44ms | 11812 | 4890 | 291870 | 9973.47 | 0.0741534 | 4.49311 | 19.6587 | 3.21834 | 0.00735156 | 4.31262e-05 | 1.8594e-05 | 4(Loss) | true |

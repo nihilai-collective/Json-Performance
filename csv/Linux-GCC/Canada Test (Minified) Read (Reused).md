@@ -1,0 +1,14 @@
+
+----
+### Canada Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Canada%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Canada%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Canada%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1460.13 | 0.161234 | 5759.78ms | 2251027 | 30 | 1.68583e+08 | 1.47024e+06 | 0.169507 | 3.45632 | 19.0389 | 3.66309 | 0.00689996 | 0.0416081 | 0.000136219 | 1(Win) | true |
+| Jsonifier (two-stage) | 1191.39 | 0.328924 | 6817.5ms | 2251027 | 160 | 5.62035e+09 | 1.80188e+06 | 0.00140962 | 4.1649 | 21.544 | 3.91993 | 0.00986941 | 0.0786829 | 0.000251863 | 2(Loss) | true |
+| Glaze | 1042.38 | 0.153681 | 7581.05ms | 2251027 | 40 | 4.00689e+08 | 2.05946e+06 | 0.0993467 | 4.79971 | 25.3559 | 4.46529 | 0.00884341 | 0.0392385 | 0.00152227 | 3(Loss) | true |
+| simdjson (reflection) | 962.445 | 0.2136 | 8133.55ms | 2251027 | 40 | 9.07967e+08 | 2.23051e+06 | 0.0544283 | 5.19826 | 24.8459 | 4.27487 | 0.00912756 | 0.0773351 | 0.00121191 | 4(Loss) | true |
+| simdjson (ondemand) | 902.673 | 0.301486 | 8640.7ms | 2251027 | 160 | 8.22537e+09 | 2.37821e+06 | 0.781616 | 5.54661 | 25.8226 | 4.70772 | 0.0110298 | 0.0759939 | 0.000523769 | 5(Loss) | true |

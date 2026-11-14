@@ -1,0 +1,11 @@
+
+----
+### Instruments Test (Prettified) Write Results [(View the data used in the following test)](./json/Instruments%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Instruments%20Test%20%28Prettified%29%20Write_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Instruments%20Test%20%28Prettified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 20240.9 | 0.0513548 | 1750.66ms | 213963 | 4890 | 131065 | 10081.1 | 0.05229 | 0.250874 | 1.119 | 0.27523 | 0.00019114 | 8.03227e-06 | 4.95088e-06 | 1(Win) | true |
+| Glaze | 4952.49 | 0.0511315 | 4869.97ms | 213963 | 4890 | 2.17028e+06 | 41201.7 | 0.120057 | 1.01923 | 3.64005 | 0.598024 | 0.000659208 | 7.74726e-05 | 2.49771e-05 | 2(Loss) | true |

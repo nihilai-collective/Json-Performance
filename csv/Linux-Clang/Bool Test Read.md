@@ -1,0 +1,13 @@
+
+----
+### Bool Test Read Results [(View the data used in the following test)](./json/Bool%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Bool%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Bool%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1989.91 | 0.240554 | 777.086ms | 905 | 2560 | 2786.72 | 433.725 | 0.438358 | 2.80708 | 13.5039 | 2.2895 | 0.00114166 | 0.000126036 | 4.14365e-05 | 1(Win) | true |
+| Glaze | 1598.31 | 0.221955 | 800.695ms | 905 | 320 | 459.68 | 539.994 | 0.00115741 | 3.45395 | 17.5934 | 2.2895 | 0.00115677 | 0.000103591 | 6.90608e-06 | 2(Loss) | true |
+| Jsonifier (two-stage) | 623.766 | 0.105762 | 871.69ms | 905 | 4890 | 10471.9 | 1383.65 | 0.571164 | 8.3596 | 42.2243 | 5.0663 | 0.00117841 | 0.000188455 | 6.10107e-05 | 3(Loss) | true |
+| simdjson (ondemand) | 290.279 | 0.199401 | 1042.92ms | 905 | 160 | 5623.92 | 2973.26 | 0.276554 | 17.9877 | 88.9459 | 9.47735 | 0.0211533 | 0.000200276 | 0.000103591 | 4(Loss) | true |

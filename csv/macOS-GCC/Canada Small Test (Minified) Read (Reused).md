@@ -1,0 +1,14 @@
+
+----
+### Canada Small Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Canada%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Canada%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Canada%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1001.34 | 1.85329 | 607.776ms | 4630 | 40 | 267143 | 4409.6 | 0.433526 | 1(Win) | true |
+| Jsonifier (two-stage) | 800.84 | 1.0511 | 714.968ms | 4630 | 80 | 268687 | 5513.6 | 0.173812 | 2(Loss) | true |
+| simdjson (reflection) | 670.175 | 0.300932 | 775.246ms | 4630 | 1280 | 503191 | 6588.6 | 0.887538 | 3(Loss) | true |
+| Glaze | 596.132 | 1.31461 | 929.36ms | 4630 | 30 | 284441 | 7406.93 | 0.686499 | 4(Loss) | true |
+| simdjson (ondemand) | 525.156 | 0.467236 | 993.31ms | 4630 | 160 | 246932 | 8408 | 0.095057 | 5(Loss) | true |

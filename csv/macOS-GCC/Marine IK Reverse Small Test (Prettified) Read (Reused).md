@@ -1,0 +1,14 @@
+
+----
+### Marine IK Reverse Small Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Marine%20IK%20Reverse%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Marine%20IK%20Reverse%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Marine%20IK%20Reverse%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier (two-stage) | 2111.38 | 0.216989 | 958.449ms | 18245 | 4890 | 1.56364e+06 | 8240.95 | 0.0455115 | 1(Win) | true |
+| Jsonifier | 2008.1 | 0.313036 | 1012.67ms | 18245 | 640 | 470853 | 8664.8 | 0.12017 | 2(Loss) | true |
+| simdjson (reflection) | 1908.65 | 0.253261 | 1060.7ms | 18245 | 2560 | 1.36462e+06 | 9116.3 | 1.10542 | 3(Loss) | true |
+| simdjson (ondemand) | 1491.61 | 0.749102 | 1358.06ms | 18245 | 30 | 229075 | 11665.1 | 0.29347 | 4(Loss) | true |
+| Glaze | 1434.58 | 0.126074 | 1361.56ms | 18245 | 1280 | 299292 | 12128.8 | 0.337525 | 5(Loss) | true |

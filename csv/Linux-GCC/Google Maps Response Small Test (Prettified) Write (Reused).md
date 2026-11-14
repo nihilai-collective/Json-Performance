@@ -1,0 +1,12 @@
+
+----
+### Google Maps Response Small Test (Prettified) Write (Reused) Results [(View the data used in the following test)](./json/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 29838.9 | 0.485576 | 759.728ms | 11521 | 4890 | 15632.9 | 368.22 | 0.301745 | 0.190213 | 0.693256 | 0.0993838 | 8.7366e-05 | 1.83536e-05 | 9.60281e-06 | 1(Win) | true |
+| Glaze | 7120.35 | 0.0985005 | 875.072ms | 11521 | 4890 | 11297 | 1543.08 | 0.194583 | 0.736993 | 3.64795 | 0.607847 | 0.000255832 | 2.44419e-05 | 1.28511e-05 | 2(Loss) | true |
+| simdjson (reflection) | 518.508 | 0.163961 | 2856.38ms | 11521 | 2560 | 3.09024e+06 | 21190.2 | 0.0540089 | 9.77634 | 38.0693 | 7.00504 | 0.011036 | 0.000116025 | 7.37444e-05 | 3(Loss) | true |

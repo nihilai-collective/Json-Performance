@@ -1,0 +1,11 @@
+
+----
+### Marine IK Small Test (Minified) Write (Reused) Results [(View the data used in the following test)](./json/Marine%20IK%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Marine%20IK%20Small%20Test%20%28Minified%29%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Marine%20IK%20Small%20Test%20%28Minified%29%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1569.87 | 0.149652 | 1014.03ms | 4604 | 30 | 525.568 | 2796.87 | 0.0620125 | 3.26971 | 9.31429 | 0.631625 | 0.000521286 | 4.34405e-05 | 1.44802e-05 | 1(Win) | true |
+| Glaze | 832.108 | 0.0839521 | 1265.35ms | 4604 | 2560 | 50235.9 | 5276.62 | 0.101909 | 6.11899 | 12.437 | 0.970896 | 0.00103154 | 8.72204e-05 | 2.60473e-05 | 2(Loss) | true |

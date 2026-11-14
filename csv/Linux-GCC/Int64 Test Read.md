@@ -1,0 +1,13 @@
+
+----
+### Int64 Test Read Results [(View the data used in the following test)](./json/Int64%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Int64%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Int64%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 3399.28 | 0.051212 | 826.6ms | 3862 | 4890 | 1505.57 | 1083.49 | 0.0815043 | 1.56845 | 7.20119 | 0.899016 | 0.000260363 | 6.97372e-05 | 3.19298e-05 | 1(Win) | true |
+| Glaze | 1777.49 | 0.109007 | 926.458ms | 3862 | 40 | 204.071 | 2072.07 | 0.0889594 | 2.95449 | 14.6657 | 1.82108 | 0.000297773 | 4.53133e-05 | 0 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1633.36 | 0.159633 | 944.706ms | 3862 | 80 | 1036.56 | 2254.91 | 0.0338036 | 3.21034 | 14.8019 | 1.67582 | 0.000278353 | 1.61833e-05 | 3.23666e-06 | 3(Loss) | true |
+| simdjson (ondemand) | 726.33 | 0.0362463 | 1226.37ms | 3862 | 4890 | 16519.4 | 5070.82 | 0.00990436 | 7.10111 | 32.3825 | 3.56526 | 0.000651304 | 7.36556e-05 | 2.86468e-05 | 4(Loss) | true |

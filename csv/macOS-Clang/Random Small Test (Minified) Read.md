@@ -1,0 +1,13 @@
+
+----
+### Random Small Test (Minified) Read Results [(View the data used in the following test)](./json/Random%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Random%20Small%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Random%20Small%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1499.82 | 0.0541605 | 331.858ms | 5094 | 160 | 492.406 | 3239.06 | 0.0811691 | 1(Win) | true |
+| Jsonifier (two-stage) | 1097.84 | 0.157331 | 445.833ms | 5094 | 4890 | 237016 | 4425.06 | 0.0437375 | 2(Loss) | true |
+| Glaze | 905.208 | 0.132121 | 541.971ms | 5094 | 1280 | 64353.5 | 5366.74 | 0.177681 | 3(Loss) | true |
+| simdjson (ondemand) | 670.866 | 0.0916018 | 731.012ms | 5094 | 4890 | 215161 | 7241.41 | 0.114006 | 4(Loss) | true |

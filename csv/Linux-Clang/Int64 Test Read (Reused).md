@@ -1,0 +1,13 @@
+
+----
+### Int64 Test Read (Reused) Results [(View the data used in the following test)](./json/Int64%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Int64%20Test%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Int64%20Test%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 3473.71 | 0.114719 | 841.474ms | 3862 | 40 | 59.1788 | 1060.28 | 0.0668512 | 1.51236 | 8.13827 | 0.92232 | 0.000265407 | 2.58933e-05 | 0 | 1(Win) | true |
+| Jsonifier (two-stage) | 1778.48 | 0.100866 | 948.548ms | 3862 | 40 | 174.533 | 2070.93 | 0.134985 | 2.95293 | 13.9612 | 1.62765 | 0.000783273 | 2.58933e-05 | 0 | 2(Loss) | true |
+| Glaze | 1756.81 | 0.301847 | 942.315ms | 3862 | 320 | 12814.5 | 2096.47 | 0.169046 | 2.96789 | 15.2165 | 1.88011 | 0.00230693 | 2.34658e-05 | 7.2825e-06 | 3(Loss) | true |
+| simdjson (ondemand) | 792.962 | 0.115889 | 1203.4ms | 3862 | 4890 | 141683 | 4644.72 | 0.00847139 | 6.45752 | 27.7962 | 3.39203 | 0.0160111 | 6.29065e-05 | 1.58855e-05 | 4(Loss) | true |

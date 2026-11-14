@@ -1,0 +1,13 @@
+
+----
+### Marine IK Reverse Test (Prettified) Read Results [(View the data used in the following test)](./json/Marine%20IK%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Marine%20IK%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Marine%20IK%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2531.92 | 0.360472 | 8707.33ms | 7351818 | 160 | 1.59423e+10 | 2.76914e+06 | 0.377712 | 1.98442 | 8.69475 | 1.60943 | 0.00994309 | 0.0608119 | 0.00102725 | 1(Win) | true |
+| Jsonifier | 2462.57 | 0.155278 | 8877.81ms | 7351818 | 40 | 7.8179e+08 | 2.84712e+06 | 0.130256 | 2.04205 | 9.56894 | 2.21009 | 0.00677754 | 0.0337493 | 0.000790186 | 2(Loss) | true |
+| simdjson (ondemand) STATISTICAL TIE | 2078.42 | 0.699764 | 5037.09ms | 7351818 | 30 | 1.67166e+10 | 3.37335e+06 | 0.140303 | 2.4227 | 10.2109 | 1.61272 | 0.0110423 | 0.0608957 | 0.00136052 | 3(Tie) | true |
+| Glaze STATISTICAL TIE | 2063.49 | 0.122122 | 5133.64ms | 7351818 | 40 | 6.88707e+08 | 3.39777e+06 | 0.551852 | 2.43097 | 11.0334 | 2.24384 | 0.00986429 | 0.0331853 | 0.000848008 | 3(Tie) | true |

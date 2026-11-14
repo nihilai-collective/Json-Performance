@@ -1,0 +1,12 @@
+
+----
+### Minify Test Write (Reused) Results [(View the data used in the following test)](./json/Minify%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Minify%20Test%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Minify%20Test%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 3720.94 | 0.051082 | 6483.56ms | 466906 | 2560 | 9.56597e+06 | 119668 | 0.0322525 | 1.34395 | 6.67669 | 0.888018 | 0.00190439 | 0.000573571 | 7.45181e-06 | 1(Win) | true |
+| Glaze | 2658.8 | 0.033515 | 8946.25ms | 466906 | 2560 | 8.06507e+06 | 167473 | 0.0973602 | 1.89457 | 7.74607 | 1.47668 | 0.00239246 | 0.000619661 | 2.45608e-05 | 2(Loss) | true |
+| simdjson (ondemand) | 1736.87 | 0.0641787 | 6752.25ms | 466906 | 1280 | 3.46511e+07 | 256367 | 0.0879041 | 2.88743 | 12.571 | 1.66789 | 0.00386556 | 0.101424 | 3.28342e-05 | 3(Loss) | true |

@@ -1,0 +1,13 @@
+
+----
+### Google Maps Response Small Test (Prettified) Read Results [(View the data used in the following test)](./json/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 2779.83 | 0.0820256 | 327.555ms | 9378 | 80 | 557.149 | 3217.3 | 0.0552009 | 1(Win) | true |
+| Jsonifier (two-stage) | 2242.09 | 0.111344 | 406.822ms | 9378 | 30 | 591.789 | 3988.93 | 0.000835638 | 2(Loss) | true |
+| Glaze | 1678.45 | 0.228292 | 542.971ms | 9378 | 640 | 94703 | 5328.45 | 0.00155413 | 3(Loss) | true |
+| simdjson (ondemand) | 1605.95 | 0.0927024 | 562.833ms | 9378 | 2560 | 68230.7 | 5569.02 | 0.0403367 | 4(Loss) | true |

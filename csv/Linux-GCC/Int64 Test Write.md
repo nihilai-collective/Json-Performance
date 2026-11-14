@@ -1,0 +1,12 @@
+
+----
+### Int64 Test Write Results [(View the data used in the following test)](./json/Int64%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Int64%20Test%20Write_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Int64%20Test%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 969.402 | 0.0450861 | 1101.76ms | 3862 | 4890 | 14348.7 | 3799.34 | 0.113498 | 5.35852 | 26.1261 | 5.37002 | 0.00753337 | 7.75741e-05 | 2.85409e-05 | 1(Win) | true |
+| simdjson (reflection) | 962.89 | 0.0304445 | 1096.03ms | 3862 | 320 | 433.948 | 3825.04 | 0.100918 | 5.30769 | 27.1207 | 5.31409 | 0.00771702 | 2.75117e-05 | 0 | 2(Loss) | true |
+| Glaze | 940.455 | 0.0434313 | 1112.1ms | 3862 | 1280 | 3703.09 | 3916.28 | 0.0361341 | 5.49554 | 28.6515 | 5.68799 | 0.00696025 | 0.000115913 | 6.41264e-05 | 3(Loss) | true |
