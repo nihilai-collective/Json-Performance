@@ -1,0 +1,11 @@
+
+----
+### Apache Builds Sparse Test (Minified) Read Results [(View the data used in the following test)](./json/Apache%20Builds%20Sparse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Apache%20Builds%20Sparse%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Apache%20Builds%20Sparse%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2489.68 | 0.0491128 | 4349.01ms | 94653 | 640 | 202933 | 36257 | 0.0858106 | 2.04361 | 9.39126 | 1.80364 | 0.00477232 | 4.80373e-06 | 7.92368e-07 | 1(Win) | true |
+| simdjson (ondemand) | 1893.09 | 0.0238883 | 5491.7ms | 94653 | 2560 | 332152 | 47682.9 | 0.0358589 | 2.70365 | 10.9659 | 1.93883 | 0.00750467 | 5.88498e-06 | 2.1625e-06 | 2(Loss) | true |

@@ -1,0 +1,11 @@
+
+----
+### Random Test (Minified) Read Results [(View the data used in the following test)](./json/Random%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Random%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Random%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1235.37 | 0.183092 | 8303.43ms | 409725 | 30 | 1.00612e+07 | 316296 | 0.00993893 | 4.14443 | 18.6315 | 3.68698 | 0.0104689 | 0.0157703 | 3.16472e-05 | 1(Win) | true |
+| simdjson (ondemand) | 969.839 | 0.0935724 | 5219.25ms | 409725 | 160 | 2.27406e+07 | 402896 | 0.10786 | 5.24375 | 21.0938 | 3.77434 | 0.0168974 | 0.0281846 | 9.84654e-05 | 2(Loss) | true |

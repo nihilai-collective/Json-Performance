@@ -1,0 +1,11 @@
+
+----
+### Random Stream Reverse Test (Comma-Separated) Read Results [(View the data used in the following test)](./json/Random%20Stream%20Reverse%20Test%20%28Comma-Separated%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Random%20Stream%20Reverse%20Test%20%28Comma-Separated%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Random%20Stream%20Reverse%20Test%20%28Comma-Separated%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 857.622 | 0.0787108 | 8301.64ms | 4506446 | 80 | 1.24462e+09 | 5.01116e+06 | 0.385352 | 5.91736 | 26.7357 | 5.4338 | 0.0129768 | 0.0817192 | 0.0128213 | 1(Win) | true |
+| simdjson (ondemand) | 461.31 | 0.190872 | 6863.85ms | 4506446 | 30 | 9.48605e+09 | 9.31625e+06 | 0.0370731 | 11.0516 | 47.3555 | 8.50232 | 0.0325121 | 0.0865437 | 0.0135259 | 2(Loss) | true |

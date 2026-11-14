@@ -1,0 +1,11 @@
+
+----
+### Google Maps Response Stream Test (NDJSON) Read Results [(View the data used in the following test)](./json/Google%20Maps%20Response%20Stream%20Test%20%28NDJSON%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Google%20Maps%20Response%20Stream%20Test%20%28NDJSON%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Google%20Maps%20Response%20Stream%20Test%20%28NDJSON%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1266.02 | 0.0972621 | 5034.53ms | 4203059 | 30 | 2.84487e+08 | 3.16611e+06 | 0.141629 | 4.04272 | 17.8425 | 3.41847 | 0.0147793 | 0.0893615 | 0.000597549 | 1(Win) | true |
+| simdjson (ondemand) | 976.094 | 0.143803 | 6452.98ms | 4203059 | 30 | 1.04618e+09 | 4.10652e+06 | 0.174645 | 5.20691 | 20.3934 | 3.53675 | 0.0261833 | 0.0883497 | 0.00261513 | 2(Loss) | true |

@@ -1,0 +1,8 @@
+# Apache Builds Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-43-generic
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+Jsonifier (generic),1563.79,0.0978468,9776.17ms,4212000,40,2.5268e+08,2.56867e+06,0.071905,3.23642,15.2579,2.94039,0.0120455,0.0663078,0.00142923,Win,true
+simdjson (ondemand),1311.59,0.0945861,5461.94ms,4212000,80,6.7131e+08,3.06259e+06,0.198649,3.87128,16.6363,2.89734,0.0102263,0.0662761,0.0031137,Loss,true

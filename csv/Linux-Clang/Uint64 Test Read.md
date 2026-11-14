@@ -1,0 +1,11 @@
+
+----
+### Uint64 Test Read Results [(View the data used in the following test)](./json/Uint64%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Uint64%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Uint64%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1542.87 | 0.0613078 | 954.134ms | 3873 | 2560 | 5514.52 | 2393.97 | 0.041526 | 3.39222 | 17.0648 | 2.1149 | 0.0006579 | 4.04443e-05 | 4.94207e-06 | 1(Win) | true |
+| simdjson (ondemand) | 729.053 | 0.0660507 | 1221.05ms | 3873 | 320 | 3583.29 | 5066.27 | 0.0398628 | 7.12014 | 27.912 | 3.56649 | 0.0163149 | 5.4867e-05 | 5.64808e-06 | 2(Loss) | true |

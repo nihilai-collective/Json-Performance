@@ -1,0 +1,11 @@
+
+----
+### Double Test Read Results [(View the data used in the following test)](./json/Double%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Double%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Double%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 687.783 | 0.0678129 | 966.241ms | 1811 | 2560 | 7423.33 | 2511.12 | 0.172512 | 7.60376 | 38.9752 | 6.36555 | 0.00074566 | 9.46904e-05 | 9.70631e-06 | 1(Win) | true |
+| simdjson (ondemand) | 367.904 | 0.0772899 | 1193.94ms | 1811 | 640 | 8425.45 | 4694.44 | 0.0300465 | 14.1091 | 71.1706 | 9.25014 | 0.000588418 | 6.98854e-05 | 3.45113e-06 | 2(Loss) | true |

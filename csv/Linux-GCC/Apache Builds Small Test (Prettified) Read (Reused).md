@@ -1,0 +1,11 @@
+
+----
+### Apache Builds Small Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Apache%20Builds%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Apache%20Builds%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Apache%20Builds%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 3004.01 | 0.18691 | 835.107ms | 3370 | 1280 | 5118.35 | 1069.86 | 0.0585991 | 1.77646 | 7.4911 | 1.22048 | 0.00060089 | 3.24555e-05 | 2.08642e-06 | 1(Win) | true |
+| simdjson (ondemand) | 2290.65 | 0.0577563 | 867.363ms | 3370 | 2560 | 1681.05 | 1403.04 | 0.0388234 | 2.3026 | 8.03323 | 1.36469 | 0.0015414 | 3.4426e-05 | 7.07066e-06 | 2(Loss) | true |

@@ -1,0 +1,11 @@
+
+----
+### Canada Small Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Canada%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Canada%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Canada%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| simdjson (ondemand) | 2253.95 | 0.0458121 | 1309.09ms | 11579 | 320 | 1612 | 4899.22 | 0.0915524 | 2.30551 | 11.5071 | 1.91165 | 0.000584571 | 1.45738e-05 | 2.42897e-06 | 1(Win) | true |
+| Jsonifier (generic) | 1856 | 0.107122 | 1419.48ms | 11579 | 320 | 12998.5 | 5949.68 | 0.0727459 | 2.79142 | 11.8126 | 2.2046 | 0.00354737 | 2.15908e-05 | 4.31816e-06 | 2(Loss) | true |

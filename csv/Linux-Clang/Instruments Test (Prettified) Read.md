@@ -1,0 +1,11 @@
+
+----
+### Instruments Test (Prettified) Read Results [(View the data used in the following test)](./json/Instruments%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Instruments%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Instruments%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2386.72 | 0.0209871 | 8074.08ms | 183677 | 4890 | 1.16017e+06 | 73392.9 | 0.0276464 | 2.14199 | 9.5816 | 1.82734 | 0.00243788 | 9.97906e-06 | 4.67278e-06 | 1(Win) | true |
+| simdjson (ondemand) | 2312.77 | 0.0460388 | 8296.96ms | 183677 | 4890 | 5.94567e+06 | 75739.5 | 0.0673633 | 2.19518 | 10.3195 | 1.50024 | 0.00403934 | 7.85588e-06 | 3.03168e-06 | 2(Loss) | true |

@@ -1,0 +1,11 @@
+
+----
+### Github Events Small Sparse Reverse Test (Prettified) Read Results [(View the data used in the following test)](./json/Github%20Events%20Small%20Sparse%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Github%20Events%20Small%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Github%20Events%20Small%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 3656.63 | 0.0601088 | 766.738ms | 2158 | 2560 | 292.993 | 562.821 | 0.153703 | 1.50552 | 5.79564 | 0.988415 | 0.000656894 | 2.8238e-05 | 5.43038e-06 | 1(Win) | true |
+| simdjson (ondemand) | 3189.47 | 0.117362 | 776.074ms | 2158 | 2560 | 1468.11 | 645.258 | 0.110968 | 1.72896 | 7.02688 | 1.13021 | 0.000935835 | 5.01405e-05 | 1.97304e-05 | 2(Loss) | true |

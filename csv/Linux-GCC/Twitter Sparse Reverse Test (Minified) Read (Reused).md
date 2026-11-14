@@ -1,0 +1,11 @@
+
+----
+### Twitter Sparse Reverse Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Twitter%20Sparse%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Sparse%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Sparse%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 4837.37 | 0.0366528 | 5987.62ms | 264040 | 2560 | 931914 | 52054.7 | 0.169137 | 1.05383 | 5.24523 | 0.856219 | 0.00215152 | 5.175e-06 | 3.27839e-06 | 1(Win) | true |
+| simdjson (ondemand) | 4053.87 | 0.137411 | 6989.69ms | 264040 | 320 | 2.33128e+06 | 62115.4 | 0.0384117 | 1.2484 | 6.25726 | 0.93291 | 0.00212744 | 5.88216e-06 | 4.09502e-06 | 2(Loss) | true |

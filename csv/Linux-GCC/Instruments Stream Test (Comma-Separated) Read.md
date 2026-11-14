@@ -1,0 +1,11 @@
+
+----
+### Instruments Stream Test (Comma-Separated) Read Results [(View the data used in the following test)](./json/Instruments%20Stream%20Test%20%28Comma-Separated%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Instruments%20Stream%20Test%20%28Comma-Separated%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Instruments%20Stream%20Test%20%28Comma-Separated%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1543.55 | 0.129233 | 8363.56ms | 4197495 | 80 | 8.98629e+08 | 2.5934e+06 | 0.150204 | 3.27825 | 16.6021 | 3.38162 | 0.000754852 | 0.0841228 | 0.000430364 | 1(Win) | true |
+| simdjson (ondemand) | 1033.49 | 0.0629864 | 5903.7ms | 4197495 | 40 | 2.38081e+08 | 3.87334e+06 | 2.13527 | 4.90299 | 22.1979 | 4.47248 | 0.0115474 | 0.102927 | 0.000895165 | 2(Loss) | true |

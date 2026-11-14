@@ -1,0 +1,11 @@
+
+----
+### Twitter Reverse Test (Prettified) Read Results [(View the data used in the following test)](./json/Twitter%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 851.776 | 0.0798126 | 5230.71ms | 360584 | 640 | 6.64485e+07 | 403721 | 0.0652489 | 5.93 | 22.0427 | 4.19662 | 0.0156637 | 0.00502096 | 8.2453e-05 | 1(Win) | true |
+| simdjson (ondemand) | 444.78 | 0.0738982 | 9898.49ms | 360584 | 640 | 2.08916e+08 | 773146 | 0.144005 | 11.3552 | 46.8803 | 9.45609 | 0.052548 | 0.00216866 | 9.83171e-05 | 2(Loss) | true |

@@ -1,0 +1,11 @@
+
+----
+### Instruments Small Reverse Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Instruments%20Small%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Instruments%20Small%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Instruments%20Small%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 577.323 | 0.023469 | 1498.49ms | 4669 | 4890 | 16021.7 | 7712.67 | 0.277307 | 8.95956 | 38.2973 | 7.63418 | 0.0105792 | 3.44263e-05 | 5.38732e-06 | 1(Win) | true |
+| simdjson (ondemand) | 250.166 | 0.0150789 | 2505.14ms | 4669 | 4890 | 35224.1 | 17799 | 0.211596 | 20.6262 | 94.0542 | 19.227 | 0.0509337 | 4.23539e-05 | 8.05907e-06 | 2(Loss) | true |

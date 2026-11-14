@@ -1,0 +1,11 @@
+
+----
+### Discord Small Sparse Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Discord%20Small%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Discord%20Small%20Sparse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Discord%20Small%20Sparse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 5586.94 | 0.0338761 | 833.937ms | 6701 | 4890 | 734.22 | 1143.84 | 0.242756 | 0.953703 | 4.08894 | 0.550216 | 0.000317903 | 1.62964e-05 | 1.52588e-06 | 1(Win) | true |
+| simdjson (ondemand) | 5216.26 | 0.0288565 | 842.142ms | 6701 | 1280 | 159.977 | 1225.13 | 0.128276 | 1.02026 | 4.3598 | 0.534249 | 0.000858431 | 1.52729e-05 | 3.49761e-07 | 2(Loss) | true |

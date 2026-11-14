@@ -1,0 +1,8 @@
+# Instruments Stream Test (NDJSON) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Linux-7.0.0-43-generic
+#**Compiler:** GCC-16.2.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Instructions/Byte,Branches/Byte,Branch Misses/Byte,Cache References/Byte,Cache Misses/Byte,Position,Converged
+Jsonifier (generic),1717,0.104815,7566.68ms,4197496,40,2.38863e+08,2.33141e+06,0.00873214,2.95402,14.6093,2.88738,0.000503336,0.0817154,0.000627261,Win,true
+simdjson (ondemand),1560.56,0.193655,8219.58ms,4197496,80,1.9741e+09,2.56514e+06,0.400992,3.23227,16.5063,2.69504,0.00343208,0.0808823,0.000344086,Loss,true
