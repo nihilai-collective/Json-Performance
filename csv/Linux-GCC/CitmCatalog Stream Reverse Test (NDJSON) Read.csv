@@ -1,0 +1,8 @@
+# CitmCatalog Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),817.215,0.278215,8287.23ms,4525120,80,1.72679e+10,5.28073e+06,1.69291,3.02957,Win,true
+simdjson (ondemand),563.447,0.276442,5496.47ms,4525120,40,1.79318e+10,7.65909e+06,1.89871,4.39405,Loss,true

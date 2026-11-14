@@ -1,0 +1,8 @@
+# Large Amazon Cellphones Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),3422.79,0.160459,9352.09ms,10548466,30,6.6722e+08,2.93906e+06,1.39328,0.723325,Win,true
+simdjson (ondemand),2978.72,0.0899509,5241.38ms,10548466,30,2.76855e+08,3.37722e+06,0.757372,0.831153,Loss,true

@@ -1,0 +1,8 @@
+# Apache Builds Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1359.6,0.0721784,5355.55ms,4212000,80,3.63798e+08,2.95446e+06,0.46711,1.82097,Tie,true
+simdjson (ondemand),1304.07,2.40423,5387.6ms,4212000,30,1.64532e+11,3.08027e+06,5.84225,1.89851,Tie,false

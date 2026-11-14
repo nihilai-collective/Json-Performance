@@ -1,0 +1,8 @@
+# Stream Formats Small Test (Comma-Separated) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),3968.87,0.297015,5844.33ms,16002591,30,3.91313e+09,3.84525e+06,2.36168,0.623804,Win,true
+simdjson (ondemand),2121.61,0.193201,5099.46ms,16002591,40,7.72552e+09,7.19324e+06,0.383893,1.16694,Loss,true

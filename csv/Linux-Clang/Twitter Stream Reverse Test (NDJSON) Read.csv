@@ -1,0 +1,8 @@
+# Twitter Stream Reverse Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),679.385,0.191696,9498.93ms,4219120,30,3.86687e+09,5.92251e+06,0.545028,3.64415,Win,true
+simdjson (ondemand),257.772,0.218647,11312.6ms,4219120,30,3.49448e+10,1.56094e+07,0.986565,9.6046,Loss,true

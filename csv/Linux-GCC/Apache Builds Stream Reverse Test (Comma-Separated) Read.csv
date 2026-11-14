@@ -1,0 +1,8 @@
+# Apache Builds Stream Reverse Test (Comma-Separated) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1363.71,0.153923,5219.67ms,4211999,40,8.22245e+08,2.94556e+06,0.363053,1.81549,Win,true
+simdjson (ondemand),1277.86,0.0909343,5661.2ms,4211999,40,3.26834e+08,3.14344e+06,0.0530093,1.93745,Loss,true

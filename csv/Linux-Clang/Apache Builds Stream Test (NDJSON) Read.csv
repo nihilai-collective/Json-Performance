@@ -1,0 +1,8 @@
+# Apache Builds Stream Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1779.84,0.182094,9022.14ms,4212000,30,5.0667e+08,2.25687e+06,0.0592068,1.39099,Win,true
+simdjson (ondemand),1464.45,0.0956628,5012.08ms,4212000,30,2.06555e+08,2.74292e+06,1.10173,1.69059,Loss,true
