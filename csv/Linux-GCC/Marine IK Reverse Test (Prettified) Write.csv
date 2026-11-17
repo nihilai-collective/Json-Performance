@@ -1,0 +1,9 @@
+# Marine IK Reverse Test (Prettified) Write Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,6133,0.118615,5000.68ms,9930848,80,2.6841e+08,1.54423e+06,2.17439,0.403683,Win,true
+Glaze,3750.67,0.16846,8164.36ms,9930228,30,5.42767e+08,2.52493e+06,2.9951,0.660086,Loss,false
+simdjson (reflection),191.745,0.999288,14865ms,10018896,30,7.43866e+12,4.98306e+07,1.77372,12.912,Loss,true

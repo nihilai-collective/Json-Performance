@@ -1,0 +1,11 @@
+# Apache Builds Test (Prettified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+simdjson (reflection),2312.26,0.147323,6329.78ms,124597,640,3.6683e+06,51389.2,0.176058,1.07018,Win,true
+Jsonifier (two-stage),2209.57,0.0578477,6706.33ms,124597,2560,2.4775e+06,53777.5,0.161006,1.11995,Tie,true
+simdjson (ondemand),2209.44,0.164778,6618.52ms,124597,320,2.51305e+06,53780.6,0.128216,1.12002,Tie,true
+Jsonifier,2173.96,0.232508,6674.83ms,124597,160,2.58409e+06,54658.4,0.128497,1.13832,Loss,true
+Glaze,2038.98,0.13328,6986.75ms,124597,320,1.93049e+06,58276.6,0.0977655,1.21368,Loss,true

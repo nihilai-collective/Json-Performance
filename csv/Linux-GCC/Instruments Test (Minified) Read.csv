@@ -1,0 +1,11 @@
+# Instruments Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,3002.74,0.0700616,3435.67ms,108313,4890,2.84051e+06,34400.4,0.462701,0.823868,Win,true
+Jsonifier (two-stage),2392.29,0.101757,4281.72ms,108313,2560,4.94196e+06,43178.4,0.545565,1.03427,Loss,true
+Glaze,1700.64,0.193198,6197.12ms,108313,160,2.20324e+06,60739.2,0.277068,1.45518,Loss,true
+simdjson (reflection),1575.61,0.0876753,6558.62ms,108313,2560,8.45781e+06,65558.9,0.34158,1.57071,Loss,true
+simdjson (ondemand),1064.57,0.279582,5035.27ms,108313,640,4.7099e+07,97030,0.557991,2.32501,Loss,true

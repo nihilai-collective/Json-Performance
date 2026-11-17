@@ -1,0 +1,10 @@
+# Marine IK Small Test (Minified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.51.36260.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,660.631,0.133678,838.336ms,4604,80,6314.87,6646.25,0.0188111,3.73078,Win,true
+Jsonifier (two-stage),566.377,0.220739,916.543ms,4604,4890,1.43195e+06,7752.29,0.664891,4.35531,Loss,true
+simdjson (ondemand),196.668,0.102661,2429.74ms,4604,4890,2.56875e+06,22325.5,0.810843,12.5727,Loss,true
+Glaze,165.957,0.132694,2851.68ms,4604,2560,3.15521e+06,26457,0.0658931,14.9019,Loss,true

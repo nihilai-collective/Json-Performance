@@ -1,0 +1,13 @@
+
+----
+### String Test Read Results [(View the data used in the following test)](./json/String%20Test.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/String%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/String%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 864.171 | 0.23025 | 1080.07ms | 9578 | 40 | 23692.3 | 10570 | 0.188857 | 2.8521 | 1(Win) | true |
+| Glaze | 675.211 | 0.216702 | 1404.71ms | 9578 | 1280 | 1.10003e+06 | 13528 | 0.245988 | 3.65467 | 2(Loss) | true |
+| Jsonifier (two-stage) | 635.374 | 0.144963 | 1450.57ms | 9578 | 80 | 34745.3 | 14376.2 | 0.00869414 | 3.88526 | 3(Loss) | true |
+| simdjson (ondemand) | 518.437 | 0.188278 | 1805.74ms | 9578 | 1280 | 1.40854e+06 | 17618.9 | 1.57825 | 4.76204 | 4(Loss) | true |

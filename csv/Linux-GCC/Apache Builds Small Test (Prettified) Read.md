@@ -1,0 +1,14 @@
+
+----
+### Apache Builds Small Test (Prettified) Read Results [(View the data used in the following test)](./json/Apache%20Builds%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Apache%20Builds%20Small%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Apache%20Builds%20Small%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2608.21 | 0.0818174 | 127.826ms | 3370 | 160 | 162.625 | 1232.22 | 0.0929066 | 0.927973 | 1(Win) | true |
+| simdjson (reflection) | 2458.44 | 0.0580102 | 136.333ms | 3370 | 160 | 92.0175 | 1307.29 | 0.0573378 | 0.986638 | 2(Loss) | true |
+| simdjson (ondemand) | 2202.01 | 0.196912 | 150.531ms | 3370 | 80 | 660.784 | 1459.53 | 0.0925815 | 1.1043 | 3(Loss) | true |
+| Jsonifier | 2190.11 | 0.121999 | 153.624ms | 3370 | 40 | 128.203 | 1467.45 | 0.0420407 | 1.11133 | 4(Loss) | true |
+| Glaze | 2124.32 | 0.0992789 | 152.595ms | 3370 | 30 | 67.6793 | 1512.9 | 0.152257 | 1.14463 | 5(Loss) | true |

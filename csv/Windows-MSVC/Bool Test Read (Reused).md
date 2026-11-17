@@ -1,0 +1,13 @@
+
+----
+### Bool Test Read (Reused) Results [(View the data used in the following test)](./json/Bool%20Test.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Bool%20Test%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Bool%20Test%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 536.072 | 0.346016 | 174.021ms | 905 | 30 | 931.034 | 1610 | 0 | 4.53333 | 1(Win) | true |
+| Glaze | 507.318 | 0.0519143 | 181.945ms | 905 | 640 | 499.218 | 1701.25 | 0.274776 | 4.80144 | 2(Loss) | true |
+| Jsonifier (two-stage) | 164.909 | 0.197496 | 541.22ms | 905 | 4890 | 522437 | 5233.64 | 0.0401491 | 14.8975 | 3(Loss) | true |
+| simdjson (ondemand) | 66.944 | 0.0327139 | 1298.71ms | 905 | 40 | 711.538 | 12892.5 | 0.238587 | 36.8539 | 4(Loss) | true |
