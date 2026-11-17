@@ -1,0 +1,13 @@
+
+----
+### Twitter Small Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Twitter%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Twitter%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Twitter%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2084.76 | 0.103297 | 151.346ms | 2889 | 4890 | 9113.09 | 1321.57 | 0.205286 | 1.43719 | 1(Win) | true |
+| Glaze | 1815.59 | 0.140192 | 172.558ms | 2889 | 320 | 1448.28 | 1517.5 | 0.289137 | 1.65528 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1508.22 | 0.0708132 | 205.471ms | 2889 | 4890 | 8182.85 | 1826.77 | 0.0155786 | 1.99408 | 3(Loss) | true |
+| simdjson (ondemand) | 1426.16 | 0.136162 | 208.205ms | 2889 | 640 | 4428.4 | 1931.88 | 0.0323415 | 2.1094 | 4(Loss) | true |

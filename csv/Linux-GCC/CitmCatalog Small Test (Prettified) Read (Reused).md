@@ -1,0 +1,14 @@
+
+----
+### CitmCatalog Small Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/CitmCatalog%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/CitmCatalog%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/CitmCatalog%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2821.98 | 0.096079 | 945.488ms | 5839 | 4890 | 17576.6 | 1973.26 | 0.041684 | 1.84926 | 7.67066 | 1.13855 | 0.000653388 | 5.20091e-05 | 1.63907e-05 | 1(Win) | true |
+| simdjson (ondemand) | 2431.7 | 0.150162 | 976.628ms | 5839 | 320 | 3783.79 | 2289.96 | 0.00586766 | 2.15392 | 8.42764 | 1.32026 | 0.000872902 | 4.44211e-05 | 5.35194e-07 | 2(Loss) | true |
+| Jsonifier | 2408.87 | 0.0526327 | 983.267ms | 5839 | 160 | 236.854 | 2311.66 | 0.0264891 | 2.1365 | 8.03939 | 1.55335 | 0.000671134 | 2.24782e-05 | 0 | 3(Loss) | true |
+| simdjson (reflection) | 2273.47 | 0.124722 | 1000.74ms | 5839 | 640 | 5972.61 | 2449.34 | 0.0697406 | 2.28603 | 8.44434 | 1.2908 | 0.00090769 | 4.89703e-05 | 1.17743e-05 | 4(Loss) | true |
+| Glaze | 1997.4 | 0.22524 | 1036.12ms | 5839 | 320 | 12618 | 2787.88 | 0.096866 | 2.60667 | 10.3408 | 1.91985 | 0.00152744 | 5.45898e-05 | 3.74636e-05 | 5(Loss) | true |

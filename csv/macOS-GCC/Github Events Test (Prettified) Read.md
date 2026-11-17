@@ -1,0 +1,14 @@
+
+----
+### Github Events Test (Prettified) Read Results [(View the data used in the following test)](./json/Github%20Events%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Github%20Events%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Github%20Events%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1595.58 | 0.374016 | 4449.29ms | 65103 | 320 | 6.77794e+06 | 38912 | 2.1997 | 1(Win) | true |
+| Glaze | 1523.1 | 0.883884 | 4463.32ms | 65103 | 30 | 3.89457e+06 | 40763.7 | 0.644759 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1359.7 | 0.440955 | 4627.95ms | 65103 | 1280 | 5.18939e+07 | 45662.4 | 1.6795 | 3(Loss) | true |
+| simdjson (reflection) | 1213.99 | 0.345425 | 5113.54ms | 65103 | 1280 | 3.99471e+07 | 51142.8 | 3.2037 | 4(Loss) | true |
+| simdjson (ondemand) | 1130.93 | 0.216928 | 5900.1ms | 65103 | 640 | 9.07703e+06 | 54899.2 | 2.33961 | 5(Loss) | true |

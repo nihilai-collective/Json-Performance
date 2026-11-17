@@ -1,0 +1,13 @@
+
+----
+### Twitter Partial Small Test (Prettified) Read Results [(View the data used in the following test)](./json/Twitter%20Partial%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Twitter%20Partial%20Small%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Twitter%20Partial%20Small%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 5385.12 | 0.256091 | 70.1733ms | 3808 | 640 | 1908.84 | 674.375 | 0.0463607 | 0.550861 | 1(Win) | true |
+| Jsonifier (two-stage) | 5352 | 0.164536 | 70.0761ms | 3808 | 4890 | 6095.25 | 678.548 | 0.322439 | 0.553451 | 2(Loss) | true |
+| simdjson (ondemand) | 4603.1 | 0.184213 | 81.1077ms | 3808 | 2560 | 5407.25 | 788.945 | 0.143792 | 0.645135 | 3(Loss) | true |
+| Glaze | 3314.63 | 0.219354 | 112.918ms | 3808 | 160 | 924.135 | 1095.62 | 0.0570125 | 0.900556 | 4(Loss) | true |

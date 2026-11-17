@@ -1,0 +1,14 @@
+
+----
+### Marine IK Reverse Test (Prettified) Read Results [(View the data used in the following test)](./json/Marine%20IK%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Marine%20IK%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Marine%20IK%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier (two-stage) | 1773.8 | 0.232405 | 5905.21ms | 7351818 | 30 | 2.53158e+09 | 3.95267e+06 | 2.68618 | 1(Win) | true |
+| Jsonifier | 1705.24 | 0.465221 | 5999.01ms | 7351818 | 40 | 1.46352e+10 | 4.11158e+06 | 0.912572 | 2(Loss) | true |
+| simdjson (reflection) | 1657.03 | 0.436478 | 6490.08ms | 7351818 | 80 | 2.72863e+10 | 4.23121e+06 | 0.250683 | 3(Loss) | true |
+| simdjson (ondemand) DID NOT CONVERGE | 1433.15 | 0.473042 | 7415.78ms | 7351818 | 80 | 4.28448e+10 | 4.8922e+06 | 5.46499 | -(Loss) | false |
+| Glaze | 1342.52 | 1.37616 | 7707.26ms | 7351818 | 30 | 1.54956e+11 | 5.22243e+06 | 0.0527496 | 5(Loss) | true |

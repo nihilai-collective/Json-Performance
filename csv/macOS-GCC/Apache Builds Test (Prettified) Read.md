@@ -1,0 +1,14 @@
+
+----
+### Apache Builds Test (Prettified) Read Results [(View the data used in the following test)](./json/Apache%20Builds%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Apache%20Builds%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Apache%20Builds%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1216.29 | 0.357756 | 5168.38ms | 124597 | 1280 | 1.5636e+08 | 97694.8 | 0.69179 | 1(Win) | true |
+| Glaze | 1198.76 | 0.502957 | 5616.69ms | 124597 | 40 | 9.94198e+06 | 99123.2 | 0.445663 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1054.13 | 0.268302 | 5809.7ms | 124597 | 2560 | 2.34159e+08 | 112723 | 0.333695 | 3(Loss) | true |
+| simdjson (reflection) | 1006.77 | 0.355609 | 6043.28ms | 124597 | 1280 | 2.25483e+08 | 118026 | 0.712338 | 4(Loss) | true |
+| simdjson (ondemand) | 828.379 | 0.410805 | 7466.98ms | 124597 | 1280 | 4.44466e+08 | 143443 | 0.0714383 | 5(Loss) | true |

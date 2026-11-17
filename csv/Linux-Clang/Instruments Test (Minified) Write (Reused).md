@@ -1,0 +1,11 @@
+
+----
+### Instruments Test (Minified) Write (Reused) Results [(View the data used in the following test)](./json/Instruments%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Instruments%20Test%20%28Minified%29%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Instruments%20Test%20%28Minified%29%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 18581.7 | 0.0729144 | 1302ms | 108313 | 2560 | 42058.8 | 5558.98 | 0.102053 | 0.273624 | 1.2424 | 0.327145 | 0.00020569 | 7.83681e-06 | 4.46478e-06 | 1(Win) | true |
+| Glaze | 5298.11 | 0.116874 | 2700.88ms | 108313 | 2560 | 1.32922e+06 | 19496.6 | 0.124604 | 0.957266 | 3.21806 | 0.400866 | 0.000274934 | 8.45712e-06 | 4.6451e-06 | 2(Loss) | true |

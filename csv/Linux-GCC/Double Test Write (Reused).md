@@ -1,0 +1,12 @@
+
+----
+### Double Test Write (Reused) Results [(View the data used in the following test)](./json/Double%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Double%20Test%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Double%20Test%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 826.136 | 0.106651 | 932.536ms | 1811 | 2560 | 12726.4 | 2090.58 | 0.0655526 | 6.34771 | 20.2408 | 1.03424 | 0.000779524 | 5.13356e-05 | 1.72557e-06 | 1(Win) | true |
+| Glaze | 650.441 | 0.0797257 | 995.399ms | 1798 | 4890 | 21600.7 | 2636.22 | 0.0654311 | 8.0015 | 26.614 | 2.36263 | 0.000894086 | 8.39378e-05 | 1.46721e-05 | 2(Loss) | true |
+| simdjson (reflection) | 649.157 | 0.0496363 | 1032.67ms | 1997 | 2560 | 5428.68 | 2933.78 | 0.00644474 | 8.04124 | 25.2954 | 2.57787 | 0.000905069 | 0.000102693 | 5.06619e-05 | 3(Loss) | true |

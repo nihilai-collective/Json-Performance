@@ -1,0 +1,13 @@
+
+----
+### Double Test Read (Reused) Results [(View the data used in the following test)](./json/Double%20Test.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Double%20Test%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Double%20Test%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 902.354 | 0.342887 | 198.277ms | 1811 | 1280 | 55130.8 | 1914 | 0.045655 | 1(Win) | true |
+| Glaze | 873.6 | 0.212225 | 206.821ms | 1811 | 2560 | 45065.8 | 1977 | 0.00410994 | 2(Loss) | true |
+| Jsonifier (two-stage) | 334.753 | 1.21256 | 500.459ms | 1811 | 80 | 313102 | 5159.34 | 0.281943 | 3(Loss) | true |
+| simdjson (ondemand) | 206.895 | 0.195048 | 935.972ms | 1811 | 640 | 169667 | 8347.73 | 0.469329 | 4(Loss) | true |

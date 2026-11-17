@@ -1,0 +1,13 @@
+
+----
+### Double Test Read Results [(View the data used in the following test)](./json/Double%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Double%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Double%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1292.24 | 0.191909 | 878.669ms | 1811 | 320 | 2105.19 | 1336.52 | 0.0378639 | 4.10939 | 20.1242 | 4.12314 | 0.000607399 | 0.000141496 | 4.48647e-05 | 1(Win) | true |
+| Glaze | 920.488 | 0.0617161 | 914.023ms | 1811 | 4890 | 6557.02 | 1876.29 | 0.0396037 | 5.66849 | 30.0745 | 4.68526 | 0.000581089 | 0.000123196 | 2.86818e-05 | 2(Loss) | true |
+| Jsonifier (two-stage) | 736.037 | 0.158342 | 962.67ms | 1811 | 640 | 8835.08 | 2346.49 | 0.223772 | 7.12019 | 34.1005 | 5.59028 | 0.00159529 | 8.02388e-05 | 6.03948e-06 | 3(Loss) | true |
+| simdjson (ondemand) | 359.891 | 0.0736554 | 1245ms | 1811 | 2560 | 31984.8 | 4798.96 | 0.146456 | 14.167 | 71.2479 | 9.26671 | 0.000635655 | 0.000200166 | 7.41993e-05 | 4(Loss) | true |

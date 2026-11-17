@@ -1,0 +1,14 @@
+
+----
+### Google Maps Response Small Test (Prettified) Read Results [(View the data used in the following test)](./json/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Google%20Maps%20Response%20Small%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 3110.57 | 0.0960479 | 1023.74ms | 9378 | 640 | 4880.86 | 2875.21 | 0.00630428 | 1.65515 | 7.46193 | 1.11836 | 0.00162748 | 2.78244e-05 | 5.83147e-06 | 1(Win) | true |
+| Jsonifier | 2990.01 | 0.09088 | 1035.24ms | 9378 | 1280 | 9458.49 | 2991.15 | 0.00480562 | 1.70917 | 7.52932 | 1.46001 | 0.00240065 | 2.72413e-05 | 9.16373e-06 | 2(Loss) | true |
+| simdjson (reflection) | 2820.64 | 0.0351278 | 1052.81ms | 9378 | 4890 | 6066.46 | 3170.75 | 0.095582 | 1.80254 | 7.15878 | 1.06825 | 0.00108237 | 2.52734e-05 | 6.47646e-06 | 3(Loss) | true |
+| simdjson (ondemand) | 2223.97 | 0.0777327 | 1143.02ms | 9378 | 30 | 293.151 | 4021.43 | 0.00414429 | 2.33996 | 9.02261 | 1.5144 | 0.00127248 | 1.42177e-05 | 7.10884e-06 | 4(Loss) | true |
+| Glaze | 1844.65 | 0.0646391 | 1213.04ms | 9378 | 80 | 785.734 | 4848.39 | 0.013147 | 2.76444 | 9.47121 | 1.81009 | 0.0039574 | 3.99872e-05 | 7.99744e-06 | 5(Loss) | true |

@@ -1,0 +1,14 @@
+
+----
+### Discord Test (Prettified) Read Results [(View the data used in the following test)](./json/Discord%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Discord%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Discord%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1780.03 | 0.234481 | 4447.99ms | 83958 | 2560 | 2.84791e+07 | 44981.7 | 1.31835 | 1(Win) | true |
+| Glaze | 1641.13 | 0.304727 | 5188.75ms | 83958 | 640 | 1.41463e+07 | 48788.8 | 0.423192 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1508.01 | 0.547389 | 5410.21ms | 83958 | 640 | 5.40616e+07 | 53095.6 | 0.680145 | 3(Loss) | true |
+| simdjson (ondemand) | 1275.99 | 0.303298 | 7139.69ms | 83958 | 160 | 5.7955e+06 | 62750.4 | 0.0229533 | 4(Loss) | true |
+| simdjson (reflection) | 1259.74 | 0.495054 | 6201.7ms | 83958 | 640 | 6.33647e+07 | 63559.6 | 0.850482 | 5(Loss) | true |

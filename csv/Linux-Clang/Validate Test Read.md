@@ -1,0 +1,11 @@
+
+----
+### Validate Test Read Results [(View the data used in the following test)](./json/Validate%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Validate%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Validate%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 3579.48 | 0.0546476 | 8991.11ms | 631514 | 2560 | 2.16426e+07 | 168253 | 0.0874699 | 1.40353 | 7.07843 | 1.22888 | 0.0043336 | 2.43691e-05 | 2.03151e-05 | 1(Win) | true |
+| Glaze | 2616.18 | 0.0498894 | 6040.85ms | 631514 | 640 | 8.44166e+06 | 230205 | 0.0182256 | 1.93298 | 8.44884 | 1.51664 | 0.00230413 | 1.6456e-05 | 1.48007e-05 | 2(Loss) | true |

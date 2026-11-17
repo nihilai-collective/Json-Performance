@@ -1,0 +1,11 @@
+# Apache Builds Small Test (Minified) Read Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier (two-stage),1399.46,1.2901,194.012ms,2632,320,171336,1793.6,0.358102,Win,true
+Jsonifier,1166.17,0.681972,197.392ms,2632,640,137899,2152.4,0.242176,Loss,true
+Glaze,1107.51,0.61647,224.97ms,2632,1280,249866,2266.4,0.334213,Loss,true
+simdjson (reflection),817.08,2.19265,271.663ms,2632,40,181484,3072,1.1236,Loss,true
+simdjson (ondemand),750.133,0.345305,328.945ms,2632,4890,652845,3346.17,0.901319,Loss,true

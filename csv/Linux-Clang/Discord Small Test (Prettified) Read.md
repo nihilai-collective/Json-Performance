@@ -1,0 +1,13 @@
+
+----
+### Discord Small Test (Prettified) Read Results [(View the data used in the following test)](./json/Discord%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Discord%20Small%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Discord%20Small%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2298.81 | 0.127902 | 1019.46ms | 6701 | 4890 | 61820.5 | 2779.94 | 0.0165388 | 2.23059 | 8.9365 | 1.5153 | 0.00108783 | 5.79226e-05 | 2.20948e-05 | 1(Win) | true |
+| Glaze | 1899.31 | 0.146602 | 1078.99ms | 6701 | 2560 | 62288.7 | 3364.68 | 0.125261 | 2.70719 | 11.117 | 2.18251 | 0.00145955 | 3.36354e-05 | 7.05352e-06 | 2(Loss) | true |
+| Jsonifier | 1612.28 | 0.228045 | 1140.05ms | 6701 | 4890 | 399530 | 3963.69 | 0.647104 | 3.17278 | 10.083 | 2.1164 | 0.00241746 | 5.61525e-05 | 1.88904e-05 | 3(Loss) | true |
+| simdjson (ondemand) | 1042.76 | 0.0791314 | 1357.38ms | 6701 | 4890 | 115005 | 6128.51 | 0.016138 | 4.88302 | 16.8379 | 2.87062 | 0.00284333 | 8.29165e-05 | 3.44239e-05 | 4(Loss) | true |

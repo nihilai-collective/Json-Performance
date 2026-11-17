@@ -1,0 +1,14 @@
+
+----
+### Marine IK Test (Minified) Read Results [(View the data used in the following test)](./json/Marine%20IK%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Marine%20IK%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Marine%20IK%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 845.435 | 0.0601388 | 6456.24ms | 1834197 | 160 | 2.4772e+08 | 2.06903e+06 | 0.0945871 | 5.95639 | 25.0821 | 5.64263 | 0.0370487 | 0.0833002 | 0.000211986 | 1(Win) | true |
+| Jsonifier (two-stage) | 720.186 | 0.107027 | 7584.22ms | 1834197 | 80 | 5.40604e+08 | 2.42885e+06 | 0.133628 | 6.97983 | 29.3736 | 6.06564 | 0.0427836 | 0.146958 | 0.0015607 | 2(Loss) | true |
+| Glaze | 656.496 | 0.0418099 | 8300.86ms | 1834197 | 160 | 1.98567e+08 | 2.66449e+06 | 0.131342 | 7.69003 | 32.3366 | 6.31554 | 0.0349466 | 0.0832925 | 0.000574512 | 3(Loss) | true |
+| simdjson (reflection) | 619.983 | 0.0620087 | 8785.08ms | 1834197 | 160 | 4.89732e+08 | 2.82141e+06 | 0.103844 | 8.13802 | 34.8364 | 6.49697 | 0.036911 | 0.136512 | 0.000341113 | 4(Loss) | true |
+| simdjson (ondemand) | 535.413 | 0.141782 | 10187.6ms | 1834197 | 30 | 6.43695e+08 | 3.26706e+06 | 0.0731293 | 9.39355 | 37.4492 | 7.33897 | 0.0422521 | 0.148088 | 0.000582725 | 5(Loss) | true |

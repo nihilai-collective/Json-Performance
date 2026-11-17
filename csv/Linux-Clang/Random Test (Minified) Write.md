@@ -1,0 +1,11 @@
+
+----
+### Random Test (Minified) Write Results [(View the data used in the following test)](./json/Random%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Random%20Test%20%28Minified%29%20Write_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Random%20Test%20%28Minified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 14574.7 | 0.0567766 | 3796.96ms | 461466 | 2560 | 752416 | 30195.3 | 0.0203141 | 0.345723 | 1.61351 | 0.264043 | 0.000485046 | 0.00819822 | 1.84433e-05 | 1(Win) | true |
+| Glaze | 3571.5 | 0.158956 | 6759.23ms | 461466 | 2560 | 9.82142e+07 | 123222 | 0.191447 | 1.40824 | 5.3694 | 0.791601 | 0.0099999 | 0.0426753 | 3.79421e-05 | 2(Loss) | true |

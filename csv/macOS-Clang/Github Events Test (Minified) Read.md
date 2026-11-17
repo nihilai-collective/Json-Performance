@@ -1,0 +1,13 @@
+
+----
+### Github Events Test (Minified) Read Results [(View the data used in the following test)](./json/Github%20Events%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Github%20Events%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Github%20Events%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1592.32 | 0.301247 | 3200.5ms | 53331 | 2560 | 2.37019e+07 | 31941 | 2.01197 | 1(Win) | true |
+| Jsonifier (two-stage) | 1485.58 | 1.24158 | 3886.78ms | 53331 | 30 | 5.42048e+06 | 34236.1 | 2.02382 | 2(Loss) | true |
+| Glaze | 1244.54 | 0.211943 | 3949.44ms | 53331 | 4890 | 3.66847e+07 | 40866.7 | 0.525874 | 3(Loss) | true |
+| simdjson (ondemand) | 882.482 | 0.0511183 | 6725.85ms | 53331 | 30 | 26038.9 | 57633.4 | 0.00485806 | 4(Loss) | true |

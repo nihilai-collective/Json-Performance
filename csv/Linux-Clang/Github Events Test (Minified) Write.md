@@ -1,0 +1,11 @@
+
+----
+### Github Events Test (Minified) Write Results [(View the data used in the following test)](./json/Github%20Events%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Github%20Events%20Test%20%28Minified%29%20Write_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Github%20Events%20Test%20%28Minified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 16106.8 | 0.235295 | 1093.13ms | 58581 | 4890 | 325709 | 3468.55 | 0.134321 | 0.316523 | 1.077 | 0.164456 | 4.69174e-05 | 2.21671e-05 | 1.26963e-05 | 1(Win) | true |
+| Glaze | 5341.8 | 0.326935 | 1803.24ms | 58581 | 640 | 748241 | 10458.5 | 0.0684381 | 0.943417 | 2.62659 | 0.382599 | 6.73747e-05 | 6.30804e-05 | 3.27271e-05 | 2(Loss) | true |

@@ -1,0 +1,13 @@
+
+----
+### Marine IK Small Test (Minified) Read Results [(View the data used in the following test)](./json/Marine%20IK%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Marine%20IK%20Small%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Marine%20IK%20Small%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 676.088 | 0.412548 | 704.459ms | 4604 | 160 | 114851 | 6494.3 | 0.105396 | 1(Win) | true |
+| Jsonifier (two-stage) | 441.022 | 0.626096 | 953.782ms | 4604 | 320 | 1.24332e+06 | 9955.78 | 1.64859 | 2(Loss) | true |
+| Glaze | 350.731 | 0.505987 | 1269.96ms | 4604 | 320 | 1.28396e+06 | 12518.8 | 0.638271 | 3(Loss) | true |
+| simdjson (ondemand) | 288.587 | 0.156068 | 1569.81ms | 4604 | 4890 | 2.75711e+06 | 15214.5 | 4.36298 | 4(Loss) | true |

@@ -1,0 +1,13 @@
+
+----
+### Instruments Small Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Instruments%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Instruments%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Instruments%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2415.24 | 0.0743335 | 330.773ms | 7932 | 4890 | 26504.7 | 3132 | 0.0681697 | 1.25083 | 1(Win) | true |
+| Jsonifier | 2173.4 | 0.0774343 | 366.034ms | 7932 | 4890 | 35519.1 | 3480.51 | 0.0940876 | 1.39054 | 2(Loss) | true |
+| Glaze | 1851.01 | 0.0963685 | 426.019ms | 7932 | 2560 | 39706.3 | 4086.72 | 0.0114714 | 1.63429 | 3(Loss) | true |
+| simdjson (ondemand) | 1482.8 | 0.104112 | 526.63ms | 7932 | 2560 | 72217.3 | 5101.52 | 0.0973389 | 2.04225 | 4(Loss) | true |

@@ -1,0 +1,14 @@
+
+----
+### Instruments Small Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Instruments%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Instruments%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Instruments%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 3556.07 | 0.0812012 | 851.301ms | 4669 | 160 | 165.407 | 1252.14 | 0.57222 | 1.46873 | 6.29921 | 1.26087 | 0.000501981 | 1.20475e-05 | 2.67723e-06 | 1(Win) | true |
+| Glaze | 2308.22 | 0.0626055 | 926.968ms | 4669 | 2560 | 3733.85 | 1929.06 | 0.0162577 | 2.24584 | 8.88263 | 1.65282 | 0.00104973 | 3.04535e-05 | 4.85248e-06 | 2(Loss) | true |
+| Jsonifier (two-stage) | 2289.03 | 0.0920436 | 927.694ms | 4669 | 80 | 256.462 | 1945.24 | 0.0572237 | 2.29693 | 9.17113 | 1.58856 | 0.00107357 | 1.07089e-05 | 5.35447e-06 | 3(Loss) | true |
+| simdjson (reflection) | 1696.82 | 0.0579789 | 1003.14ms | 4669 | 4890 | 11319.5 | 2624.15 | 0.0853583 | 3.02168 | 12.3958 | 1.92097 | 0.000787205 | 4.40621e-05 | 1.48042e-05 | 4(Loss) | true |
+| simdjson (ondemand) | 1414.16 | 0.0310721 | 1054.28ms | 4669 | 320 | 306.296 | 3148.65 | 0.03902 | 3.62261 | 14.1321 | 2.51317 | 0.00132389 | 2.74416e-05 | 6.69308e-06 | 5(Loss) | true |

@@ -1,0 +1,14 @@
+
+----
+### Instruments Test (Minified) Read Results [(View the data used in the following test)](./json/Instruments%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Instruments%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Instruments%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 2444.04 | 0.0861305 | 4247.97ms | 108313 | 4890 | 6.47992e+06 | 42264.2 | 0.00884716 | 1(Win) | true |
+| Jsonifier (two-stage) | 1680.51 | 0.0520556 | 6383.61ms | 108313 | 4890 | 5.00637e+06 | 61466.6 | 0.467381 | 2(Loss) | true |
+| Glaze | 1405.7 | 0.46838 | 7492.48ms | 108313 | 640 | 7.58147e+07 | 73483.2 | 0.726282 | 3(Loss) | true |
+| simdjson (ondemand) | 1215.72 | 0.501539 | 9068.27ms | 108313 | 30 | 5.44785e+06 | 84966.4 | 0.160433 | 4(Loss) | true |
+| simdjson (reflection) | 1106.4 | 0.681555 | 8952.13ms | 108313 | 160 | 6.47825e+07 | 93361.6 | 0.482655 | 5(Loss) | true |

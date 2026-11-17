@@ -1,0 +1,14 @@
+
+----
+### Discord Test (Prettified) Read Results [(View the data used in the following test)](./json/Discord%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Discord%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Discord%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2542.08 | 0.0311488 | 3891.14ms | 83958 | 2560 | 246415 | 31497.3 | 0.0753659 | 1.96891 | 8.76062 | 1.44207 | 0.00283024 | 1.34414e-05 | 7.53725e-06 | 1(Win) | true |
+| Glaze | 2431.95 | 0.106564 | 4050.76ms | 83958 | 320 | 393900 | 32923.6 | 0.0534475 | 2.07574 | 9.97514 | 2.07256 | 0.00431027 | 2.36726e-05 | 1.45906e-05 | 2(Loss) | true |
+| simdjson (reflection) | 2240.36 | 0.0439082 | 4325.89ms | 83958 | 640 | 157601 | 35739.1 | 0.174456 | 2.2582 | 9.73037 | 1.63321 | 0.00302627 | 1.76986e-05 | 1.02172e-05 | 3(Loss) | true |
+| Jsonifier | 2233.55 | 0.0218881 | 4334.98ms | 83958 | 1280 | 78805.5 | 35848.1 | 0.0114821 | 2.26437 | 8.89125 | 1.83539 | 0.00473913 | 4.10268e-05 | 2.7618e-05 | 4(Loss) | true |
+| simdjson (ondemand) | 1905.09 | 0.0217881 | 4940.67ms | 83958 | 4890 | 410053 | 42028.7 | 0.14399 | 2.65582 | 10.5584 | 1.8917 | 0.00595623 | 3.7101e-05 | 2.34804e-05 | 5(Loss) | true |
