@@ -1,0 +1,11 @@
+
+----
+### Discord Sparse Test (Prettified) Read Results [(View the data used in the following test)](./json/Discord%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Discord%20Sparse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Discord%20Sparse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2127.36 | 0.59464 | 3827.04ms | 83958 | 80 | 4.00718e+06 | 37637.5 | 0.00664187 | 1.1627 | 1(Win) | true |
+| simdjson (ondemand) | 1798.53 | 0.159636 | 4537.28ms | 83958 | 1280 | 6.46491e+06 | 44518.9 | 0.0186051 | 1.37516 | 2(Loss) | true |

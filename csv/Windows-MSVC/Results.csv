@@ -1,0 +1,13 @@
+# Json-Performance: Generic Parsing & Streaming vs simdjson On Demand (AVX512) Stage Results
+#CPU: AMD EPYC 9V45 96-Core Processor-AVX512
+#OS: Windows-10.0.26100
+#Compiler: MSVC-19.51.36260.0
+
+# Json-Performance: Generic Parsing & Streaming vs simdjson On Demand (AVX512) Stage Config
+
+ClearCpuCachesBeforeIterations,MeasuredIterationCount,MaxIterationCount,IncludeNonConvergedResults,ConvergenceThreshold (%),MaxTimeInS,RseThreshold (%),MaxK,MinK
+true,100,100000,true,2.5,5,5,100000,30
+
+Library,Wins,Ties,Losses
+Jsonifier (generic),346,7,7
+simdjson (ondemand),7,7,346

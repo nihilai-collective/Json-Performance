@@ -1,0 +1,8 @@
+# Instruments Stream Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** GCC-16.0.1
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1791.92,0.128243,7251.36ms,4197496,30,2.46224e+08,2.23394e+06,0.285,1.38162,Win,true
+simdjson (ondemand),1774.3,0.183716,7336.07ms,4197496,30,5.15395e+08,2.25612e+06,0.543977,1.39534,Loss,true

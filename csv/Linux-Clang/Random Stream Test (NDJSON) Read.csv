@@ -1,0 +1,8 @@
+# Random Stream Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1019-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1323.68,0.107834,6029.97ms,4506447,30,3.67735e+08,3.24676e+06,1.17666,1.87016,Win,true
+simdjson (ondemand),1167.28,0.299679,6479.99ms,4506447,30,3.6522e+09,3.68181e+06,0.523133,2.1209,Loss,true
