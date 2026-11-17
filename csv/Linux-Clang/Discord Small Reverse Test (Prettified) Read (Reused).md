@@ -1,0 +1,11 @@
+
+----
+### Discord Small Reverse Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Discord%20Small%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Discord%20Small%20Reverse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Discord%20Small%20Reverse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1007.83 | 0.0402481 | 1388.47ms | 6701 | 1280 | 8336.87 | 6340.9 | 0.00576647 | 5.14076 | 21.4255 | 4.25474 | 0.00530669 | 3.49761e-05 | 6.64546e-06 | 1(Win) | true |
+| simdjson (ondemand) | 314.702 | 0.0476071 | 2785.95ms | 6701 | 320 | 29907 | 20306.7 | 0.0716459 | 16.3992 | 82.391 | 15.7912 | 0.0320465 | 3.2178e-05 | 4.66348e-07 | 2(Loss) | true |

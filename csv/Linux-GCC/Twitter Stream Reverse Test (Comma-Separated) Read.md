@@ -1,0 +1,11 @@
+
+----
+### Twitter Stream Reverse Test (Comma-Separated) Read Results [(View the data used in the following test)](./json/Twitter%20Stream%20Reverse%20Test%20%28Comma-Separated%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Stream%20Reverse%20Test%20%28Comma-Separated%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Stream%20Reverse%20Test%20%28Comma-Separated%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 716.061 | 0.206943 | 8960.29ms | 4219119 | 30 | 4.05664e+09 | 5.61916e+06 | 0.311823 | 7.07596 | 27.2144 | 5.16715 | 0.0202669 | 0.0578374 | 0.00792093 | 1(Win) | true |
+| simdjson (ondemand) | 310.946 | 0.0664348 | 9335.25ms | 4219119 | 40 | 2.95615e+09 | 1.29401e+07 | 0.245187 | 16.2329 | 64.3899 | 13.299 | 0.0894148 | 0.0577301 | 0.010554 | 2(Loss) | true |

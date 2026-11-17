@@ -1,0 +1,11 @@
+
+----
+### Large Amazon Cellphones Test (NDJSON) Read Results [(View the data used in the following test)](./json/Large%20Amazon%20Cellphones%20Test%20%28NDJSON%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Large%20Amazon%20Cellphones%20Test%20%28NDJSON%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Large%20Amazon%20Cellphones%20Test%20%28NDJSON%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 4057.93 | 0.252556 | 7743.88ms | 10548466 | 40 | 1.568e+09 | 2.47905e+06 | 0.0934847 | 1.25844 | 4.28876 | 0.683731 | 0.0101408 | 0.0175175 | 0.000765905 | 1(Win) | true |
+| simdjson (ondemand) | 3426.65 | 0.0901898 | 9173.69ms | 10548466 | 160 | 1.12169e+09 | 2.93575e+06 | 0.290681 | 1.48738 | 4.68845 | 0.770965 | 0.00968387 | 0.0180083 | 0.000720333 | 2(Loss) | true |

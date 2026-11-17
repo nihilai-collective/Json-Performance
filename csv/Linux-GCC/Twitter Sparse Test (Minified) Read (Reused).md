@@ -1,0 +1,11 @@
+
+----
+### Twitter Sparse Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Twitter%20Sparse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Sparse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Sparse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 7052.72 | 0.0309631 | 4370.49ms | 264040 | 2560 | 312864 | 35703.7 | 0.0197224 | 0.720749 | 3.53611 | 0.450125 | 0.00134734 | 6.97397e-06 | 5.28004e-06 | 1(Win) | true |
+| simdjson (ondemand) | 6376.84 | 0.0469387 | 4743.07ms | 264040 | 80 | 27484 | 39487.9 | 0.0242104 | 0.793904 | 3.92424 | 0.423063 | 0.00109472 | 4.73413e-06 | 3.07719e-06 | 2(Loss) | true |

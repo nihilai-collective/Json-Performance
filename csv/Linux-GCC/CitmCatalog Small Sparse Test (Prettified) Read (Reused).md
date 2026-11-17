@@ -1,0 +1,11 @@
+
+----
+### CitmCatalog Small Sparse Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/CitmCatalog%20Small%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/CitmCatalog%20Small%20Sparse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/CitmCatalog%20Small%20Sparse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 7822.86 | 0.0560363 | 832.658ms | 9739 | 4890 | 2164.44 | 1187.27 | 0.00499645 | 0.679786 | 3.0228 | 0.360304 | 0.000641655 | 1.35857e-05 | 2.12079e-06 | 1(Win) | true |
+| simdjson (ondemand) | 7344.72 | 0.049787 | 842.872ms | 9739 | 2560 | 1014.73 | 1264.56 | 0.0116161 | 0.723517 | 3.41575 | 0.361639 | 0.000563456 | 1.05889e-05 | 1.60437e-07 | 2(Loss) | true |

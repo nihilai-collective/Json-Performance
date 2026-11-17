@@ -1,0 +1,11 @@
+
+----
+### Instruments Sparse Test (Prettified) Read Results [(View the data used in the following test)](./json/Instruments%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Instruments%20Sparse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Instruments%20Sparse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 6770.64 | 0.0153085 | 3319.76ms | 183677 | 4890 | 76704.9 | 25871.7 | 0.0172068 | 0.761126 | 3.87652 | 0.534928 | 0.000527335 | 1.72237e-06 | 5.77835e-07 | 1(Win) | true |
+| simdjson (ondemand) | 6318.33 | 0.0279803 | 3500.14ms | 183677 | 2560 | 154046 | 27723.8 | 0.00418593 | 0.813725 | 4.11406 | 0.477736 | 0.00105846 | 2.2309e-06 | 6.80542e-07 | 2(Loss) | true |

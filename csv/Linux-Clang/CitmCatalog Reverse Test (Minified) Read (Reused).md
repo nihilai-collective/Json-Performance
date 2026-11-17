@@ -1,0 +1,11 @@
+
+----
+### CitmCatalog Reverse Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/CitmCatalog%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/CitmCatalog%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/CitmCatalog%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 745.678 | 0.083858 | 8675.94ms | 500299 | 160 | 4.60643e+07 | 639850 | 0.026918 | 6.83371 | 35.5328 | 7.29686 | 0.0162862 | 0.0178734 | 2.73711e-05 | 1(Win) | true |
+| simdjson (ondemand) | 432.063 | 0.0509753 | 7246.71ms | 500299 | 160 | 5.06998e+07 | 1.10429e+06 | 0.0612604 | 11.7 | 64.4547 | 12.8063 | 0.0295968 | 0.0249884 | 3.86394e-05 | 2(Loss) | true |

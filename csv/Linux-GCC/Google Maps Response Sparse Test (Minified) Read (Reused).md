@@ -1,0 +1,11 @@
+
+----
+### Google Maps Response Sparse Test (Minified) Read (Reused) Results [(View the data used in the following test)](./json/Google%20Maps%20Response%20Sparse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Google%20Maps%20Response%20Sparse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Google%20Maps%20Response%20Sparse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2534.66 | 0.158403 | 1181.75ms | 11812 | 320 | 15859.3 | 4444.31 | 0.194799 | 2.04677 | 10.3176 | 1.79961 | 0.0022038 | 1.0847e-05 | 1.85193e-06 | 1(Win) | true |
+| simdjson (ondemand) | 2129.62 | 0.0300909 | 1257.46ms | 11812 | 4890 | 12388.6 | 5289.57 | 0.0629873 | 2.43527 | 11.1472 | 1.84778 | 0.00368003 | 2.97088e-05 | 6.18068e-06 | 2(Loss) | true |

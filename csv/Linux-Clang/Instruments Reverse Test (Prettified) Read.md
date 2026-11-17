@@ -1,0 +1,11 @@
+
+----
+### Instruments Reverse Test (Prettified) Read Results [(View the data used in the following test)](./json/Instruments%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Instruments%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Instruments%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 960.546 | 0.0209153 | 9680.88ms | 183677 | 2560 | 3.72426e+06 | 182363 | 0.158634 | 5.29922 | 24.168 | 4.79153 | 0.00569132 | 1.75474e-05 | 1.03017e-05 | 1(Win) | true |
+| simdjson (ondemand) | 420.604 | 0.221783 | 5410.84ms | 183677 | 80 | 6.8251e+07 | 416468 | 0.286557 | 12.1911 | 58.7619 | 10.566 | 0.037072 | 3.33466e-05 | 1.89191e-05 | 2(Loss) | true |

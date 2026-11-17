@@ -1,0 +1,11 @@
+
+----
+### Github Events Small Sparse Test (Prettified) Read Results [(View the data used in the following test)](./json/Github%20Events%20Small%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Github%20Events%20Small%20Sparse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Github%20Events%20Small%20Sparse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 5343.38 | 0.207764 | 747.049ms | 2158 | 1280 | 819.635 | 385.155 | 0.215882 | 1.07987 | 4.08434 | 0.569046 | 0.00046484 | 2.02734e-05 | 0 | 1(Win) | true |
+| simdjson (ondemand) | 4821.39 | 0.0977655 | 753.84ms | 2158 | 2560 | 445.83 | 426.854 | 0.074984 | 1.1724 | 4.27433 | 0.57368 | 0.000773104 | 2.46177e-05 | 4.52531e-06 | 2(Loss) | true |

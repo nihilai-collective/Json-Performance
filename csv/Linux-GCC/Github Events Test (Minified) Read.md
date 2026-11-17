@@ -1,0 +1,11 @@
+
+----
+### Github Events Test (Minified) Read Results [(View the data used in the following test)](./json/Github%20Events%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Github%20Events%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Github%20Events%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1279.89 | 0.0402512 | 4727.28ms | 53331 | 2560 | 654954 | 39738.1 | 0.0739367 | 4.02379 | 13.8593 | 2.70975 | 0.0131712 | 6.29031e-05 | 1.7469e-05 | 1(Win) | true |
+| simdjson (ondemand) | 1032.75 | 0.133845 | 5654.98ms | 53331 | 160 | 695183 | 49247.7 | 0.0060659 | 4.98852 | 17.7821 | 3.49489 | 0.0201871 | 0.000190555 | 0.000122583 | 2(Loss) | true |

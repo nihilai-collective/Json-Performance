@@ -1,0 +1,11 @@
+
+----
+### CitmCatalog Small Reverse Test (Prettified) Read Results [(View the data used in the following test)](./json/CitmCatalog%20Small%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/CitmCatalog%20Small%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/CitmCatalog%20Small%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1222.94 | 0.0298366 | 1498.53ms | 9739 | 1280 | 6572.5 | 7594.7 | 0.436243 | 4.23447 | 17.5094 | 3.52134 | 0.00408971 | 2.95205e-05 | 1.0268e-05 | 1(Win) | true |
+| simdjson (ondemand) | 849.885 | 0.0471964 | 1815.7ms | 9739 | 640 | 17025.8 | 10928.3 | 0.0168112 | 6.07846 | 28.6469 | 5.72061 | 0.0089561 | 2.19799e-05 | 5.29443e-06 | 2(Loss) | true |

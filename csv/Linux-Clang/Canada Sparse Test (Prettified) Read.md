@@ -1,0 +1,11 @@
+
+----
+### Canada Sparse Test (Prettified) Read Results [(View the data used in the following test)](./json/Canada%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Canada%20Sparse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Canada%20Sparse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 10758.1 | 0.0858083 | 5966ms | 5212421 | 320 | 5.03059e+07 | 462067 | 0.0366378 | 0.469446 | 1.95585 | 0.18325 | 0.00198931 | 0.0394018 | 4.29563e-06 | 1(Win) | true |
+| simdjson (ondemand) | 9837.1 | 0.0735097 | 6563.05ms | 5212421 | 640 | 8.83109e+07 | 505327 | 0.0957799 | 0.51652 | 2.19705 | 0.202785 | 0.00216707 | 0.0394067 | 6.84063e-06 | 2(Loss) | true |
