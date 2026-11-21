@@ -1,0 +1,11 @@
+
+----
+### Package.json Corpus 2048-65536 Test Read Results [(View the data used in the following test)](./json/Package.json%20Corpus%202048-65536%20Test.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Package.json%20Corpus%202048-65536%20Test%20Read_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Package.json%20Corpus%202048-65536%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier (generic) | 4787.41 | 0.352912 | 1156.24ms | 59099 | 640 | 1.10477e+06 | 11772.8 | 0.334083 | 1(Win) | true |
+| simdjson (ondemand) | 4098.27 | 0.133545 | 1403.4ms | 59099 | 4890 | 1.64939e+06 | 13752.4 | 0.511129 | 2(Loss) | true |
