@@ -1,0 +1,13 @@
+
+----
+### Int64 Test Read Results [(View the data used in the following test)](./json/Int64%20Test.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Int64%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Int64%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1456.31 | 0.179329 | 254.352ms | 3862 | 320 | 6582.19 | 2529.06 | 0.111084 | 1.68238 | 1(Win) | true |
+| Jsonifier (two-stage) | 1423.59 | 0.118376 | 271.861ms | 3862 | 320 | 3001.47 | 2587.19 | 0.375849 | 1.72111 | 2(Loss) | true |
+| Glaze | 912.409 | 0.221682 | 418.902ms | 3862 | 30 | 2402.3 | 4036.67 | 0.16488 | 2.69043 | 3(Loss) | true |
+| simdjson (ondemand) | 630.194 | 0.235518 | 607.154ms | 3862 | 2560 | 485025 | 5844.38 | 0.0334301 | 3.90973 | 4(Loss) | true |

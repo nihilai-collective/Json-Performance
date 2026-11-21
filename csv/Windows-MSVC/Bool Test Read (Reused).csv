@@ -1,0 +1,10 @@
+# Bool Test Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,619.803,0.24821,145.571ms,905,80,955.696,1392.5,0.179856,3.92141,Win,true
+Jsonifier (two-stage),572.284,0.64962,156.296ms,905,1280,122858,1508.12,0.0103616,4.24968,Loss,true
+Glaze,564.274,0.284645,160.696ms,905,640,12131.2,1529.53,0.112497,4.313,Loss,true
+simdjson (ondemand),163.849,0.142383,532.662ms,905,40,2250,5267.5,0.26967,14.9865,Loss,true

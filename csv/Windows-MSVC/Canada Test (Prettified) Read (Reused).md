@@ -1,0 +1,13 @@
+
+----
+### Canada Test (Prettified) Read (Reused) Results [(View the data used in the following test)](./json/Canada%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Canada%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Canada%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 1464.16 | 1.13732 | 6409.21ms | 5373214 | 40 | 6.33741e+10 | 3.49981e+06 | 0.343714 | 1.6909 | 1(Win) | true |
+| Jsonifier | 1408.06 | 1.48962 | 6689.96ms | 5373214 | 40 | 1.17553e+11 | 3.63925e+06 | 1.90302 | 1.75822 | 2(Loss) | true |
+| simdjson (ondemand) DID NOT CONVERGE | 469.767 | 1.25129 | 8379.73ms | 5373214 | 30 | 5.58906e+11 | 1.09082e+07 | 2.515 | 5.27021 | -(Loss) | false |
+| Glaze | 430.206 | 0.666403 | 9215.47ms | 5373214 | 30 | 1.89021e+11 | 1.19113e+07 | 0.0729254 | 5.75482 | 4(Loss) | true |
