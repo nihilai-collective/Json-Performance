@@ -1,0 +1,483 @@
+sudo: preserving the entire environment is not supported, '-E' is ignored
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Read.ranks
+### Bool Test Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2460.57 | 0.114222 | 38.457ms | 905 | 80 | 12.8416 | 350.762 | 0.145897 | 0.933108 | 1(Win) | true |
+| Glaze | 2346.99 | 0.0761169 | 41.0283ms | 905 | 320 | 25.0719 | 367.738 | 0.047611 | 0.980615 | 2(Loss) | true |
+| Jsonifier (two-stage) | 1914.12 | 0.122198 | 48.3339ms | 905 | 40 | 12.1436 | 450.9 | 0.0147831 | 1.22152 | 3(Loss) | true |
+| simdjson (ondemand) | 551.709 | 0.0574605 | 161.498ms | 905 | 30 | 24.2402 | 1564.37 | 0.129809 | 4.41083 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Read (Reused).ranks
+### Bool Test Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Glaze | 2468.65 | 0.0294601 | 37.7809ms | 905 | 1280 | 13.5787 | 349.615 | 0.0587355 | 0.930439 | 1(Win) | true |
+| Jsonifier | 2253.17 | 0.1834 | 40.2084ms | 905 | 40 | 19.741 | 383.05 | 0.126021 | 1.02693 | 2(Loss) | true |
+| Jsonifier (two-stage) | 2099.46 | 0.0426441 | 44.2289ms | 905 | 320 | 9.83444 | 411.094 | 0.0425875 | 1.10571 | 3(Loss) | true |
+| simdjson (ondemand) | 564.461 | 0.0490362 | 158.088ms | 905 | 40 | 22.4865 | 1529.03 | 0.0397699 | 4.31633 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Bool Test Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Write.ranks
+### Bool Test Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2084.53 | 0.0455627 | 44.2446ms | 905 | 640 | 22.7762 | 414.039 | 0.0117001 | 1.11412 | 1(Win) | true |
+| simdjson (reflection) | 269.941 | 0.23953 | 324.45ms | 905 | 2560 | 150148 | 3197.27 | 0.0694555 | 9.0923 | 2(Loss) | true |
+| Glaze | 209.254 | 0.137056 | 454.434ms | 905 | 4890 | 156262 | 4124.53 | 0.0855259 | 11.7557 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Write (Reused).ranks
+### Bool Test Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 3330.01 | 0.117559 | 33.7993ms | 905 | 160 | 14.8537 | 259.181 | 0.0217077 | 0.668349 | 1(Win) | true |
+| simdjson (reflection) | 2630.42 | 0.0729971 | 40.2546ms | 905 | 320 | 18.3572 | 328.113 | 0.0418888 | 0.867555 | 2(Loss) | true |
+| Glaze | 1121.57 | 0.102838 | 85.1519ms | 905 | 80 | 50.1006 | 769.525 | 0.0162464 | 2.13126 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Bool Test Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Read.ranks
+### Double Test Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1451.41 | 0.0402145 | 124.232ms | 1811 | 160 | 36.639 | 1189.95 | 0.0567573 | 1.66703 | 1(Win) | true |
+| Jsonifier (two-stage) | 1385.53 | 0.0983449 | 128.41ms | 1811 | 30 | 45.0851 | 1246.53 | 0.024061 | 1.75238 | 2(Loss) | true |
+| Glaze | 1063.23 | 0.075229 | 165.324ms | 1811 | 30 | 44.8 | 1624.4 | 0.0615233 | 2.28842 | 3(Loss) | true |
+| simdjson (ondemand) | 354.169 | 0.326174 | 491.401ms | 1811 | 640 | 161918 | 4876.5 | 0.0222738 | 6.95354 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Read (Reused).ranks
+### Double Test Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1565.82 | 0.0962228 | 113.817ms | 1811 | 30 | 33.7931 | 1103 | 0.275766 | 1.54373 | 1(Win) | true |
+| Jsonifier (two-stage) | 1471.13 | 0.0780558 | 120.07ms | 1811 | 40 | 33.5897 | 1174 | 0.0767198 | 1.64413 | 2(Loss) | true |
+| Glaze | 1168.49 | 0.0489971 | 151.684ms | 1811 | 80 | 41.9581 | 1478.06 | 0.16464 | 2.08252 | 3(Loss) | true |
+| simdjson (ondemand) | 358.742 | 0.0556408 | 487.999ms | 1811 | 80 | 574.049 | 4814.34 | 0.180256 | 6.8639 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Double Test Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Write.ranks
+### Double Test Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 397.934 | 0.0194293 | 483.443ms | 1997 | 80 | 69.1733 | 4785.94 | 0.119218 | 6.18826 | 1(Win) | true |
+| simdjson (reflection) | 329.816 | 0.031641 | 584.483ms | 1997 | 40 | 133.528 | 5774.4 | 0.0386615 | 7.47538 | 2(Loss) | true |
+| Glaze | 287.54 | 0.0491093 | 604.116ms | 1798 | 40 | 343.061 | 5963.38 | 0.04208 | 8.57251 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Write (Reused).ranks
+### Double Test Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 943.214 | 0.0198729 | 211.564ms | 1997 | 320 | 51.5238 | 2019.15 | 0.0335735 | 2.59158 | 1(Win) | true |
+| simdjson (reflection) | 757.936 | 0.151995 | 259.325ms | 1997 | 4890 | 71327.4 | 2512.73 | 0.0332939 | 3.23333 | 2(Loss) | true |
+| Glaze | 558.906 | 0.108426 | 310.791ms | 1798 | 30 | 331.964 | 3067.97 | 0.00869121 | 4.39062 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Double Test Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Read.ranks
+### Int64 Test Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 3092.09 | 0.0901636 | 122.193ms | 3862 | 30 | 34.6023 | 1191.13 | 0.0560004 | 0.781391 | 1(Win) | true |
+| Jsonifier (two-stage) | 3025.13 | 0.0939176 | 124.493ms | 3862 | 30 | 39.2241 | 1217.5 | 0.087688 | 0.8 | 2(Loss) | true |
+| Glaze | 1475.36 | 0.0720578 | 249.346ms | 3862 | 30 | 97.0759 | 2496.4 | 0.0120187 | 1.6606 | 3(Loss) | true |
+| simdjson (ondemand) | 824.259 | 0.0326607 | 455.278ms | 3862 | 30 | 63.8954 | 4468.37 | 0.0223846 | 2.98748 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Read (Reused).ranks
+### Int64 Test Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 3298.1 | 0.0387809 | 114.994ms | 3862 | 160 | 30.0091 | 1116.73 | 0.206945 | 0.733357 | 1(Win) | true |
+| Jsonifier (two-stage) | 3104.1 | 0.0845487 | 117.888ms | 3862 | 40 | 40.2558 | 1186.53 | 0.0302094 | 0.779395 | 2(Loss) | true |
+| Glaze | 1645.66 | 0.0407001 | 229.171ms | 3862 | 30 | 24.892 | 2238.07 | 0.101175 | 1.48824 | 3(Loss) | true |
+| simdjson (ondemand) | 807.803 | 0.17199 | 451.574ms | 3862 | 2560 | 157420 | 4559.39 | 0.423287 | 3.0476 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Int64 Test Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Write.ranks
+### Int64 Test Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| simdjson (reflection) | 1058.95 | 0.0344995 | 354.553ms | 3862 | 80 | 115.184 | 3478.07 | 0.141401 | 2.32057 | 1(Win) | true |
+| Jsonifier | 1055.57 | 0.0552733 | 354.971ms | 3862 | 40 | 148.779 | 3489.2 | 0.0296064 | 2.32798 | 2(Loss) | true |
+| Glaze | 901.782 | 0.0268857 | 414.877ms | 3862 | 80 | 96.4619 | 4084.24 | 0.150499 | 2.72772 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Write (Reused).ranks
+### Int64 Test Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 4521.45 | 0.0559323 | 89.4727ms | 3862 | 160 | 33.2135 | 814.581 | 0.0513804 | 0.530381 | 1(Win) | true |
+| simdjson (reflection) | 4381.57 | 0.0539747 | 93.0578ms | 3862 | 160 | 32.9357 | 840.587 | 0.00743583 | 0.548212 | 2(Loss) | true |
+| Glaze | 2726.7 | 0.0710668 | 144.497ms | 3862 | 40 | 36.859 | 1350.75 | 0.117082 | 0.891132 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Int64 Test Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Read.ranks
+### String Test Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1731.16 | 0.0584575 | 534.639ms | 9578 | 40 | 380.554 | 5276.4 | 0.0341025 | 1.42336 | 1(Win) | true |
+| Jsonifier (two-stage) | 1701.45 | 0.0638504 | 545.175ms | 9578 | 40 | 469.999 | 5368.52 | 0.171508 | 1.44834 | 2(Loss) | true |
+| Glaze | 1503.62 | 0.060172 | 620.531ms | 9578 | 40 | 534.471 | 6074.88 | 0.0731689 | 1.63992 | 3(Loss) | true |
+| simdjson (ondemand) | 1147.51 | 0.0588246 | 816.971ms | 9578 | 40 | 877.035 | 7960.12 | 0.0181078 | 2.15052 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Read (Reused).ranks
+### String Test Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2364.64 | 0.0939945 | 513.466ms | 9578 | 30 | 395.499 | 3862.87 | 0.0708093 | 1.03967 | 1(Win) | true |
+| Jsonifier (two-stage) | 2303.76 | 0.0651222 | 518.321ms | 9578 | 80 | 533.365 | 3964.95 | 0.139152 | 1.06785 | 2(Loss) | true |
+| Glaze | 2002.86 | 0.153886 | 584.94ms | 9578 | 4890 | 240853 | 4560.62 | 0.217058 | 1.2291 | 3(Loss) | true |
+| simdjson (ondemand) | 1366.99 | 0.137865 | 785.049ms | 9578 | 2560 | 217254 | 6682.06 | 0.00637826 | 1.80424 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/String Test Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Write.ranks
+### String Test Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 4494.34 | 0.0780858 | 207.588ms | 9578 | 30 | 75.5586 | 2032.4 | 0.0655609 | 0.544073 | 1(Win) | true |
+| simdjson (reflection) | 3973.29 | 0.0718206 | 234.034ms | 9578 | 40 | 109.046 | 2298.93 | 0.226043 | 0.616191 | 2(Loss) | true |
+| Glaze | 2397.03 | 0.0701485 | 391.503ms | 9578 | 30 | 214.368 | 3810.67 | 0.0367255 | 1.02581 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Write (Reused).ranks
+### String Test Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 12498.2 | 0.0918582 | 82.555ms | 9578 | 40 | 18.0282 | 730.85 | 0.0296371 | 0.190825 | 1(Win) | true |
+| simdjson (reflection) | 9245.7 | 0.0364221 | 107.591ms | 9578 | 320 | 41.4332 | 987.95 | 0.0859628 | 0.260895 | 2(Loss) | true |
+| Glaze | 6781.09 | 0.0799868 | 144.556ms | 9578 | 40 | 46.4353 | 1347.03 | 0.048897 | 0.358499 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/String Test Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Read.ranks
+### Uint64 Test Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 3024.3 | 0.0341489 | 125.55ms | 3873 | 640 | 111.321 | 1221.3 | 0.0138192 | 0.801924 | 1(Win) | true |
+| Jsonifier | 3005.23 | 0.078169 | 126.373ms | 3873 | 40 | 36.9205 | 1229.05 | 0.00949153 | 0.808023 | 2(Loss) | true |
+| Glaze | 1894.56 | 0.0751882 | 199.183ms | 3873 | 30 | 64.4609 | 1949.57 | 0.0529752 | 1.28891 | 3(Loss) | true |
+| simdjson (ondemand) | 844.71 | 0.0377559 | 441.835ms | 3873 | 30 | 81.7655 | 4372.6 | 0.028198 | 2.91457 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Read (Reused).ranks
+### Uint64 Test Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) STATISTICAL TIE | 3201.52 | 0.0311521 | 118.848ms | 3873 | 320 | 41.3342 | 1153.7 | 0.0132743 | 0.756507 | 1(Tie) | true |
+| Jsonifier STATISTICAL TIE | 3189.55 | 0.244172 | 119.022ms | 3873 | 2560 | 20467.6 | 1158.02 | 0.222036 | 0.759036 | 1(Tie) | true |
+| Glaze | 2084 | 0.052664 | 181.251ms | 3873 | 40 | 34.8487 | 1772.35 | 0.0723562 | 1.17106 | 3(Loss) | true |
+| simdjson (ondemand) | 855.842 | 0.030686 | 435.664ms | 3873 | 40 | 70.1532 | 4315.73 | 0.12199 | 2.8762 | 4(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Uint64 Test Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Write.ranks
+### Uint64 Test Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1026.31 | 0.12357 | 366.218ms | 3873 | 4890 | 96711 | 3598.9 | 0.0292399 | 2.39532 | 1(Win) | true |
+| simdjson (reflection) | 968.821 | 0.0445883 | 387.357ms | 3873 | 40 | 115.587 | 3812.45 | 0.102628 | 2.53755 | 2(Loss) | true |
+| Glaze | 897.812 | 0.258831 | 417.664ms | 3873 | 1280 | 145133 | 4113.98 | 0.357624 | 2.74044 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Write (Reused).ranks
+### Uint64 Test Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 4932.25 | 0.0584075 | 83.1546ms | 3873 | 160 | 30.6099 | 748.862 | 0.0317248 | 0.484611 | 1(Win) | true |
+| simdjson (reflection) | 4672.02 | 0.0773209 | 88.5459ms | 3873 | 80 | 29.893 | 790.575 | 0.0158088 | 0.512765 | 2(Loss) | true |
+| Glaze | 3127.14 | 0.0563482 | 128.22ms | 3873 | 80 | 35.4366 | 1181.14 | 0.0730762 | 0.774813 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Uint64 Test Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Read-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Read.ranks
+### Apache Builds Test (Minified) Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1576.05 | 0.0396053 | 5784.63ms | 94653 | 4890 | 2.51621e+06 | 57275.1 | 0.0732374 | 1.57022 | 1(Win) | true |
+| simdjson (reflection) | 1523.76 | 0.0518427 | 5931.59ms | 94653 | 4890 | 4.61232e+06 | 59240.3 | 0.112246 | 1.62411 | 2(Loss) | true |
+| Glaze | 1437 | 0.0940961 | 6322.1ms | 94653 | 640 | 2.23605e+06 | 62817.3 | 0.0227373 | 1.72222 | 3(Loss) | true |
+| Jsonifier (two-stage) | 1377.42 | 0.082665 | 6590.59ms | 94653 | 640 | 1.87827e+06 | 65534.1 | 0.123435 | 1.79674 | 4(Loss) | true |
+| simdjson (ondemand) | 1352.86 | 0.0482627 | 6657.52ms | 94653 | 4890 | 5.07103e+06 | 66724 | 0.0447053 | 1.82937 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Read (Reused).ranks
+### Apache Builds Test (Minified) Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2104.73 | 0.0823744 | 5417.31ms | 94653 | 1280 | 1.59762e+06 | 42888.3 | 0.0425488 | 1.17562 | 1(Win) | true |
+| simdjson (reflection) | 1951.12 | 0.0971526 | 5761.47ms | 94653 | 640 | 1.29297e+06 | 46264.7 | 0.00670688 | 1.26822 | 2(Loss) | true |
+| Glaze | 1855.12 | 0.0416078 | 6002.45ms | 94653 | 4890 | 2.0044e+06 | 48659 | 0.0329845 | 1.33389 | 3(Loss) | true |
+| Jsonifier (two-stage) | 1800.25 | 0.10157 | 6187.51ms | 94653 | 640 | 1.66001e+06 | 50141.9 | 0.0255397 | 1.37455 | 4(Loss) | true |
+| simdjson (ondemand) | 1779.31 | 0.0554615 | 6177.08ms | 94653 | 2560 | 2.0267e+06 | 50732.2 | 0.218912 | 1.39076 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Minified) Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Write.ranks
+### Apache Builds Test (Minified) Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 22797.6 | 0.028125 | 403.102ms | 94653 | 80 | 99.2127 | 3959.55 | 0.097769 | 0.107916 | 1(Win) | true |
+| simdjson (reflection) | 14773.9 | 0.291981 | 616.152ms | 94653 | 640 | 203688 | 6109.96 | 0.0760985 | 0.166872 | 2(Loss) | true |
+| Glaze | 6312.51 | 0.0945321 | 1440.72ms | 94653 | 2560 | 467804 | 14299.9 | 0.49485 | 0.391504 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Write (Reused).ranks
+### Apache Builds Test (Minified) Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 22943.3 | 0.0263606 | 399.739ms | 94653 | 160 | 172.102 | 3934.39 | 0.0760339 | 0.107185 | 1(Win) | true |
+| simdjson (reflection) | 14473.1 | 0.0311553 | 620.935ms | 94653 | 30 | 113.275 | 6236.97 | 0.397062 | 0.170333 | 2(Loss) | true |
+| Glaze | 6995.58 | 0.16001 | 1297.33ms | 94653 | 2560 | 1.09132e+06 | 12903.6 | 0.111688 | 0.353185 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Minified) Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Read-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Read.ranks
+### Apache Builds Test (Prettified) Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| simdjson (reflection) | 1938.36 | 0.193785 | 6170.3ms | 124597 | 160 | 2.25791e+06 | 61301.8 | 0.0377578 | 1.27676 | 1(Win) | true |
+| Jsonifier (two-stage) | 1742.4 | 0.0348527 | 6834.68ms | 124597 | 4890 | 2.76249e+06 | 68196.1 | 0.0232652 | 1.4204 | 2(Loss) | true |
+| simdjson (ondemand) | 1724.17 | 0.0807513 | 6906.35ms | 124597 | 4890 | 1.51448e+07 | 68917.1 | 0.00426116 | 1.43543 | 3(Loss) | true |
+| Jsonifier | 1698.77 | 0.0761723 | 7036.05ms | 124597 | 1280 | 3.6337e+06 | 69947.6 | 0.0104744 | 1.45689 | 4(Loss) | true |
+| Glaze | 1631.09 | 0.041951 | 7290.72ms | 124597 | 4890 | 4.5672e+06 | 72849.8 | 0.147689 | 1.51736 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Read (Reused).ranks
+### Apache Builds Test (Prettified) Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| simdjson (reflection) | 2441.4 | 0.0979568 | 6003.98ms | 124597 | 640 | 1.45474e+06 | 48670.8 | 0.0952421 | 1.01356 | 1(Win) | true |
+| simdjson (ondemand) | 2268.85 | 0.0372403 | 6369.59ms | 124597 | 4890 | 1.8601e+06 | 52372.2 | 0.144878 | 1.09069 | 2(Loss) | true |
+| Jsonifier (two-stage) | 2249.45 | 0.0382737 | 6455.03ms | 124597 | 4890 | 1.99883e+06 | 52824.1 | 0.0387926 | 1.1001 | 3(Loss) | true |
+| Jsonifier | 2177.29 | 0.250605 | 6641.38ms | 124597 | 160 | 2.99282e+06 | 54574.6 | 0.0109381 | 1.13658 | 4(Loss) | true |
+| Glaze | 2049.67 | 0.0532687 | 6961.93ms | 124597 | 4890 | 4.66338e+06 | 57972.8 | 0.0501646 | 1.20739 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Apache Builds Test (Prettified) Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Write.ranks
+### Apache Builds Test (Prettified) Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 28994.5 | 0.153609 | 451.007ms | 136037 | 2560 | 120937 | 4474.47 | 0.029595 | 0.0848988 | 1(Win) | true |
+| Glaze | 6204.6 | 0.169975 | 2086.69ms | 136076 | 1280 | 1.61776e+06 | 20915.5 | 0.00985267 | 0.398545 | 2(Loss) | true |
+| simdjson (reflection) | 609.303 | 0.114916 | 5449.59ms | 136037 | 640 | 3.83167e+07 | 212924 | 0.0251685 | 4.0625 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Write (Reused).ranks
+### Apache Builds Test (Prettified) Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 29257.2 | 0.0474662 | 449.051ms | 136037 | 80 | 354.41 | 4434.29 | 0.0194545 | 0.0841369 | 1(Win) | true |
+| Glaze | 6824.16 | 0.152079 | 1910.98ms | 136076 | 1280 | 1.07056e+06 | 19016.6 | 0.00681924 | 0.362312 | 2(Loss) | true |
+| simdjson (reflection) | 611.679 | 0.169552 | 5452.31ms | 136037 | 320 | 4.13828e+07 | 212096 | 0.288119 | 4.04688 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Apache Builds Test (Prettified) Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Read-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Read.ranks
+### Canada Test (Minified) Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 885.579 | 0.065151 | 7535.28ms | 2251027 | 80 | 1.99544e+08 | 2.42412e+06 | 0.108663 | 2.79569 | 1(Win) | true |
+| Glaze | 802.61 | 0.0551249 | 8314.89ms | 2251027 | 80 | 1.73916e+08 | 2.67471e+06 | 0.0817761 | 3.08469 | 2(Loss) | true |
+| simdjson (reflection) | 741.887 | 0.0550499 | 9039.42ms | 2251027 | 30 | 7.61237e+07 | 2.89363e+06 | 0.00862741 | 3.33718 | 3(Loss) | true |
+| simdjson (ondemand) | 733.451 | 0.0278681 | 9111.59ms | 2251027 | 160 | 1.06452e+08 | 2.92691e+06 | 0.230307 | 3.37557 | 4(Loss) | true |
+| Jsonifier (two-stage) | 720.855 | 0.540504 | 9285.19ms | 2251027 | 40 | 1.03639e+10 | 2.97806e+06 | 0.213141 | 3.43455 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Read (Reused).ranks
+### Canada Test (Minified) Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1042.84 | 0.0369084 | 7570.24ms | 2251027 | 160 | 9.23618e+07 | 2.05855e+06 | 0.12847 | 2.37408 | 1(Win) | true |
+| Glaze | 944.802 | 0.0446091 | 8290.34ms | 2251027 | 160 | 1.64379e+08 | 2.27217e+06 | 0.129679 | 2.62044 | 2(Loss) | true |
+| simdjson (ondemand) | 857.749 | 0.0396011 | 8985.28ms | 2251027 | 80 | 7.8586e+07 | 2.50277e+06 | 0.147946 | 2.88639 | 3(Loss) | true |
+| simdjson (reflection) | 850.249 | 0.0393217 | 8996.23ms | 2251027 | 80 | 7.8854e+07 | 2.52485e+06 | 0.0282972 | 2.91184 | 4(Loss) | true |
+| Jsonifier (two-stage) | 814.378 | 0.458274 | 9269.01ms | 2251027 | 80 | 1.16748e+10 | 2.63606e+06 | 0.204097 | 3.0401 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Minified) Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Write.ranks
+### Canada Test (Minified) Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1924.97 | 0.0365782 | 6535.22ms | 2090326 | 320 | 4.5917e+07 | 1.0356e+06 | 0.164414 | 1.28613 | 1(Win) | true |
+| Glaze | 1386.58 | 0.0451118 | 9067.04ms | 2090234 | 160 | 6.72975e+07 | 1.43764e+06 | 0.0912892 | 1.78553 | 2(Loss) | true |
+| simdjson (reflection) | 1256.69 | 0.0380612 | 10021.9ms | 2090326 | 160 | 5.8325e+07 | 1.5863e+06 | 0.00260558 | 1.97008 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Write (Reused).ranks
+### Canada Test (Minified) Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1928.12 | 0.0216043 | 6533.02ms | 2090326 | 320 | 1.59658e+07 | 1.0339e+06 | 0.00101286 | 1.28402 | 1(Win) | true |
+| Glaze | 1421.77 | 0.0295647 | 8861.21ms | 2090234 | 160 | 2.74915e+07 | 1.40205e+06 | 0.106004 | 1.74133 | 2(Loss) | true |
+| simdjson (reflection) | 1256.73 | 0.0710717 | 10037.4ms | 2090326 | 40 | 5.08394e+07 | 1.58626e+06 | 0.0204548 | 1.97002 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Minified) Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Read-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Read.ranks
+### Canada Test (Prettified) Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 1784.11 | 0.0499472 | 8924.28ms | 5373214 | 160 | 3.29283e+08 | 2.87219e+06 | 0.0331214 | 1.3877 | 1(Win) | true |
+| Jsonifier | 1764.48 | 0.0602408 | 9072.14ms | 5373214 | 40 | 1.22426e+08 | 2.90414e+06 | 0.186068 | 1.40314 | 2(Loss) | true |
+| simdjson (reflection) | 1667.67 | 0.0498393 | 9580.03ms | 5373214 | 30 | 7.0358e+07 | 3.07273e+06 | 0.0887812 | 1.48459 | 3(Loss) | true |
+| simdjson (ondemand) | 1638.28 | 0.055779 | 9788.22ms | 5373214 | 40 | 1.21757e+08 | 3.12785e+06 | 0.466559 | 1.51122 | 4(Loss) | true |
+| Glaze | 1629.23 | 0.0329317 | 9800.74ms | 5373214 | 40 | 4.29136e+07 | 3.14523e+06 | 0.0346809 | 1.51962 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Read (Reused).ranks
+### Canada Test (Prettified) Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (two-stage) | 2040.62 | 0.0506477 | 8911.8ms | 5373214 | 160 | 2.58812e+08 | 2.51115e+06 | 0.179111 | 1.21326 | 1(Win) | true |
+| Jsonifier | 2008.17 | 0.137714 | 9118.21ms | 5373214 | 30 | 3.70459e+08 | 2.55172e+06 | 0.0659056 | 1.23286 | 2(Loss) | true |
+| simdjson (ondemand) | 1902.73 | 0.085786 | 9651.16ms | 5373214 | 30 | 1.60127e+08 | 2.69312e+06 | 0.0566281 | 1.30118 | 3(Loss) | true |
+| simdjson (reflection) | 1891.25 | 0.0782863 | 9577.25ms | 5373214 | 30 | 1.34978e+08 | 2.70948e+06 | 0.198686 | 1.30908 | 4(Loss) | true |
+| Glaze | 1855.75 | 0.0436133 | 9771.4ms | 5373214 | 160 | 2.32054e+08 | 2.76131e+06 | 0.0423934 | 1.33413 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Read (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Write-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Write-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/Canada Test (Prettified) Write-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Write.ranks
+### Canada Test (Prettified) Write Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 5962.27 | 0.109863 | 6736.91ms | 6661989 | 40 | 5.48208e+07 | 1.0656e+06 | 0.01707 | 0.41524 | 1(Win) | true |
+| Glaze | 3300.44 | 0.09831 | 6030.25ms | 6661897 | 40 | 1.43254e+08 | 1.92498e+06 | 0.65015 | 0.750136 | 2(Loss) | true |
+| simdjson (reflection) | 455.116 | 0.140003 | 9844.5ms | 6661989 | 30 | 1.14594e+10 | 1.39599e+07 | 0.125848 | 5.43985 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Write.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Write.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Write (Reused).ranks
+### Canada Test (Prettified) Write (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 5994.07 | 0.0420391 | 6717.61ms | 6661989 | 80 | 1.58841e+07 | 1.05994e+06 | 0.146754 | 0.41303 | 1(Win) | true |
+| Glaze | 3562.93 | 0.0484031 | 5532.87ms | 6661897 | 80 | 5.95959e+07 | 1.78316e+06 | 0.0986374 | 0.694866 | 2(Loss) | true |
+| simdjson (reflection) | 451.823 | 0.118666 | 9884.75ms | 6661989 | 30 | 8.35305e+09 | 1.40616e+07 | 0.143439 | 5.47954 | 3(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Write (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/Canada Test (Prettified) Write (Reused).md
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/CitmCatalog Test (Minified) Read-glaze.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/CitmCatalog Test (Minified) Read-jsonifier.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/CitmCatalog Test (Minified) Read-jsonifier-two-stage.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/CitmCatalog Test (Minified) Read-simdjson.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//json/Linux-GCC/CitmCatalog Test (Minified) Read-simdjson-reflection.json
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/CitmCatalog Test (Minified) Read.ranks
+### CitmCatalog Test (Minified) Read Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2120.85 | 0.0992079 | 5752.79ms | 500299 | 320 | 1.59397e+07 | 224967 | 0.0386393 | 1.16721 | 1(Win) | true |
+| Jsonifier (two-stage) | 1838.21 | 0.115896 | 6593.75ms | 500299 | 320 | 2.89574e+07 | 259559 | 0.0968387 | 1.34667 | 2(Loss) | true |
+| simdjson (ondemand) | 1636.95 | 0.0890801 | 7452.38ms | 500299 | 320 | 2.15724e+07 | 291470 | 0.0657468 | 1.51226 | 3(Loss) | true |
+| Glaze | 1628.95 | 0.108993 | 7485.45ms | 500299 | 160 | 1.63066e+07 | 292902 | 0.155892 | 1.5197 | 4(Loss) | true |
+| simdjson (reflection) | 1573.48 | 0.127835 | 7736.14ms | 500299 | 80 | 1.20205e+07 | 303226 | 0.18282 | 1.57327 | 5(Loss) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/CitmCatalog Test (Minified) Read.csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/CitmCatalog Test (Minified) Read.md
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/CitmCatalog Test (Minified) Read (Reused).ranks
+### CitmCatalog Test (Minified) Read (Reused) Test Results
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2537.72 | 0.157792 | 5584.13ms | 500299 | 160 | 1.40819e+07 | 188012 | 0.225263 | 0.975465 | 1(Win) | true |
+| Jsonifier (two-stage) | 2141.11 | 0.123701 | 6400.65ms | 500299 | 160 | 1.21577e+07 | 222839 | 0.207007 | 1.15617 | 2(Loss) | true |
+| simdjson (ondemand) | 1968.74 | 0.162415 | 6989.52ms | 500299 | 160 | 2.47887e+07 | 242349 | 0.112106 | 1.25742 | 3(Loss) | true |
+| Glaze STATISTICAL TIE | 1888.56 | 0.709751 | 7362.79ms | 500299 | 30 | 9.64561e+07 | 252638 | 0.130965 | 1.31082 | 4(Tie) | true |
+| simdjson (reflection) STATISTICAL TIE | 1869.76 | 0.0747 | 7329.57ms | 500299 | 640 | 2.32546e+07 | 255178 | 0.0459969 | 1.32398 | 4(Tie) | true |
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/CitmCatalog Test (Minified) Read (Reused).csv
+Saved: /home/runner/work/Json-Performance/Json-Performance//csv/Linux-GCC/CitmCatalog Test (Minified) Read (Reused).md
