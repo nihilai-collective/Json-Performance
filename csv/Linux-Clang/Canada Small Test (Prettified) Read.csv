@@ -1,0 +1,10 @@
+# Canada Small Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (two-stage),1972.15,0.134049,566.616ms,11579,4890,275485,5599.27,0.169096,1.2495,Win,true
+Jsonifier,1828.28,0.38229,610.368ms,11579,320,170605,6039.88,0.145081,1.34838,Loss,true
+simdjson (ondemand),1773.16,0.29056,625.241ms,11579,1280,419109,6227.63,0.0442513,1.38986,Loss,true
+Glaze,1644.16,0.55894,671.779ms,11579,320,450955,6716.24,0.0128869,1.49991,Loss,true

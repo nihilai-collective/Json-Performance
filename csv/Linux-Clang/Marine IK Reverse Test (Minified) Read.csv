@@ -1,0 +1,10 @@
+# Marine IK Reverse Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,830.256,1.06089,6631.17ms,1834197,160,7.99335e+10,2.10685e+06,1.48802,2.98193,Win,true
+Jsonifier (two-stage),788.081,0.108375,6976.19ms,1834197,30,1.73591e+08,2.2196e+06,0.226639,3.14152,Loss,true
+Glaze,678.954,0.0617451,8040.95ms,1834197,80,2.02444e+08,2.57635e+06,0.0865522,3.64646,Loss,true
+simdjson (ondemand),629.91,0.254963,8855.73ms,1834197,40,2.00516e+09,2.77695e+06,0.0671845,3.93037,Loss,true

@@ -1,0 +1,10 @@
+# Discord Small Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (two-stage),2330.92,0.146379,281.615ms,6701,40,644.233,2741.65,0.0796992,1.05206,Win,true
+Glaze,1858.83,0.125879,346.508ms,6701,4890,91583.4,3437.95,0.0140516,1.322,Loss,true
+Jsonifier,1738.05,0.287219,374.02ms,6701,1280,142755,3676.86,0.0120035,1.41269,Loss,true
+simdjson (ondemand),1112.56,0.276144,587.27ms,6701,1280,322042,5744.02,0.194042,2.21504,Loss,true

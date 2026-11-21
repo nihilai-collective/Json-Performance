@@ -1,0 +1,11 @@
+
+----
+### Marine IK Small Test (Prettified) Write Results [(View the data used in the following test)](./json/Marine%20IK%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Marine%20IK%20Small%20Test%20%28Prettified%29%20Write_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Marine%20IK%20Small%20Test%20%28Prettified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 5889.49 | 0.21678 | 406.364ms | 24893 | 1280 | 97734.1 | 4030.88 | 0.0312722 | 0.417694 | 1(Win) | true |
+| Glaze | 3657.1 | 0.151446 | 628.341ms | 24579 | 2560 | 241218 | 6409.55 | 0.500855 | 0.674117 | 2(Loss) | true |

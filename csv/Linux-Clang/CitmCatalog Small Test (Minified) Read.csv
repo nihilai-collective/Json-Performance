@@ -1,0 +1,10 @@
+# CitmCatalog Small Test (Minified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1862.87,0.0412381,173.978ms,3223,320,148.15,1649.97,0.25428,1.3079,Win,true
+Jsonifier (two-stage),1629.64,0.0801859,191.165ms,3223,80,182.987,1886.11,0.121428,1.49803,Loss,true
+Glaze,1367.22,0.0729722,226.28ms,3223,80,215.301,2248.12,0.0990694,1.79015,Loss,true
+simdjson (ondemand),1082.58,0.112305,289.7ms,3223,30,305.013,2839.23,0.213217,2.26678,Loss,true

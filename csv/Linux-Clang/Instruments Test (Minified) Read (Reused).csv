@@ -1,0 +1,10 @@
+# Instruments Test (Minified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,3096.9,0.0874494,3529.19ms,108313,2560,2.17802e+06,33354.5,0.0358835,0.798833,Win,true
+Jsonifier (two-stage),2651.25,0.111061,4143.37ms,108313,1280,2.39658e+06,38960.9,0.392299,0.933194,Loss,true
+Glaze,1865.75,0.06902,5817.64ms,108313,1280,1.86901e+06,55363.9,0.0515963,1.32637,Loss,true
+simdjson (ondemand),664.381,0.0705031,8201.81ms,108313,640,7.68996e+06,155476,0.0700992,3.72585,Loss,true
