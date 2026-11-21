@@ -1,0 +1,10 @@
+# Marine IK Reverse Small Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** Clang-23.1.5
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,2106.19,0.157474,993.021ms,18245,4890,827600,8261.25,1.5617,Win,true
+Jsonifier (two-stage),2092.43,0.131799,1023.14ms,18245,4890,587381,8315.59,0.872775,Loss,true
+simdjson (ondemand),1365.16,0.0618686,1414.2ms,18245,4890,304068,12745.6,0.0743216,Loss,true
+Glaze,1277.64,0.918213,1629ms,18245,40,625487,13618.7,0.609477,Loss,true
