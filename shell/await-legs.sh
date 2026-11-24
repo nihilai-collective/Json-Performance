@@ -41,9 +41,16 @@ while true; do
       continue
     fi
     IDLE_POLLS[$leg]=$(( ${IDLE_POLLS[$leg]:-0} + 1 ))
-    if [ "${IDLE_POLLS[$leg]}" -ge 6 ]; then
-      echo "$leg has no queued or running attempt and no temp branch, so its retry chain has ended." >&2
-      exit 1
+    if [ "${IDLE_POLLS[$leg]}" -ge 3 ]; then
+      last=$(echo "$runs" | filter_leg_runs "$GITHUB_RUN_ID" "$leg" | jq -r --arg p "$leg attempt " '[.[] | .displayTitle | ltrimstr($p) | split(" ")[0] | tonumber] | max // 0')
+      next=$(( last + 1 ))
+      if [ "$next" -ge 100 ]; then
+        echo "$leg used every attempt without pushing a temp branch." >&2
+        exit 1
+      fi
+      echo "$leg has no queued or running attempt and no temp branch after attempt $last, so attempt $next is being dispatched." >&2
+      bash "$(dirname "$0")/dispatch-leg.sh" "$leg" "$next" "$GITHUB_RUN_ID" "$GITHUB_SHA" || exit 1
+      IDLE_POLLS[$leg]=0
     fi
   done
   [ "$pending" = "0" ] && break
