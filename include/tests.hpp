@@ -58,9 +58,9 @@ namespace tests {
 
 		result += "##### A Few Details\n"
 				  "* **Corpus:** Every unique package.json that is a JSON object in the deps/ folder of Node.js's add-jsonifier-main branch (the same set Node's "
-				  "benchmark/module/package-json-corpus.js reads), split by size into the same buckets. `json/package_json/Sources.txt` tells you where each file came from.\n"
+				  "benchmark/module/package-json-corpus.js reads), all sizes mixed in one corpus, as Node.js meets them when resolving modules. `json/package_json/Sources.txt` tells you where each file came from.\n"
 				  "* **Work per document:** Each library runs Node.js's own package.json field loop, so name, main, type, private, and the raw JSON of exports, imports "
-				  "and scripts, skipping every other key. One benchmark iteration parses every document in the bucket once, reusing one parser across all of them.\n"
+				  "and scripts, skipping every other key. One benchmark iteration parses every document in the corpus once, reusing one parser across all of them.\n"
 				  "* **Padding:** Every document gets stored with `SIMDJSON_PADDING` bytes of spare capacity, so simdjson can parse it in place without a copy.\n"
 				  "* **Jsonifier:** Built from our `node` branch, which is the C++20 subset that gets vendored into Node.js.\n\n"
 				  "---\n";
@@ -361,10 +361,6 @@ namespace tests {
 	}
 
 	inline void run_all_tests(test_registry& registry) {
-		run_package_json_test<"Package.json Corpus 0-512 Test", 0, 512>(registry);
-		run_package_json_test<"Package.json Corpus 512-1024 Test", 512, 1024>(registry);
-		run_package_json_test<"Package.json Corpus 1024-2048 Test", 1024, 2048>(registry);
-		run_package_json_test<"Package.json Corpus 2048-65536 Test", 2048, 65536>(registry);
 		run_package_json_test<"Package.json Corpus All Test", 0, 65536>(registry);
 	}
 
