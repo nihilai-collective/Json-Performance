@@ -43,7 +43,7 @@ set(SIMDJSON_DEVELOPMENT_CHECKS OFF CACHE BOOL "" FORCE)
 FetchContent_Declare(
   simdjson
   GIT_REPOSITORY https://github.com/simdjson/simdjson.git
-  GIT_TAG 81c2d7212d5f3bfd7138716c9bfc5a4b0bad732c
+  GIT_TAG b26f71a0f9144360e586d05810f007924f0ffb6b
 )
 FetchContent_MakeAvailable(simdjson)
 getCommitHash(${simdjson_SOURCE_DIR} SIMDJSON_COMMIT_HASH)
