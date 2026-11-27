@@ -1,0 +1,11 @@
+
+----
+### Marine IK Sparse Reverse Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Marine%20IK%20Sparse%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Marine%20IK%20Sparse%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Marine%20IK%20Sparse%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 3145.32 | 0.225909 | 7166.63ms | 1834197 | 320 | 5.05104e+08 | 556137 | 0.228455 | 1.62231 | 8.57443 | 1.61614 | 0.00583496 | 0.113065 | 4.76026e-06 | 1(Win) | true |
+| simdjson (ondemand) | 2462.61 | 0.092316 | 9134.38ms | 1834197 | 640 | 2.75191e+08 | 710313 | 0.0200857 | 2.06864 | 12.8394 | 2.27673 | 0.00343741 | 0.150362 | 2.59906e-06 | 2(Loss) | true |

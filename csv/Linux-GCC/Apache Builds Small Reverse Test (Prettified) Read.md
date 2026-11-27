@@ -1,0 +1,11 @@
+
+----
+### Apache Builds Small Reverse Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Apache%20Builds%20Small%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Apache%20Builds%20Small%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Apache%20Builds%20Small%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1680.69 | 0.0562559 | 919.976ms | 3370 | 320 | 370.315 | 1912.24 | 0.0690793 | 3.1291 | 12.9864 | 2.51573 | 0.00141691 | 3.98739e-05 | 4.6365e-06 | 1(Win) | true |
+| simdjson (ondemand) | 906.187 | 0.0605478 | 1084.13ms | 3370 | 40 | 184.451 | 3546.6 | 0.104434 | 5.75027 | 23.0122 | 4.60415 | 0.00951039 | 1.48368e-05 | 0 | 2(Loss) | true |

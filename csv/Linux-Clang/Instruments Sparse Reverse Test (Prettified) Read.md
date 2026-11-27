@@ -1,0 +1,11 @@
+
+----
+### Instruments Sparse Reverse Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Instruments%20Sparse%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Instruments%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Instruments%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 4960.64 | 0.0409222 | 4245.39ms | 183677 | 1280 | 267278 | 35311.6 | 0.279608 | 1.02238 | 5.33292 | 0.898186 | 0.000851325 | 5.38905e-06 | 3.3219e-06 | 1(Win) | true |
+| simdjson (ondemand) | 3965.43 | 0.0370869 | 5165.61ms | 183677 | 2560 | 687084 | 44173.7 | 0.0255398 | 1.28889 | 6.58849 | 0.95883 | 0.00207441 | 4.43841e-06 | 2.34149e-06 | 2(Loss) | true |

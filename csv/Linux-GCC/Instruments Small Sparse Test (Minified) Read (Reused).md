@@ -1,0 +1,11 @@
+
+----
+### Instruments Small Sparse Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Instruments%20Small%20Sparse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Instruments%20Small%20Sparse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Instruments%20Small%20Sparse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 5361.19 | 0.0637504 | 801.022ms | 4669 | 4890 | 1370.88 | 830.544 | 0.0241897 | 1.00262 | 4.68216 | 0.678946 | 0.00089828 | 2.17683e-05 | 8.23427e-06 | 1(Win) | true |
+| simdjson (ondemand) | 4722.49 | 0.0342742 | 813.709ms | 4669 | 1280 | 133.675 | 942.873 | 0.0711248 | 1.13391 | 5.27029 | 0.639537 | 0.00111624 | 1.7402e-05 | 1.8406e-06 | 2(Loss) | true |

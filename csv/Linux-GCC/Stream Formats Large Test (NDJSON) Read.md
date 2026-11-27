@@ -1,0 +1,11 @@
+
+----
+### Stream Formats Large Test (NDJSON) Read Results [(Here is the data we used for this test)](./json/Stream%20Formats%20Large%20Test%20%28NDJSON%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Stream%20Formats%20Large%20Test%20%28NDJSON%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Stream%20Formats%20Large%20Test%20%28NDJSON%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 20365.3 | 0.109214 | 9813.28ms | 16197086 | 640 | 4.39169e+08 | 758482 | 0.156866 | 0.248277 | 1.24513 | 0.0695898 | 5.80092e-05 | 0.0157148 | 0.000268948 | 1(Win) | true |
+| simdjson (ondemand) | 17597.4 | 0.712512 | 5679.16ms | 16197086 | 80 | 3.12934e+09 | 877787 | 0.270667 | 0.286532 | 1.33582 | 0.0730644 | 8.54189e-05 | 0.0157224 | 0.00025423 | 2(Loss) | true |

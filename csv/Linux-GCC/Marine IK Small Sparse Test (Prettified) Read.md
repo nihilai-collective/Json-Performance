@@ -1,0 +1,11 @@
+
+----
+### Marine IK Small Sparse Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Marine%20IK%20Small%20Sparse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Marine%20IK%20Small%20Sparse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Marine%20IK%20Small%20Sparse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 10850.2 | 0.0612875 | 878.126ms | 18245 | 320 | 309.108 | 1603.64 | 0.0140325 | 0.486773 | 2.40745 | 0.280789 | 0.00011236 | 6.50863e-06 | 2.05536e-06 | 1(Win) | true |
+| simdjson (ondemand) | 9616.12 | 0.0315934 | 901.825ms | 18245 | 640 | 209.151 | 1809.44 | 0.0444519 | 0.547349 | 2.8028 | 0.284571 | 0.000115614 | 6.67991e-06 | 3.4256e-07 | 2(Loss) | true |

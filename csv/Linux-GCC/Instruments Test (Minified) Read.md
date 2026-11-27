@@ -1,0 +1,11 @@
+
+----
+### Instruments Test (Minified) Read Results [(Here is the data we used for this test)](./json/Instruments%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Instruments%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Instruments%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1681.28 | 0.0374736 | 6900.52ms | 108313 | 1280 | 678489 | 61438.5 | 0.0645008 | 3.05246 | 13.0819 | 2.64407 | 0.00374537 | 1.59766e-05 | 1.02928e-05 | 1(Win) | true |
+| simdjson (ondemand) | 1514.73 | 0.0982863 | 7547.17ms | 108313 | 640 | 2.87513e+06 | 68193.9 | 0.0880183 | 3.34522 | 15.1474 | 2.4544 | 0.00622774 | 3.69012e-05 | 1.98499e-05 | 2(Loss) | true |

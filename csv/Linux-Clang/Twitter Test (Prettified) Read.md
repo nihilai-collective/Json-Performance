@@ -1,0 +1,11 @@
+
+----
+### Twitter Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Twitter%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Twitter%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Twitter%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2193.61 | 0.14379 | 8391.08ms | 360584 | 1280 | 6.50371e+07 | 156764 | 0.065436 | 2.32954 | 8.11955 | 1.40834 | 0.00981565 | 0.000306179 | 3.40203e-05 | 1(Win) | true |
+| simdjson (ondemand) | 2112.74 | 0.111623 | 8776.02ms | 360584 | 1280 | 4.22508e+07 | 162764 | 0.124341 | 2.42276 | 8.60654 | 1.36762 | 0.00948939 | 0.00087238 | 0.00010119 | 2(Loss) | true |

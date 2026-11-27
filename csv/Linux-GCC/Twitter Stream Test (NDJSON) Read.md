@@ -1,0 +1,11 @@
+
+----
+### Twitter Stream Test (NDJSON) Read Results [(Here is the data we used for this test)](./json/Twitter%20Stream%20Test%20%28NDJSON%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Stream%20Test%20%28NDJSON%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Stream%20Test%20%28NDJSON%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2009.15 | 0.0845229 | 7014.91ms | 4219120 | 160 | 4.58447e+08 | 2.00267e+06 | 0.126629 | 2.51495 | 8.88729 | 1.52469 | 0.0168366 | 0.0533348 | 0.0020128 | 1(Win) | true |
+| simdjson (ondemand) | 1852.32 | 0.120442 | 7607.32ms | 4219120 | 80 | 5.47591e+08 | 2.17223e+06 | 0.361027 | 2.71101 | 9.38762 | 1.53463 | 0.0148696 | 0.0534671 | 0.00149411 | 2(Loss) | true |

@@ -1,0 +1,11 @@
+
+----
+### Canada Reverse Test (Minified) Read Results [(Here is the data we used for this test)](./json/Canada%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Canada%20Reverse%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Canada%20Reverse%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 730.157 | 0.0644116 | 8486.82ms | 2090234 | 160 | 4.94773e+08 | 2.7301e+06 | 0.0637006 | 6.92072 | 33.1543 | 6.85438 | 0.0273143 | 0.156428 | 0.00131363 | 1(Win) | true |
+| simdjson (ondemand) | 727.085 | 0.0834151 | 8511.26ms | 2090234 | 40 | 2.09203e+08 | 2.74163e+06 | 0.290187 | 6.95448 | 34.7293 | 6.58347 | 0.0230443 | 0.180226 | 0.00181534 | 2(Loss) | true |

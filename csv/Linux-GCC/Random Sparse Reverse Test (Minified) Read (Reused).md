@@ -1,0 +1,11 @@
+
+----
+### Random Sparse Reverse Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Random%20Sparse%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Random%20Sparse%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Random%20Sparse%20Reverse%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2226.6 | 0.0479156 | 5172.48ms | 409725 | 640 | 4.52516e+06 | 175489 | 0.309245 | 2.29743 | 11.153 | 2.09971 | 0.00749813 | 8.5549e-05 | 5.81945e-06 | 1(Win) | true |
+| simdjson (ondemand) | 1553.63 | 0.023145 | 7066.72ms | 409725 | 1280 | 4.33724e+06 | 251504 | 0.0484909 | 3.25977 | 13.7194 | 2.44014 | 0.0120534 | 0.00072914 | 1.09525e-05 | 2(Loss) | true |

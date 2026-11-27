@@ -1,0 +1,11 @@
+
+----
+### Canada Small Reverse Test (Prettified) Read (Reused) Results [(Here is the data we used for this test)](./json/Canada%20Small%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Canada%20Small%20Reverse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Canada%20Small%20Reverse%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| simdjson (ondemand) | 1938.79 | 0.0350614 | 1386.76ms | 11579 | 4890 | 19500.6 | 5695.61 | 0.0814693 | 2.67504 | 13.4813 | 2.27067 | 0.00147651 | 1.08616e-05 | 1.92507e-06 | 1(Win) | true |
+| Jsonifier (generic) | 1902.13 | 0.0397992 | 1399.52ms | 11579 | 2560 | 13666.3 | 5805.38 | 0.0618343 | 2.72067 | 13.1449 | 2.44788 | 0.00183454 | 1.3528e-05 | 4.25069e-06 | 2(Loss) | true |

@@ -1,0 +1,11 @@
+
+----
+### Canada Small Sparse Reverse Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Canada%20Small%20Sparse%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Canada%20Small%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Canada%20Small%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 10303.9 | 0.0795681 | 820.642ms | 11579 | 2560 | 1861.49 | 1071.69 | 0.00266087 | 0.519027 | 2.703 | 0.358753 | 0.000260237 | 1.24147e-05 | 5.02661e-06 | 1(Win) | true |
+| simdjson (ondemand) | 9116.69 | 0.050999 | 838.002ms | 11579 | 2560 | 976.856 | 1211.25 | 0.00696643 | 0.579397 | 3.04102 | 0.363589 | 0.000261586 | 1.07954e-05 | 3.47477e-06 | 2(Loss) | true |
