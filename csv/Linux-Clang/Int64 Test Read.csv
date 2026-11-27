@@ -1,0 +1,8 @@
+# Int64 Test Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (stage-1),2640.15,0.0804348,50.1281ms,1313,160,23.2852,474.281,0.0355675,0.887876,Win,true
+simdjson (stage-1),1275.78,0.085138,101.328ms,1313,30,20.9483,981.5,0.0339501,1.88903,Loss,true
