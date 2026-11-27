@@ -1,0 +1,11 @@
+
+----
+### Discord Sparse Reverse Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Discord%20Sparse%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Discord%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Discord%20Sparse%20Reverse%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 2653.89 | 0.166266 | 3140.82ms | 83958 | 640 | 1.61045e+06 | 30170.3 | 0.250853 | 0.932089 | 1(Win) | true |
+| simdjson (ondemand) | 1817.98 | 0.411441 | 4526ms | 83958 | 40 | 1.31348e+06 | 44042.7 | 0.0243195 | 1.36106 | 2(Loss) | true |

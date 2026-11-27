@@ -1,0 +1,8 @@
+# Twitter Stream Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+simdjson (ondemand),2225.92,0.05187,6437.87ms,4219120,80,7.03313e+07,1.80764e+06,0.0280451,1.11224,Win,true
+Jsonifier (generic),2091.79,0.041635,6770.82ms,4219120,40,2.56556e+07,1.92355e+06,0.11382,1.18355,Loss,true

@@ -1,0 +1,8 @@
+# Stream Formats Large Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),19664.6,0.490247,5094.76ms,16197086,40,5.9319e+08,785510,0.255232,0.125895,Win,true
+simdjson (ondemand),16196.8,0.495208,6117.52ms,16197086,30,6.69131e+08,953690,0.0300677,0.152849,Loss,true

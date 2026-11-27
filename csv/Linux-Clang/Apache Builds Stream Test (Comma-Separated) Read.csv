@@ -1,0 +1,8 @@
+# Apache Builds Stream Test (Comma-Separated) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1629.82,0.101834,9484.15ms,4211999,160,1.00786e+09,2.46461e+06,0.202549,1.51903,Win,true
+simdjson (ondemand),1424.93,0.661857,5109.59ms,4211999,80,2.78491e+10,2.81901e+06,0.849586,1.73746,Loss,true

@@ -1,0 +1,8 @@
+# Google Maps Response Stream Test (NDJSON) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (generic),1165.84,0.0471044,5669.38ms,4203059,30,7.86859e+07,3.43817e+06,0.343841,2.12359,Win,true
+simdjson (ondemand),995.726,0.226683,6330.53ms,4203059,40,3.33081e+09,4.02555e+06,0.24742,2.4864,Loss,true

@@ -1,0 +1,11 @@
+
+----
+### Apache Builds Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Apache%20Builds%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Apache%20Builds%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Apache%20Builds%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier (generic) | 1766.36 | 0.163507 | 6903.63ms | 124597 | 320 | 3.8715e+06 | 67271 | 0.128447 | 1.40109 | 1(Win) | true |
+| simdjson (ondemand) | 1666.88 | 0.079627 | 7179.12ms | 124597 | 1280 | 4.12418e+06 | 71285.9 | 0.167107 | 1.48474 | 2(Loss) | true |
