@@ -1,0 +1,10 @@
+# Apache Builds Test (Prettified) Read (Reused) Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1640.52,0.740851,9100.17ms,124597,4890,1.40807e+09,72431.2,1.89576,1.85187,Win,true
+Jsonifier (two-stage),1450.92,0.711234,5236.51ms,124597,2560,8.68544e+08,81896.2,0.877251,2.09398,Loss,true
+Glaze,1390.3,0.897952,5470.9ms,124597,1280,7.53899e+08,85467,0.0360024,2.18523,Loss,true
+simdjson (ondemand),1281.76,0.779436,5648.07ms,124597,2560,1.3366e+09,92704.4,2.72942,2.37046,Loss,false

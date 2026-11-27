@@ -1,0 +1,10 @@
+# Int64 Test Read (Reused) Test Results 
+#**CPU:** Apple M2 Pro (Virtual)-NEON
+#**OS:** macOS-25.6.0
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Position,Converged
+Jsonifier,1494.96,1.92522,85.6719ms,1313,640,166424,837.6,0.0956023,Win,true
+Glaze,849.167,0.503532,152.636ms,1313,4890,269592,1474.59,0.634002,Loss,true
+simdjson (reflection),746.147,0.506547,178.576ms,1313,4890,353370,1678.19,0.19627,Loss,true
+simdjson (ondemand),304.591,0.282573,425.333ms,1313,2560,345459,4111,0.371112,Loss,true

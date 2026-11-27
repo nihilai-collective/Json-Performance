@@ -1,0 +1,10 @@
+# Github Events Test (Prettified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,976.015,0.918997,6371.28ms,65103,4890,1.67119e+09,63612.8,1.16136,3.11207,Win,true
+Glaze,921.13,1.87798,6899.67ms,65103,640,1.02547e+09,67403.1,0.00510017,3.29733,Tie,true
+Jsonifier (two-stage),904.787,0.878186,6797.08ms,65103,4890,1.77579e+09,68620.7,0.607114,3.35736,Tie,true
+simdjson (ondemand),652.018,0.963781,9464.32ms,65103,2560,2.15616e+09,95223,0.76388,4.65941,Loss,true

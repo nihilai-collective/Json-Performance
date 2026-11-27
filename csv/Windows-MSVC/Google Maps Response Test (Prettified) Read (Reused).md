@@ -1,0 +1,13 @@
+
+----
+### Google Maps Response Test (Prettified) Read (Reused) Results [(Here is the data we used for this test)](./json/Google%20Maps%20Response%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Google%20Maps%20Response%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Google%20Maps%20Response%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2579.39 | 1.0045 | 1124.51ms | 25388 | 30 | 266713 | 9386.67 | 0.635145 | 1.17463 | 1(Win) | true |
+| Jsonifier (two-stage) | 2401.97 | 1.06678 | 1158.18ms | 25388 | 320 | 3.70016e+06 | 10080 | 0.167131 | 1.26251 | 2(Loss) | true |
+| Glaze | 1599.25 | 0.997131 | 1658.94ms | 25388 | 4890 | 1.11439e+08 | 15139.5 | 1.05716 | 1.89682 | 3(Loss) | true |
+| simdjson (ondemand) | 1359.69 | 0.877236 | 2015.59ms | 25388 | 160 | 3.90417e+06 | 17806.9 | 0.845688 | 2.23174 | 4(Loss) | true |

@@ -1,0 +1,12 @@
+
+----
+### Marine IK Reverse Test (Prettified) Write (Reused) Results [(Here is the data we used for this test)](./json/Marine%20IK%20Reverse%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Marine%20IK%20Reverse%20Test%20%28Prettified%29%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Marine%20IK%20Reverse%20Test%20%28Prettified%29%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 6358.41 | 0.0478698 | 9559.89ms | 10018896 | 80 | 4.13959e+07 | 1.5027e+06 | 0.0404741 | 0.794679 | 2.59972 | 0.119828 | 0.00013517 | 0.0248468 | 0.000175642 | 1(Win) | true |
+| Glaze | 4074.86 | 0.182842 | 7271.54ms | 9930228 | 30 | 5.41711e+08 | 2.32406e+06 | 0.861266 | 1.24262 | 4.4153 | 0.474313 | 0.000758338 | 0.0224746 | 0.000178774 | 2(Loss) | true |
+| simdjson (reflection) | 326.25 | 2.23239 | 8698.85ms | 10018896 | 30 | 1.28233e+13 | 2.92866e+07 | 1.88889 | 12.3341 | 35.8783 | 5.255 | 0.0176691 | 0.291193 | 0.152421 | 3(Loss) | true |

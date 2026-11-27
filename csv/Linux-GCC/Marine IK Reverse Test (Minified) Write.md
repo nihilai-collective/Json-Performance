@@ -1,0 +1,12 @@
+
+----
+### Marine IK Reverse Test (Minified) Write Results [(Here is the data we used for this test)](./json/Marine%20IK%20Reverse%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Marine%20IK%20Reverse%20Test%20%28Minified%29%20Write_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Marine%20IK%20Reverse%20Test%20%28Minified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1364.17 | 0.0366939 | 8525.77ms | 1922245 | 320 | 7.7807e+07 | 1.34382e+06 | 0.115494 | 3.70797 | 13.0169 | 0.630071 | 0.000686666 | 0.0586533 | 4.84899e-05 | 1(Win) | true |
+| simdjson (reflection) | 1352.9 | 0.044544 | 8582.84ms | 1922245 | 80 | 2.91443e+07 | 1.35501e+06 | 0.0110999 | 3.73644 | 13.5128 | 1.13444 | 0.00872919 | 0.0506553 | 1.94174e-05 | 2(Loss) | true |
+| Glaze | 994.251 | 0.213487 | 5472.57ms | 1833577 | 160 | 2.25564e+09 | 1.75875e+06 | 0.284224 | 5.08043 | 16.0488 | 1.05286 | 0.00102141 | 0.0497675 | 4.52667e-05 | 3(Loss) | true |

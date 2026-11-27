@@ -1,0 +1,10 @@
+# CitmCatalog Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1508.47,0.564382,8065.34ms,500299,640,2.03944e+09,316295,0.0762825,2.01442,Win,true
+Jsonifier (two-stage),1129.34,0.771839,5362.22ms,500299,640,6.80524e+09,422479,2.66829,2.69042,Loss,false
+Glaze,748.546,1.12021,7962.27ms,500299,640,3.26287e+10,637399,0.815171,4.05961,Loss,true
+simdjson (ondemand),551.783,1.01645,5544.4ms,500299,160,1.23599e+10,864692,0.457024,5.50735,Loss,true

@@ -1,0 +1,10 @@
+# Canada Test (Minified) Read Test Results 
+#**CPU:** Intel(R) Core(TM) i9-14900KF-AVX2
+#**OS:** Windows-10.0.26200
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,645.825,0.743456,10022.5ms,2251027,160,9.77151e+10,3.32404e+06,0.982683,4.70584,Win,true
+Jsonifier (two-stage),611.747,0.672942,5274.67ms,2251027,80,4.46133e+10,3.50921e+06,0.554125,4.96735,Loss,true
+simdjson (ondemand),385.659,0.940834,8421.82ms,2251027,40,1.09709e+11,5.56644e+06,0.868577,7.87997,Loss,true
+Glaze,353.04,1.11087,9074.35ms,2251027,30,1.36886e+11,6.08075e+06,1.36755,8.60853,Loss,true

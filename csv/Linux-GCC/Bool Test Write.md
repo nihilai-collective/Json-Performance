@@ -1,0 +1,12 @@
+
+----
+### Bool Test Write Results [(Here is the data we used for this test)](./json/Bool%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Bool%20Test%20Write_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Bool%20Test%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1798.74 | 0.0914238 | 758.048ms | 905 | 4890 | 940.995 | 479.821 | 0.282064 | 3.09915 | 11.0895 | 1.10276 | 0.00446712 | 5.87511e-05 | 1.9659e-05 | 1(Win) | true |
+| simdjson (reflection) | 259.465 | 0.0685426 | 1048.29ms | 905 | 1280 | 6653.8 | 3326.36 | 0.0237863 | 20.066 | 95.1249 | 21.1436 | 0.0550898 | 0.000155387 | 2.41713e-05 | 2(Loss) | true |
+| Glaze | 199.073 | 0.0426131 | 1177.7ms | 905 | 4890 | 16690.5 | 4335.47 | 0.126029 | 26.0715 | 111.054 | 23.5105 | 0.0883092 | 0.00026099 | 0.000100781 | 3(Loss) | true |

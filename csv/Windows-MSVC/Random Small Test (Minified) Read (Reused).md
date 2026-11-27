@@ -1,0 +1,13 @@
+
+----
+### Random Small Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Random%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Random%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Random%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1298.94 | 0.274956 | 504.848ms | 5094 | 30 | 3172.41 | 3740 | 0.620018 | 2.32051 | 1(Win) | true |
+| Jsonifier (two-stage) | 1021.66 | 0.216496 | 610.785ms | 5094 | 160 | 16956 | 4755 | 0.768212 | 2.9664 | 2(Loss) | true |
+| Glaze | 951.309 | 0.264451 | 645.111ms | 5094 | 30 | 5471.26 | 5106.67 | 0.327439 | 3.18318 | 3(Loss) | true |
+| simdjson (ondemand) | 716.522 | 0.178902 | 840.968ms | 5094 | 30 | 4413.79 | 6780 | 0.196271 | 4.21885 | 4(Loss) | true |

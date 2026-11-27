@@ -1,0 +1,13 @@
+
+----
+### Marine IK Test (Prettified) Read Results [(Here is the data we used for this test)](./json/Marine%20IK%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Marine%20IK%20Test%20%28Prettified%29%20Read_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Marine%20IK%20Test%20%28Prettified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1875.01 | 0.352817 | 5686.61ms | 7351818 | 80 | 1.39242e+10 | 3.7393e+06 | 0.861564 | 1(Win) | true |
+| Jsonifier (two-stage) | 1818.42 | 0.170151 | 5916.17ms | 7351818 | 80 | 3.44318e+09 | 3.85568e+06 | 0.0477411 | 2(Loss) | true |
+| Glaze | 1395.8 | 0.624595 | 7621.45ms | 7351818 | 40 | 3.93734e+10 | 5.02311e+06 | 2.69724 | 3(Loss) | true |
+| simdjson (ondemand) | 1352.21 | 0.332244 | 7771.97ms | 7351818 | 80 | 2.37413e+10 | 5.18502e+06 | 1.79167 | 4(Loss) | true |

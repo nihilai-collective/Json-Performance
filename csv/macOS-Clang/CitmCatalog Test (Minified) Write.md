@@ -1,0 +1,11 @@
+
+----
+### CitmCatalog Test (Minified) Write Results [(Here is the data we used for this test)](./json/CitmCatalog%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/CitmCatalog%20Test%20%28Minified%29%20Write_Results.png" target="_blank"><img src="./graphs/macOS-Clang/CitmCatalog%20Test%20%28Minified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 9582.57 | 0.0190643 | 5088.92ms | 500299 | 40 | 3604.09 | 49790.6 | 0.0806228 | 1(Win) | true |
+| Glaze | 2221.79 | 0.0840626 | 5569.06ms | 500299 | 640 | 2.08565e+07 | 214747 | 0.00460986 | 2(Loss) | true |

@@ -1,0 +1,12 @@
+
+----
+### Int64 Test Read Results [(Here is the data we used for this test)](./json/Int64%20Test.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Int64%20Test%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Int64%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 1474.86 | 0.17731 | 812.427ms | 1313 | 2560 | 5801.48 | 849.015 | 0.0388627 | 3.63531 | 18.1889 | 2.90404 | 0.00077411 | 0.000164818 | 3.09406e-05 | 1(Win) | true |
+| Glaze | 993.687 | 0.10952 | 846.377ms | 1313 | 4890 | 9313.81 | 1260.13 | 0.0618396 | 5.34511 | 26.9345 | 3.62529 | 0.00103153 | 0.000224591 | 4.12736e-05 | 2(Loss) | true |
+| simdjson (ondemand) | 370.729 | 0.0615287 | 1062.53ms | 1313 | 4890 | 21119.3 | 3377.6 | 0.268573 | 14.0032 | 56.8325 | 11.0685 | 0.000890108 | 0.000179891 | 3.23959e-05 | 3(Loss) | true |

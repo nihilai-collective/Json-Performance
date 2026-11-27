@@ -1,0 +1,13 @@
+
+----
+### Marine IK Small Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Marine%20IK%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Marine%20IK%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Marine%20IK%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 631.624 | 1.71523 | 832.525ms | 4604 | 4890 | 6.95195e+07 | 6951.47 | 0.647789 | 4.79473 | 1(Win) | true |
+| Jsonifier (two-stage) | 560.308 | 0.437988 | 975.27ms | 4604 | 80 | 94238.9 | 7836.25 | 0.111785 | 5.40853 | 2(Loss) | true |
+| simdjson (ondemand) | 323.834 | 1.08909 | 1466.35ms | 4604 | 4890 | 1.06626e+08 | 13558.5 | 0.32715 | 9.36861 | 3(Loss) | true |
+| Glaze | 309.267 | 0.138324 | 1666.78ms | 4604 | 320 | 123409 | 14197.2 | 0.174193 | 9.81458 | 4(Loss) | true |

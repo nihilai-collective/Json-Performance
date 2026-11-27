@@ -1,0 +1,14 @@
+
+----
+### Twitter Partial Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Twitter%20Partial%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Twitter%20Partial%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Twitter%20Partial%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 8658.02 | 0.134094 | 6002.75ms | 466906 | 30 | 142679 | 51429.3 | 0.0425646 | 0.594674 | 3.03887 | 0.399663 | 0.000939518 | 6.42528e-07 | 2.14176e-07 | 1(Win) | true |
+| Jsonifier (two-stage) | 8515.56 | 0.128762 | 6003.26ms | 466906 | 640 | 2.90127e+06 | 52289.7 | 0.0612918 | 0.596783 | 3.03882 | 0.399721 | 0.000916589 | 1.82953e-05 | 1.68764e-05 | 2(Loss) | true |
+| simdjson (ondemand) | 7100.14 | 0.0394615 | 7073.7ms | 466906 | 1280 | 783940 | 62713.7 | 0.0324995 | 0.716993 | 3.55207 | 0.361788 | 0.000882677 | 8.25246e-06 | 7.24349e-06 | 3(Loss) | true |
+| simdjson (reflection) | 6947.31 | 0.209686 | 7311.82ms | 466906 | 30 | 541860 | 64093.3 | 0.0614351 | 0.741401 | 3.54128 | 0.364521 | 0.00095244 | 2.6415e-06 | 1.7848e-06 | 4(Loss) | true |
+| Glaze | 3292.81 | 0.0742186 | 7360.22ms | 466906 | 640 | 6.44662e+06 | 135227 | 0.112865 | 1.54976 | 6.39747 | 1.01713 | 0.00150555 | 8.20227e-06 | 7.05107e-06 | 5(Loss) | true |

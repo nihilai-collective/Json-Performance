@@ -1,0 +1,14 @@
+
+----
+### Random Small Test (Prettified) Read (Reused) Results [(Here is the data we used for this test)](./json/Random%20Small%20Test%20%28Prettified%29.json):
+
+<p align="left"><a href="./graphs/Linux-GCC/Random%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-GCC/Random%20Small%20Test%20%28Prettified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Instructions/Byte | Branches/Byte | Branch Misses/Byte | Cache References/Byte | Cache Misses/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | -------- | --------- |
+| Jsonifier | 3482.68 | 0.0523833 | 996.131ms | 8051 | 4890 | 6521.82 | 2204.64 | 0.0227436 | 1.50685 | 6.87269 | 1.17327 | 0.00176744 | 3.09377e-05 | 1.1227e-05 | 1(Win) | true |
+| Jsonifier (two-stage) | 2668.3 | 0.059309 | 1063.86ms | 8051 | 2560 | 7456.08 | 2877.5 | 0.195034 | 1.96137 | 9.43995 | 1.37101 | 0.00108114 | 2.75102e-05 | 8.10264e-06 | 2(Loss) | true |
+| simdjson (reflection) | 2223.04 | 0.0600445 | 1134.18ms | 8051 | 2560 | 11010.1 | 3453.85 | 0.00221678 | 2.33442 | 10.0011 | 1.50851 | 0.000908515 | 2.56665e-05 | 6.84115e-06 | 3(Loss) | true |
+| simdjson (ondemand) | 2015.65 | 0.0441965 | 1160.44ms | 8051 | 4890 | 13859.7 | 3809.2 | 0.00960297 | 2.57754 | 9.72525 | 1.46752 | 0.00243235 | 2.34446e-05 | 5.7405e-06 | 4(Loss) | true |
+| Glaze | 1996.89 | 0.0516837 | 1165.92ms | 8051 | 4890 | 19311 | 3844.99 | 0.204927 | 2.60801 | 11.4704 | 2.14632 | 0.00301 | 3.87103e-05 | 1.53419e-05 | 5(Loss) | true |

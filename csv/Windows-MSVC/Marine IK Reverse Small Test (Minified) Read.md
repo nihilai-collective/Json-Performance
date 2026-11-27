@@ -1,0 +1,13 @@
+
+----
+### Marine IK Reverse Small Test (Minified) Read Results [(Here is the data we used for this test)](./json/Marine%20IK%20Reverse%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Windows-MSVC/Marine%20IK%20Reverse%20Small%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Windows-MSVC/Marine%20IK%20Reverse%20Small%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 462.181 | 0.226142 | 989.708ms | 4604 | 40 | 18461.5 | 9500 | 0.175747 | 6.56382 | 1(Win) | true |
+| Jsonifier (two-stage) | 435.443 | 0.260804 | 1067.63ms | 4604 | 30 | 20747.1 | 10083.3 | 0.427913 | 6.97037 | 2(Loss) | true |
+| Glaze | 272.434 | 0.584655 | 1629.69ms | 4604 | 1280 | 1.13647e+07 | 16116.6 | 0.370259 | 11.1406 | 3(Loss) | true |
+| simdjson (ondemand) | 157.764 | 0.125304 | 2858.01ms | 4604 | 320 | 389165 | 27830.9 | 0.00112284 | 19.2536 | 4(Loss) | true |

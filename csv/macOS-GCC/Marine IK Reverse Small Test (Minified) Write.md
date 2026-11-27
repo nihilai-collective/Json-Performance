@@ -1,0 +1,12 @@
+
+----
+### Marine IK Reverse Small Test (Minified) Write Results [(Here is the data we used for this test)](./json/Marine%20IK%20Reverse%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Marine%20IK%20Reverse%20Small%20Test%20%28Minified%29%20Write_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Marine%20IK%20Reverse%20Small%20Test%20%28Minified%29%20Write_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 2111.26 | 0.387231 | 227.295ms | 4918 | 2560 | 189441 | 2221.5 | 0.139351 | 1(Win) | true |
+| simdjson (reflection) | 2076.4 | 0.585555 | 227.82ms | 4918 | 1280 | 223924 | 2258.8 | 0.0354296 | 2(Loss) | true |
+| Glaze | 1093.74 | 0.277636 | 411.607ms | 4604 | 320 | 39750.5 | 4014.4 | 0.0796495 | 3(Loss) | true |
