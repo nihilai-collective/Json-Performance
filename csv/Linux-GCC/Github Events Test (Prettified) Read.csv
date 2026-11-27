@@ -1,0 +1,11 @@
+# Github Events Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+simdjson (reflection),1988.59,0.262633,3138.88ms,65103,320,2.15161e+06,31221.7,0.345229,1.24386,Win,true
+Jsonifier,1967.28,0.182286,3200.23ms,65103,640,2.11815e+06,31559.8,0.058326,1.25734,Loss,true
+Jsonifier (two-stage),1795.28,0.0754693,3513.55ms,65103,4890,3.33109e+06,34583.4,1.05686,1.37787,Loss,true
+Glaze,1500.83,0.0810176,4118.43ms,65103,4890,5.49296e+06,41368.4,0.235411,1.64849,Loss,true
+simdjson (ondemand),1491.22,0.134616,4186.38ms,65103,2560,8.04175e+06,41635,0.09636,1.65909,Loss,true

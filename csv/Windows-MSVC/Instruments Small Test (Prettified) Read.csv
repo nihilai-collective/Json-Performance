@@ -1,0 +1,10 @@
+# Instruments Small Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1861.66,0.220227,430.543ms,7932,30,2402.3,4063.33,0.1638,1.32152,Win,true
+Jsonifier (two-stage),1693.71,0.119117,466.468ms,7932,80,2264.24,4466.25,0.139743,1.45271,Loss,true
+Glaze,1283.21,0.0597862,609.626ms,7932,160,1987.42,5895,0.233794,1.9197,Loss,true
+simdjson (ondemand),1246.27,0.222983,619.792ms,7932,4890,895762,6069.73,0.0464831,1.97716,Loss,true

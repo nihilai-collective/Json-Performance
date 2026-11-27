@@ -1,0 +1,9 @@
+# Marine IK Test (Minified) Write Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1235.52,0.170292,9284.91ms,1922245,30,1.91525e+08,1.48374e+06,0.903142,2.00381,Win,true
+simdjson (reflection),1079.22,0.518975,5415.68ms,1922245,80,6.217e+09,1.69863e+06,2.68986,2.29402,Loss,false
+Glaze,895.823,0.23575,6115.49ms,1833577,80,1.69413e+09,1.95199e+06,0.762813,2.76367,Loss,true

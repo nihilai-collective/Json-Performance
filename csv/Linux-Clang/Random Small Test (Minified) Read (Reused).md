@@ -1,0 +1,13 @@
+
+----
+### Random Small Test (Minified) Read (Reused) Results [(Here is the data we used for this test)](./json/Random%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Random%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Random%20Small%20Test%20%28Minified%29%20Read%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2650.44 | 0.0591808 | 229.285ms | 5094 | 80 | 94.1315 | 1832.91 | 0.223867 | 0.92032 | 1(Win) | true |
+| Jsonifier (two-stage) | 2087.56 | 0.0768217 | 280.292ms | 5094 | 80 | 255.68 | 2327.12 | 0.24327 | 1.17257 | 2(Loss) | true |
+| Glaze | 1584.55 | 0.0678194 | 356.899ms | 5094 | 40 | 172.933 | 3065.88 | 0.104756 | 1.54993 | 3(Loss) | true |
+| simdjson (ondemand) | 1041.71 | 0.122981 | 509.219ms | 5094 | 4890 | 160846 | 4663.51 | 0.0818205 | 2.36189 | 4(Loss) | true |

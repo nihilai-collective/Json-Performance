@@ -1,0 +1,13 @@
+
+----
+### Twitter Small Test (Minified) Read Results [(Here is the data we used for this test)](./json/Twitter%20Small%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Twitter%20Small%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Twitter%20Small%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 2567.59 | 0.0685935 | 112.957ms | 2889 | 160 | 86.6824 | 1073.06 | 0.00407731 | 0.940717 | 1(Win) | true |
+| Glaze | 2174.04 | 0.0547281 | 129.55ms | 2889 | 160 | 76.966 | 1267.3 | 0.127077 | 1.11552 | 2(Loss) | true |
+| Jsonifier (two-stage) | 2092.01 | 0.0976703 | 143.124ms | 2889 | 160 | 264.736 | 1316.99 | 0.229742 | 1.15992 | 3(Loss) | true |
+| simdjson (ondemand) | 1057.31 | 0.0291837 | 265.293ms | 2889 | 320 | 185.064 | 2605.83 | 0.106977 | 2.31884 | 4(Loss) | true |

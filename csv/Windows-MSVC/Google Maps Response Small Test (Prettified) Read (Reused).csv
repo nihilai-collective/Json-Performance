@@ -1,0 +1,10 @@
+# Google Maps Response Small Test (Prettified) Read (Reused) Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,2236.59,0.0799089,465.45ms,9378,160,1633.65,3998.75,0.345044,1.09925,Win,true
+Jsonifier (two-stage),2099.43,0.202863,471.085ms,9378,80,5974.68,4260,0.176367,1.17011,Loss,true
+Glaze,1597.78,0.119458,620.298ms,9378,40,1788.46,5597.5,0.0148898,1.54571,Loss,true
+simdjson (ondemand),1203.27,0.299584,868.235ms,9378,2560,1.26933e+06,7432.73,0.318441,2.05033,Loss,true

@@ -1,0 +1,10 @@
+# Twitter Partial Small Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Windows-10.0.26100
+#**Compiler:** MSVC-19.52.37029.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,6748.6,0.715782,70.8171ms,3808,160,2373.82,538.125,0.34965,0.347417,Tie,true
+Jsonifier (two-stage),6698.04,0.360332,59.1275ms,3808,640,2442.78,542.188,0,0.350755,Tie,true
+simdjson (ondemand),3865.97,0.291207,98.6766ms,3808,320,2394.59,939.375,0.0664894,0.620009,Loss,true
+Glaze,3286.51,0.315829,115.596ms,3808,40,487.179,1105,0.151057,0.735347,Loss,true

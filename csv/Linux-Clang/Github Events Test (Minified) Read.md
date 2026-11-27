@@ -1,0 +1,13 @@
+
+----
+### Github Events Test (Minified) Read Results [(Here is the data we used for this test)](./json/Github%20Events%20Test%20%28Minified%29.json):
+
+<p align="left"><a href="./graphs/Linux-Clang/Github%20Events%20Test%20%28Minified%29%20Read_Results.png" target="_blank"><img src="./graphs/Linux-Clang/Github%20Events%20Test%20%28Minified%29%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Cycles/Byte | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | ----------- | -------- | --------- |
+| Jsonifier | 1941.48 | 0.0684686 | 2629.6ms | 53331 | 4890 | 1.57321e+06 | 26196.8 | 0.126035 | 1.27394 | 1(Win) | true |
+| Jsonifier (two-stage) | 1567.08 | 0.124895 | 3706.46ms | 53331 | 2560 | 4.20639e+06 | 32455.5 | 0.122618 | 1.5786 | 2(Loss) | true |
+| Glaze | 1440.47 | 0.0730064 | 3555.87ms | 53331 | 4890 | 3.24924e+06 | 35308.2 | 0.110779 | 1.71749 | 3(Loss) | true |
+| simdjson (ondemand) | 991.33 | 0.144399 | 5124.78ms | 53331 | 1280 | 7.02522e+06 | 51305.2 | 0.111341 | 2.49616 | 4(Loss) | true |

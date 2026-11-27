@@ -1,0 +1,11 @@
+# CitmCatalog Test (Prettified) Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier (two-stage),3630.54,0.0707548,7754.9ms,1151920,1280,5.86711e+07,302588,0.652541,0.681853,Win,true
+Jsonifier,3564.08,0.127963,7964.55ms,1151920,320,4.97819e+07,308230,0.45601,0.694582,Loss,true
+simdjson (ondemand),3140.21,0.108121,8863.79ms,1151920,160,2.28912e+07,349835,0.774784,0.788333,Loss,true
+simdjson (reflection),3051.26,0.168958,9221.15ms,1151920,640,2.36825e+08,360034,0.319085,0.811307,Loss,true
+Glaze,2467.25,0.202941,5485.99ms,1151920,160,1.30641e+08,445256,0.131383,1.0034,Loss,true
