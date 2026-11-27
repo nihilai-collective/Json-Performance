@@ -250,7 +250,7 @@ jobs:
       - name: Merge all temporary branches into the benchmarking branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bash shell/merge-branches.sh stage-1-parsing
+        run: bash shell/merge-branches.sh stage-1-parsing-internal
 
   Delete-Temp-Branches:
     runs-on: ubuntu-latest

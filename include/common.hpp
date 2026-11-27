@@ -9,6 +9,7 @@
 
 #include <benchmarksuite>
 #include <simdjson.h>
+#include <jsonifier>
 
 namespace tests {
 
@@ -33,8 +34,9 @@ namespace tests {
 	inline constexpr benchmarksuite::string_literal json_path{ base_path + "/json" };
 	inline constexpr benchmarksuite::string_literal csv_out_path{ base_path + "/csv" + "/" + current_path };
 	inline constexpr benchmarksuite::string_literal graphs_path{ base_path + "/graphs/" + current_path + "/" };
-	inline constexpr benchmarksuite::string_literal jsonifier_library_name{ "Jsonifier (simdjson stage-1)" };
+	inline constexpr benchmarksuite::string_literal jsonifier_library_name{ "Jsonifier (stage-1)" };
 	inline constexpr benchmarksuite::string_literal simdjson_library_name{ "simdjson (stage-1)" };
+	inline constexpr benchmarksuite::string_literal simdjson_jsonifier_library_name{ "simdjson (jsonifier stage-1)" };
 	inline constexpr benchmarksuite::string_literal stage_name{ "Json-Performance: Stage-1 Parsing (Internal)" };
 
 	inline constexpr benchmarksuite::stage_config_data config{ .measured_iteration_count = measured_iteration_count,
@@ -50,6 +52,7 @@ namespace tests {
 	enum class json_libraries {
 		jsonifier = 0,
 		simdjson  = 1,
+		simdjson_jsonifier = 2,
 	};
 
 	enum class test_flags : uint8_t {

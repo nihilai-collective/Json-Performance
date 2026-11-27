@@ -20,6 +20,15 @@ include(GetCommitHash.cmake)
 include(FetchContent)
 
 FetchContent_Declare(
+  Jsonifier
+  GIT_REPOSITORY https://github.com/nihilai-collective/jsonifier.git
+  GIT_TAG main
+  GIT_SHALLOW TRUE
+)
+FetchContent_MakeAvailable(Jsonifier)
+getCommitHash(${jsonifier_SOURCE_DIR} JSONIFIER_COMMIT_HASH)
+
+FetchContent_Declare(
   benchmarksuite
   GIT_REPOSITORY https://github.com/nihilai-collective/benchmarksuite.git
   GIT_TAG main
@@ -48,6 +57,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE ./include)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
   "BASE_PATH=\"${JSON_PERFORMANCE_TEST_BASE_PATH}\""
+  "JSONIFIER_COMMIT=\"${JSONIFIER_COMMIT_HASH}\""
   "SIMDJSON_COMMIT=\"${SIMDJSON_COMMIT_HASH}\""
   "BNCH_SWT_COMMIT=\"${BNCH_SWT_COMMIT_HASH}\""
   "JP_CI_RUN=$<BOOL:${JP_CI_RUN}>"
@@ -59,6 +69,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   benchmarksuite::benchmarksuite
+  Jsonifier::Jsonifier
   simdjson
 )
 

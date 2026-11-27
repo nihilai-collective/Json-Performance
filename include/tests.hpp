@@ -42,8 +42,8 @@ namespace tests {
 		}
 	};
 
-	template<> struct stage1_call<json_libraries::jsonifier> {
-		static constexpr benchmarksuite::string_literal library_name{ jsonifier_library_name };
+	template<> struct stage1_call<json_libraries::simdjson_jsonifier> {
+		static constexpr benchmarksuite::string_literal library_name{ simdjson_jsonifier_library_name };
 
 		simdjson_inline static simdjson::error_code impl(simdjson_stage1_parser& parser_new, const std::string& json_data_in) {
 			return parser_new->stage1_jsonifier(std::bit_cast<const uint8_t*>(json_data_in.data()), json_data_in.size());
@@ -83,6 +83,34 @@ namespace tests {
 		}
 	};
 
+	template<benchmarksuite::string_literal test_name_new, bool minified> struct library_traits<json_libraries::jsonifier, test_name_new, minified> {
+		static constexpr benchmarksuite::string_literal test_name_read{ test_name_new + " Read" };
+
+		inline static auto run(const std::string& json_data_in_pre) {
+			jsonifier::jsonifier_core<> parser;
+			struct parse_test_struct {
+				inline static size_t impl(jsonifier::jsonifier_core<>& parser_new, const std::string& json_data_in, uint64_t size) {
+					benchmarksuite::do_not_optimize_away(parser_new.collectStructurals<jsonifier::parse_options{ .minified = minified }>(json_data_in));
+					return size;
+				}
+			};
+			benchmark_stage::template run_benchmark<test_name_read, jsonifier_library_name, parse_test_struct>(parser, json_data_in_pre, json_data_in_pre.size());
+		}
+
+		inline static auto run(const std::vector<std::string>& json_data_in_pre) {
+			jsonifier::jsonifier_core<> parser;
+			struct parse_test_struct {
+				inline static size_t impl(jsonifier::jsonifier_core<>& parser_new, const std::vector<std::string>& json_data_in, uint64_t size) {
+					for (const auto& element: json_data_in) {
+						benchmarksuite::do_not_optimize_away(parser_new.collectStructuralsSingle<jsonifier::parse_options{ .minified = minified }>(element));
+					}
+					return size;
+				}
+			};
+			benchmark_stage::template run_benchmark<test_name_read, jsonifier_library_name, parse_test_struct>(parser, json_data_in_pre, total_element_size(json_data_in_pre));
+		}
+	};
+
 	template<benchmarksuite::string_literal label, benchmarksuite::string_literal org_repo, benchmarksuite::string_literal commit> consteval auto make_commit_row() {
 		return benchmarksuite::string_literal{ "| " + label + ": [" + commit + "](https://github.com/" + org_repo + "/commit/" + commit + ")  \n" };
 	}
@@ -94,7 +122,8 @@ namespace tests {
 	}
 
 	consteval auto make_section01() {
-		return benchmarksuite::string_literal{ "#### Here are the commits we used:\n----\n" + make_commit_row<"simdjson", "nihilai-collective/simdjson", SIMDJSON_COMMIT>() };
+		return benchmarksuite::string_literal{ "#### Here are the commits we used:\n----\n" + make_commit_row<"Jsonifier", "nihilai-collective/Jsonifier", JSONIFIER_COMMIT>() +
+			make_commit_row<"simdjson", "nihilai-collective/simdjson", SIMDJSON_COMMIT>() };
 	}
 
 	template<benchmarksuite::string_literal test_name_new_graph, benchmarksuite::string_literal test_name_new_json> consteval auto generate_section() {
@@ -109,11 +138,13 @@ namespace tests {
 			std::format("\n#### How We Benchmarked & What We Tested\n\n"
 						"| Library | Active Implementation |\n"
 						"| :--- | :--- |\n"
-						"| **Jsonifier (simdjson stage-1)** | `{0}` |\n"
-						"| **simdjson (stage-1)** | `{0}` |\n\n"
-						"> Both rows come from one build of our simdjson fork and share its runtime-selected kernel. Jsonifier (simdjson stage-1) runs our transplanted "
-						"Jsonifier stage-1 through `stage1_jsonifier()`, and simdjson (stage-1) runs the original `stage1()`.\n\n",
-				simdjson::get_active_implementation()->name());
+						"| **Jsonifier (stage-1)** | `{0}` |\n"
+						"| **simdjson (stage-1)** | `{1}` |\n"
+						"| **simdjson (jsonifier stage-1)** | `{1}` |\n\n"
+						"> Jsonifier (stage-1) is Jsonifier's own structural indexer. Both simdjson rows come from one build of our simdjson fork and share its runtime-selected "
+						"kernel: simdjson (stage-1) runs the original `stage1()`, and simdjson (jsonifier stage-1) runs our transplanted Jsonifier stage-1 through "
+						"`stage1_jsonifier()`.\n\n",
+				jsonifier::cpuArchName, simdjson::get_active_implementation()->name());
 
 		result += std::format("> **Sampling ({0}):**  \n"
 							  "> Iterations: {1} → {2} → {3} ... (max {4}), doubling per epoch.  \n"
@@ -127,8 +158,8 @@ namespace tests {
 
 		result += "##### A Few Details\n"
 				  "* **Stage-1 Only:** Just stage-1 on both sides, structural indexing with no tape or DOM built.\n"
-				  "* **Same Parser, Same Buffers:** Both stage-1s write into the same simdjson parser's structural index array.\n"
-				  "* **No UTF-8 Validation:** The Jsonifier stage-1 never validates, and simdjson is built with `SIMDJSON_SKIPUTF8VALIDATION`.\n\n"
+				  "* **Same Parser, Same Buffers:** Both simdjson stage-1s write into the same simdjson parser's structural index array.\n"
+				  "* **No UTF-8 Validation:** Neither Jsonifier stage-1 validates, and simdjson is built with `SIMDJSON_SKIPUTF8VALIDATION`.\n\n"
 				  "---\n";
 
 		result += "*Generated with BenchmarkSuite commit: [" + std::string{ BNCH_SWT_COMMIT } + "](https://github.com/nihilai-collective/benchmarksuite/commit/" +
@@ -334,7 +365,7 @@ namespace tests {
 
 	template<size_t... indices, typename... variants> struct test_dispatcher<std::index_sequence<indices...>, variants...> {
 		inline static void impl(size_t index) {
-			((index == indices ? (variants::execute(), true) : false) || ...);
+			static_cast<void>(((index == indices ? (variants::execute(), true) : false) || ...));
 		}
 	};
 
@@ -386,7 +417,7 @@ namespace tests {
 		}
 	}
 
-	using stage_one_libraries = library_list<json_libraries::simdjson, json_libraries::jsonifier>;
+	using stage_one_libraries = library_list<json_libraries::simdjson, json_libraries::simdjson_jsonifier, json_libraries::jsonifier>;
 
 	template<benchmarksuite::string_literal base_name_new, bool pod_new, test_flags flags_new, typename libraries> struct test_variant;
 

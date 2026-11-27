@@ -12,8 +12,9 @@ import matplotlib.pyplot as plt
 from io import StringIO
 
 _library_color_map: dict = {
-    "jsonifier (simdjson stage-1)":     "#825C96",
-    "simdjson (stage-1)":    "#7B9E89"
+    "jsonifier (stage-1)":           "#825C96",
+    "simdjson (stage-1)":            "#7B9E89",
+    "simdjson (jsonifier stage-1)":  "#C9A227"
 }
 
 def color_for(library_name: str) -> str:
