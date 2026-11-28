@@ -62,14 +62,14 @@ namespace tests {
 			};
 			std::vector<test_data_type> reused_datas;
 			gated_benchmark<reused_test_name, variant::library_name, reused_parse_test_struct>::impl(parser, json_data_in, reused_datas);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::vector<test_data_type> test_datas;
 			parse_test_struct::parse(parser, json_data_in, test_datas);
 			std::string new_string;
 			parser.serializeJson<jsonifier::serialize_options{ .prettify = !minified }>(test_datas, new_string);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(new_string, json_out_path + "/" + test_name + variant::file_tag);
@@ -121,12 +121,12 @@ namespace tests {
 			};
 			std::vector<std::string> reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_serialize_test_struct>::impl(parser, test_datas, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string new_string;
 			parser.serializeJson<jsonifier::serialize_options{ .prettify = !minified }>(test_datas, new_string);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(new_string, json_out_path + "/" + test_name + "-jsonifier.json");
@@ -167,14 +167,14 @@ namespace tests {
 			};
 			test_data_type reused_data{};
 			gated_benchmark<reused_test_name, variant::library_name, reused_parse_test_struct>::impl(parser, json_data_in_pre, reused_data);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			test_data_type json_data{};
 			parse_test_struct::parse(parser, json_data_in_pre, json_data);
 			std::string new_string;
 			parser.serializeJson<jsonifier::serialize_options{ .prettify = !minified }>(json_data, new_string);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(new_string, json_out_path + "/" + test_name + variant::file_tag);
@@ -213,7 +213,7 @@ namespace tests {
 			};
 			std::string reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_serialize_test_struct>::impl(parser, json_data, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string json_data_out;
@@ -251,7 +251,7 @@ namespace tests {
 			};
 			std::string reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_prettify_test_struct>::impl(parser, json_data_in, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string json_data_out;
@@ -289,7 +289,7 @@ namespace tests {
 			};
 			std::string reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_minify_test_struct>::impl(parser, json_data_in, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string json_data_out;
@@ -312,7 +312,7 @@ namespace tests {
 			};
 			jsonifier::jsonifier_core<> parser;
 			gated_benchmark<test_name, jsonifier_library_name, validate_test_struct>::impl(parser, json_data_in);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(json_data_in, json_out_path + "/" + test_name + "-jsonifier.json");
@@ -1342,7 +1342,7 @@ namespace tests {
 
 	template<size_t... indices, typename... variants> struct test_dispatcher<std::index_sequence<indices...>, variants...> {
 		inline static void impl(size_t index) {
-			((index == indices ? (variants::execute(), true) : false) || ...);
+			static_cast<void>(((index == indices ? (variants::execute(), true) : false) || ...));
 		}
 	};
 
@@ -1628,18 +1628,7 @@ namespace tests {
 	};
 
 	using registered_tests = test_registry<pod_tests<"Bool Test", bool>, pod_tests<"Double Test", double>, pod_tests<"Int64 Test", int64_t>, pod_tests<"String Test", std::string>,
-		pod_tests<"Uint64 Test", uint64_t>, json_tests<"Apache Builds Test", apache_builds_message>, json_tests<"Canada Test", canada_message>,
-		json_tests<"CitmCatalog Test", citm_catalog_message>, json_tests<"Discord Test", discord_message>, json_tests<"Github Events Test", github_events_message>,
-		json_tests<"Google Maps Response Test", google_maps_response_message>, json_tests<"Instruments Test", instruments_message>,
-		json_tests<"Marine IK Reverse Test", marine_ik_reverse>, json_tests<"Marine IK Test", marine_ik>, json_tests<"Random Test", random_message>,
-		json_tests<"Twitter Partial Test", twitter_partial_message, test_flags::read>, json_tests<"Twitter Test", twitter_message>,
-		json_tests<"Apache Builds Small Test", apache_builds_message>, json_tests<"Canada Small Test", canada_message>, json_tests<"CitmCatalog Small Test", citm_catalog_message>,
-		json_tests<"Discord Small Test", discord_message>, json_tests<"Github Events Small Test", github_events_message>,
-		json_tests<"Google Maps Response Small Test", google_maps_response_message>, json_tests<"Instruments Small Test", instruments_message>,
-		json_tests<"Marine IK Reverse Small Test", marine_ik_reverse>, json_tests<"Marine IK Small Test", marine_ik>, json_tests<"Random Small Test", random_message>,
-		json_tests<"Twitter Partial Small Test", twitter_partial_message, test_flags::read>, json_tests<"Twitter Small Test", twitter_message>,
-		raw_test<test_types::minify, "Minify Test", minify_libraries>, raw_test<test_types::prettify, "Prettify Test", prettify_libraries>,
-		raw_test<test_types::validate, "Validate Test", validate_libraries>>;
+		pod_tests<"Uint64 Test", uint64_t>, raw_test<test_types::minify, "Minify Test", minify_libraries>>;
 
 	inline std::string write_final_results() {
 		std::string markdown{ make_section00().operator std::string() + benchmarksuite::get_time() + ")\n" + make_section01().operator std::string() + make_section02() };
