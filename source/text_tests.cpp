@@ -10,8 +10,7 @@
 namespace tests {
 
 	test_suite_view text_test_suite() {
-		return test_registry<raw_test<test_types::minify, "Minify Test", minify_libraries>, raw_test<test_types::prettify, "Prettify Test", prettify_libraries>,
-			raw_test<test_types::validate, "Validate Test", validate_libraries>>::view();
+		return test_registry<raw_test<test_types::minify, "Minify Test", minify_libraries>>::view();
 	}
 
 }

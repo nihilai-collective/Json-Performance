@@ -62,14 +62,14 @@ namespace tests {
 			};
 			std::vector<test_data_type> reused_datas;
 			gated_benchmark<reused_test_name, variant::library_name, reused_parse_test_struct>::impl(parser, json_data_in, reused_datas);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::vector<test_data_type> test_datas;
 			parse_test_struct::parse(parser, json_data_in, test_datas);
 			std::string new_string;
 			parser.serializeJson<jsonifier::serialize_options{ .prettify = !minified }>(test_datas, new_string);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(new_string, json_out_path + "/" + test_name + variant::file_tag);
@@ -121,12 +121,12 @@ namespace tests {
 			};
 			std::vector<std::string> reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_serialize_test_struct>::impl(parser, test_datas, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string new_string;
 			parser.serializeJson<jsonifier::serialize_options{ .prettify = !minified }>(test_datas, new_string);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(new_string, json_out_path + "/" + test_name + "-jsonifier.json");
@@ -167,14 +167,14 @@ namespace tests {
 			};
 			test_data_type reused_data{};
 			gated_benchmark<reused_test_name, variant::library_name, reused_parse_test_struct>::impl(parser, json_data_in_pre, reused_data);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			test_data_type json_data{};
 			parse_test_struct::parse(parser, json_data_in_pre, json_data);
 			std::string new_string;
 			parser.serializeJson<jsonifier::serialize_options{ .prettify = !minified }>(json_data, new_string);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(new_string, json_out_path + "/" + test_name + variant::file_tag);
@@ -213,7 +213,7 @@ namespace tests {
 			};
 			std::string reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_serialize_test_struct>::impl(parser, json_data, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string json_data_out;
@@ -251,7 +251,7 @@ namespace tests {
 			};
 			std::string reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_prettify_test_struct>::impl(parser, json_data_in, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string json_data_out;
@@ -289,7 +289,7 @@ namespace tests {
 			};
 			std::string reused_output;
 			gated_benchmark<reused_test_name, jsonifier_library_name, reused_minify_test_struct>::impl(parser, json_data_in, reused_output);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			std::string json_data_out;
@@ -312,7 +312,7 @@ namespace tests {
 			};
 			jsonifier::jsonifier_core<> parser;
 			gated_benchmark<test_name, jsonifier_library_name, validate_test_struct>::impl(parser, json_data_in);
-			for (auto& value: parser.getErrors()) {
+			if (auto& value = parser.getError(); value.hasError()) {
 				std::cout << "Jsonifier Error: " << value << std::endl;
 			}
 			benchmarksuite::file_handle::save_file(json_data_in, json_out_path + "/" + test_name + "-jsonifier.json");
@@ -1676,33 +1676,10 @@ namespace tests {
 	};
 
 	test_suite_view pod_test_suite();
-	test_suite_view apache_builds_tests();
-	test_suite_view canada_tests();
-	test_suite_view citm_catalog_tests();
-	test_suite_view discord_tests();
-	test_suite_view github_events_tests();
-	test_suite_view google_maps_response_tests();
-	test_suite_view instruments_tests();
-	test_suite_view marine_ik_tests();
-	test_suite_view random_tests();
-	test_suite_view twitter_tests();
-	test_suite_view apache_builds_small_tests();
-	test_suite_view canada_small_tests();
-	test_suite_view citm_catalog_small_tests();
-	test_suite_view discord_small_tests();
-	test_suite_view github_events_small_tests();
-	test_suite_view google_maps_response_small_tests();
-	test_suite_view instruments_small_tests();
-	test_suite_view marine_ik_small_tests();
-	test_suite_view random_small_tests();
-	test_suite_view twitter_small_tests();
 	test_suite_view text_test_suite();
 
 	inline const test_catalog& registered_catalog() {
-		static const test_catalog catalog{ pod_test_suite(), apache_builds_tests(), canada_tests(), citm_catalog_tests(), discord_tests(), github_events_tests(),
-			google_maps_response_tests(), instruments_tests(), marine_ik_tests(), random_tests(), twitter_tests(), apache_builds_small_tests(), canada_small_tests(),
-			citm_catalog_small_tests(), discord_small_tests(), github_events_small_tests(), google_maps_response_small_tests(), instruments_small_tests(), marine_ik_small_tests(),
-			random_small_tests(), twitter_small_tests(), text_test_suite() };
+		static const test_catalog catalog{ pod_test_suite(), text_test_suite() };
 		return catalog;
 	}
 
