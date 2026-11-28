@@ -1,0 +1,12 @@
+
+----
+### Double Test Write (Reused) Results [(Here is the data we used for this test)](./json/Double%20Test.json):
+
+<p align="left"><a href="./graphs/macOS-GCC/Double%20Test%20Write%20%28Reused%29_Results.png" target="_blank"><img src="./graphs/macOS-GCC/Double%20Test%20Write%20%28Reused%29_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1058.05 | 1.81176 | 209.361ms | 1997 | 160 | 170164 | 1800 | 0.446429 | 1(Win) | true |
+| simdjson (reflection) | 1002.15 | 0.807487 | 202.03ms | 1997 | 1280 | 301419 | 1900.4 | 0.606695 | 2(Loss) | true |
+| Glaze | 645.543 | 0.337049 | 272.846ms | 1798 | 4890 | 391945 | 2656.22 | 1.56473 | 3(Loss) | true |
