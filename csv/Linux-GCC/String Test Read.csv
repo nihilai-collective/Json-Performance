@@ -1,0 +1,10 @@
+# String Test Read Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** GCC-16.2.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+Jsonifier,1440.11,0.175527,282.832ms,4215,30,720.133,2791.27,0.156685,1.70348,Win,true
+simdjson (reflection),1060.92,0.164185,383.624ms,4215,2560,99068.3,3788.92,0.0803199,2.31779,Loss,true
+Glaze,1043.02,0.0528083,387.536ms,4215,80,331.365,3853.95,0.0805017,2.35808,Loss,true
+simdjson (ondemand),740.747,0.0809038,532.288ms,4215,30,578.248,5426.6,0.0442462,3.32539,Loss,true
