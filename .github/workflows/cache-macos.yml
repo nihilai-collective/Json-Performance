@@ -1,0 +1,104 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Nihilai Collective Corp
+# https://github.com/nihilai-collective/json-performance
+# .github/workflows/cache-macos.yml
+
+name: macOS Binaries
+run-name: macOS binaries for ${{ inputs.sha || github.sha }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: 'Commit to build (empty builds the dispatched ref)'
+        required: false
+        default: ''
+      base_path:
+        description: 'Folder holding json/, csv/ and graphs/ on the machine that runs the binary'
+        required: false
+        default: '/Users/ec2-user/Json-Performance'
+      ci_thresholds:
+        description: 'Build with the looser CI convergence thresholds (JP_CI_RUN)'
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [ clang, gcc ]
+
+    runs-on: macos-latest
+    name: Build macOS ${{ matrix.compiler }} binary
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.sha }}
+
+      - name: Setup Clang
+        if: matrix.compiler == 'clang'
+        run: |
+          brew install llvm
+          echo "CXX_BIN=$(brew --prefix llvm)/bin/clang++" >> $GITHUB_ENV
+          echo "C_BIN=$(brew --prefix llvm)/bin/clang" >> $GITHUB_ENV
+          echo "LINK_FLAGS=" >> $GITHUB_ENV
+
+      - name: Setup GCC
+        if: matrix.compiler == 'gcc'
+        run: |
+          brew install gcc
+          GCC_VERSION=$(brew list --versions gcc | awk '{print $2}' | cut -d. -f1)
+          echo "CXX_BIN=g++-$GCC_VERSION" >> $GITHUB_ENV
+          echo "C_BIN=gcc-$GCC_VERSION" >> $GITHUB_ENV
+          echo "LINK_FLAGS=-static-libstdc++ -static-libgcc" >> $GITHUB_ENV
+
+      - name: Configure CMake
+        run: >-
+          cmake -S . -B ./Build -DCMAKE_BUILD_TYPE=Release
+          -DCMAKE_CXX_COMPILER=${{ env.CXX_BIN }} -DCMAKE_C_COMPILER=${{ env.C_BIN }}
+          "-DCMAKE_EXE_LINKER_FLAGS=${{ env.LINK_FLAGS }}"
+          "-DJSON_PERFORMANCE_TEST_BASE_PATH=${{ inputs.base_path }}"
+          -DJP_CI_RUN=${{ inputs.ci_thresholds && 'TRUE' || 'FALSE' }}
+
+      - name: Build
+        run: cmake --build ./Build --config=Release -v
+
+      - name: Bundle
+        id: bundle
+        shell: bash
+        run: |
+          set -e
+          BIN=$(find Build -maxdepth 2 -type f -name Json-Performance -perm -u+x | head -n 1)
+          [ -n "$BIN" ] || { echo "Json-Performance binary not found" >&2; exit 1; }
+          echo "Linked libraries:"
+          otool -L "$BIN"
+          if otool -L "$BIN" | tail -n +2 | grep -E "/opt/homebrew|/usr/local"; then
+            echo "The binary links Homebrew libraries that a fresh Mac will not have (the gecko is sad)" >&2
+            exit 1
+          fi
+          CPU=$(sysctl -n machdep.cpu.brand_string)
+          COMPILER_VERSION=$("$CXX_BIN" --version | head -n 1)
+          NAME="jp-macos-${{ matrix.compiler }}-$(git rev-parse --short HEAD)"
+          mkdir -p "bundle/$NAME"
+          cp "$BIN" "bundle/$NAME/"
+          cp -R json csv graphs "bundle/$NAME/"
+          {
+            echo "Commit: $(git rev-parse HEAD)"
+            echo "Base path: ${{ inputs.base_path }}"
+            echo "Compiler: $COMPILER_VERSION"
+            echo "Built on: $CPU, macOS $(sw_vers -productVersion)"
+            echo "Minimum macOS: $(otool -l "$BIN" | awk '/LC_BUILD_VERSION/{f=1} f&&/minos/{print $2; exit}')"
+          } > "bundle/$NAME/BUILD_INFO.txt"
+          cat "bundle/$NAME/BUILD_INFO.txt"
+          tar -czf "$NAME.tar.gz" -C bundle "$NAME"
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          echo "Bundled $NAME 🦎"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.bundle.outputs.name }}
+          path: ${{ steps.bundle.outputs.name }}.tar.gz
+          retention-days: 30

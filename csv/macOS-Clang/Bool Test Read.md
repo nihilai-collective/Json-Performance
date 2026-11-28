@@ -1,0 +1,12 @@
+
+----
+### Bool Test Read Results [(Here is the data we used for this test)](./json/Bool%20Test.json):
+
+<p align="left"><a href="./graphs/macOS-Clang/Bool%20Test%20Read_Results.png" target="_blank"><img src="./graphs/macOS-Clang/Bool%20Test%20Read_Results.png?raw=true" 
+alt="" width="1200"/></a></p>
+
+| Library | Throughput (MB/s) | RSE (%) | Window Duration | File Size (Bytes) | Window Samples (k) | Variance | Latency / Run (ns) | Mean Convergence (%) | Position | Converged |
+| ------- | ----------- | ------- | --------- | --------------- | -------------------- | ---------- | ---- | ---------------- | -------- | --------- |
+| Jsonifier | 1174.68 | 0.69212 | 95.1269ms | 905 | 30 | 775.789 | 734.733 | 0.400838 | 1(Win) | true |
+| Glaze | 959.539 | 1.19404 | 82.8365ms | 905 | 160 | 18455.7 | 899.469 | 0.226339 | 2(Loss) | true |
+| simdjson (ondemand) | 273.868 | 0.790694 | 311.929ms | 905 | 320 | 198693 | 3151.43 | 1.42055 | 3(Loss) | true |
