@@ -1,0 +1,9 @@
+# Minify Test Write Test Results 
+#**CPU:** AMD EPYC 9V45 96-Core Processor-AVX512
+#**OS:** Linux-7.0.0-1020-azure
+#**Compiler:** Clang-24.0.0
+
+Library,Throughput (MB/s),RSE (%),Window Duration,File Size (Bytes),Window Samples (k),Variance,Latency / Run (ns),Mean Convergence (%),Cycles/Byte,Position,Converged
+simdjson (ondemand),23663.4,0.0698191,1993.84ms,466906,30,5178.13,18817.1,0.00372017,0.104473,Win,true
+Jsonifier,21757.8,0.410326,2085.04ms,466906,80,564126,20465.1,0.0104435,0.113618,Loss,true
+Glaze,2627.59,0.0402233,8785.48ms,466906,2560,1.18943e+07,169462,0.42795,0.942078,Loss,true
